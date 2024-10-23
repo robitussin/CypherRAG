@@ -1,0 +1,26 @@
+Question: In what country is Normandy located?
+Model Answer: Normandy is located in France.
+Real Answer: France
+
+Question: When were the Normans in Normandy?
+Model Answer: The Normans were present in Normandy during the 10th and 11th centuries. This period marked the emergence of their distinct cultural and ethnic identity, which continued to evolve over the succeeding centuries.
+Real Answer: 10th and 11th centuries
+
+Question: From which countries did the Norse originate?
+Model Answer: The Norse raiders and pirates originated from several countries, specifically:
+
+1. **Norway**
+2. **Iceland**
+3. **Denmark**
+
+These regions contributed to the heritage of the Norse people.
+Real Answer: Denmark, Iceland and Norway
+
+Question: Who was the Norse leader?
+Model Answer: The Norse leader was Rollo, who led the Norse raiders and pirates.
+Real Answer: Rollo
+
+Question: What century did the Normans first gain their separate identity?
+Model Answer: The Normans first gained their distinct cultural and ethnic identity in the first half of the 10th century. This period marked the emergence of their unique characteristics that would continue to evolve over the succeeding centuries.
+Real Answer: 10th century
+
