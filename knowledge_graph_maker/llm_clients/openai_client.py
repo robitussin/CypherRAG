@@ -18,7 +18,7 @@ class OpenAIClient(LLMClient):
         self.client = OpenAI()
 
     def generate(self, user_message: str, system_message: str) -> str:
-        print("Using Model: ", self._model)
+        # print("Using Model: ", self._model)
 
         response = self.client.chat.completions.create(
             messages=[

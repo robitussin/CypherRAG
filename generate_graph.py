@@ -1,5 +1,5 @@
 import os
-from knowledge_graph_maker import GraphMaker, Ontology, OpenAIClient
+from knowledge_graph_maker import GraphMaker, Ontology, OpenAIClient, Edge
 from knowledge_graph_maker import Document
 import datetime
 from langchain import hub
@@ -37,6 +37,8 @@ def get_propositions(text: str, proposition_list: List[str]):
 
     text = text.split(".")
 
+    file = open("propositions.txt", "a")
+
     for t in text:
         
         if t:
@@ -46,9 +48,13 @@ def get_propositions(text: str, proposition_list: List[str]):
             }).content
         
             propositions = structured_llm.invoke(runnable_output).sentences
-            proposition_list.extend(propositions)
-
-    return proposition_list
+            
+            for item in propositions:
+                file.write(item + "\n")
+            # proposition_list.extend(propositions)
+            
+    file.close()       
+    # return proposition_list
 
 
 def generate_summary(text: str, llm: OpenAIClient):
@@ -63,7 +69,7 @@ def generate_summary(text: str, llm: OpenAIClient):
     finally:
         return summary
 
-def generate(proposition_list: List[str]):
+def generateEdges(proposition_list: List[str]) -> List[Edge]:
 
     ontology = Ontology(
     labels=[
@@ -86,16 +92,15 @@ def generate(proposition_list: List[str]):
 
     current_time = str(datetime.datetime.now())
 
-    docs = map(
-    lambda t: Document(text=t, metadata={"summary": t, 'generated_at': current_time}),
-    proposition_list
-    )
+    docs = map(lambda t: Document(text=t, metadata={"summary": t, 'generated_at': current_time}),proposition_list)
+    
     graph_maker = GraphMaker(ontology=ontology, llm_client=llm, verbose=True)
 
-    graph = graph_maker.from_documents(
-        list(docs), 
-        delay_s_between=0 ## delay_s_between because otherwise groq api maxes out pretty fast. 
-        )
+    graph = graph_maker.from_documents(list(docs), delay_s_between=0)
+    
+    return graph
+
+def createGraph(graph: List[Edge]) -> bool:
     
     create_indices = False
     neo4j_graph = Neo4jGraphModel(edges=graph, create_indices=create_indices)

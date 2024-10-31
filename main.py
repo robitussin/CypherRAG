@@ -128,13 +128,17 @@ def query_graph(user_input):
     chain = GraphCypherQAChain.from_llm(
         llm=llm,
         graph=graph,
-        verbose=True,
+        verbose=False,
         return_intermediate_steps=True,
         cypher_prompt=cypher_prompt,
-        qa_prompt=qa_prompt
-        )
-    result = chain(user_input)
-    return result
+        qa_prompt=qa_prompt)
+    
+    try:
+        result = chain.invoke(user_input)
+        return result
+    except Exception as e:
+        print(e)
+        return None
 
 def refine_query(previous_query, user_input):
 
@@ -156,22 +160,24 @@ def refine_query(previous_query, user_input):
    Can you please refine the Initial Cypher Query to answer the question?
    """
     
-   cypher_refine_prompt = PromptTemplate(
-      input_variables=["schema", "question"], template=cypher_refine_template
-   )
+   cypher_refine_prompt = PromptTemplate(input_variables=["schema", "question"], template=cypher_refine_template)
 
    graph = Neo4jGraph(url=neo4j_url, username=neo4j_user, password=neo4j_password)
-   chain = GraphCypherQAChain.from_llm(
-       llm=llm,
-       graph=graph,
-       verbose=True,
-       return_intermediate_steps=True,
-       cypher_prompt=cypher_refine_prompt
-   )
    
-   print(cypher_refine_prompt.format(question=user_input, schema=graph.schema, prevquery=previous_query))
-   result = chain(user_input)
-   return result
+   chain = GraphCypherQAChain.from_llm(llm=llm, 
+                                       graph=graph, 
+                                       verbose=False, 
+                                       return_intermediate_steps=True, 
+                                       cypher_prompt=cypher_refine_prompt)
+   
+   try:
+        result = chain.invoke(user_input)
+        return result
+   except Exception as e:
+        print(e)
+        return None
+
+    #print(cypher_refine_prompt.format(question=user_input, schema=graph.schema, prevquery=previous_query))
 
 
 st.set_page_config(layout="wide")
