@@ -1,2 +1,0 @@
-node_1=Node(label='Person', name='Normans') node_2=Node(label='Place', name='Normandy') relationship='The Normans are the people who named the place Normandy.' metadata={'summary': 'The Normans were the people who gave their name to Normandy.', 'generated_at': '2024-10-24 10:14:01.896823'} order=0
-node_1=Node(label='Place', name='Normandy') node_2=Node(label='Place', name='France') relationship='Normandy is a region located within France.' metadata={'summary': 'Normandy is a region in France.', 'generated_at': '2024-10-24 10:14:01.896823'} order=1

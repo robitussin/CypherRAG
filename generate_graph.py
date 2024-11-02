@@ -18,6 +18,9 @@ os.environ["NEO4J_URI"]= "bolt://localhost:7687"
 class Sentences(BaseModel):
     sentences: List[str]
 
+def hello():
+    print("hello")
+
 def get_propositions(text: str, proposition_list: List[str]):
     obj = hub.pull("wfh/proposal-indexing")
 

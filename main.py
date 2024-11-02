@@ -107,12 +107,24 @@ cypher_prompt = PromptTemplate(
     input_variables = ["schema", "question"]
 )
 
+# CYPHER_QA_TEMPLATE = """You are an assistant that helps to form nice and human understandable answers.
+# The information part contains the provided information that you must use to construct an answer.
+# The provided information is authoritative, you must never doubt it or try to use your internal knowledge to correct it.
+# Make the answer sound as a response to the question. Do not mention that you based the result on the given information.
+# If the provided information is empty, say that you don't know the answer.
+# Final answer should be easily readable and structured.
+# Information:
+# {context}
+
+# Question: {question}
+# Helpful Answer:"""
+
 CYPHER_QA_TEMPLATE = """You are an assistant that helps to form nice and human understandable answers.
 The information part contains the provided information that you must use to construct an answer.
 The provided information is authoritative, you must never doubt it or try to use your internal knowledge to correct it.
 Make the answer sound as a response to the question. Do not mention that you based the result on the given information.
-If the provided information is empty, say that you don't know the answer.
-Final answer should be easily readable and structured.
+If the provided information does not have enough information to provide a clear answer to the question, say that you don't know the answer
+Provide only the direct answer without any additional explanations, context, or elaboration. For example, if asked, 'In what country is Normandy located?' your response should simply be 'France' without any additional information."
 Information:
 {context}
 
