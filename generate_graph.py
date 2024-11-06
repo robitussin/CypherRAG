@@ -2,7 +2,8 @@ import os
 from knowledge_graph_maker import GraphMaker, Ontology, OpenAIClient, Edge
 from knowledge_graph_maker import Document
 import datetime
-from langchain import hub
+# from langchain import hub
+from langsmith import Client
 from langchain_openai import ChatOpenAI
 from langchain_core.pydantic_v1 import BaseModel
 from typing import Optional, List
@@ -22,7 +23,10 @@ def hello():
     print("hello")
 
 def get_propositions(text: str, proposition_list: List[str]):
-    obj = hub.pull("wfh/proposal-indexing")
+    # obj = hub.pull("wfh/proposal-indexing")
+    
+    client = Client()
+    obj = client.pull_prompt("wfh/proposal-indexing")
 
     chunking_llm = ChatOpenAI(
         model="gpt-4o-mini",
@@ -38,7 +42,7 @@ def get_propositions(text: str, proposition_list: List[str]):
     # Extraction
     structured_llm = chunking_llm.with_structured_output(Sentences)
 
-    text = text.split(".")
+    # text = text.split(".")
 
     file = open("propositions.txt", "a")
 
@@ -55,6 +59,41 @@ def get_propositions(text: str, proposition_list: List[str]):
             for item in propositions:
                 file.write(item + "\n")
             # proposition_list.extend(propositions)
+            
+    file.close()       
+    # return proposition_list
+    
+def get_propositions_nosplit(text: str, proposition_list: List[str]):
+    # obj = hub.pull("wfh/proposal-indexing")
+    client = Client()
+    obj = client.pull_prompt("wfh/proposal-indexing")
+    
+    chunking_llm = ChatOpenAI(
+        model="gpt-4o-mini",
+        temperature=0,
+        max_tokens=None,
+        timeout=None,
+        max_retries=2,
+    )
+
+    # use it in a runnable
+    runnable = obj | chunking_llm
+
+    # Extraction
+    structured_llm = chunking_llm.with_structured_output(Sentences)
+
+    file = open("propositions.txt", "a")
+    
+    if text:
+        runnable_output = runnable.invoke({
+            "input": text
+        }).content
+    
+        propositions = structured_llm.invoke(runnable_output).sentences
+        
+        for item in propositions:
+            file.write(item + "\n")
+        # proposition_list.extend(propositions)
             
     file.close()       
     # return proposition_list
