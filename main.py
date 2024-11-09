@@ -37,7 +37,7 @@ neo4j_url = "bolt://localhost:7687"
 neo4j_user = "neo4j"
 neo4j_password = "12345678"
 
-# cypher_generation_template = """
+# cypher_generation_template_elaborated = """
 # You are an expert Neo4j Cypher translator who converts English to Cypher based on the Neo4j Schema provided, following the instructions below:
 # 1. Generate Cypher query compatible ONLY for Neo4j Version 5
 # 2. Do not use EXISTS, SIZE, HAVING keywords in the cypher. Use alias when using the WITH keyword
@@ -57,6 +57,25 @@ neo4j_password = "12345678"
 
 # Question: {question}
 # """
+
+# Cypher generation prompt
+cypher_generation_template_cot = """
+You are an expert Neo4j Cypher translator who converts English to Cypher based on the Neo4j Schema provided, following the instructions below:
+
+schema: {schema}
+
+Question: {question}
+
+Let's break down this question step-by-step to construct the correct Cypher query:
+
+1. **Identify Entities**: Determine the main entities (e.g., person, place, item) that need to be included in the query.
+2. **Identify Relationships**: Identify the relationships between entities, as described in the question.
+3. **Define Filters and Conditions**: Determine any specific conditions, properties, or filters required (e.g., name, age, location).
+4. **Determine the Output**: Decide what information should be returned (e.g., node properties, relationships).
+5. **Construct the Query**: Using the information above, write the Cypher query.
+
+Cypher Query:
+"""
 
 # Cypher generation prompt
 cypher_generation_template = """
@@ -107,6 +126,11 @@ cypher_prompt = PromptTemplate(
     input_variables = ["schema", "question"]
 )
 
+cypher_prompt_cot = PromptTemplate(
+    template = cypher_generation_template_cot,
+    input_variables = ["schema", "question"]
+)
+
 # CYPHER_QA_TEMPLATE = """You are an assistant that helps to form nice and human understandable answers.
 # The information part contains the provided information that you must use to construct an answer.
 # The provided information is authoritative, you must never doubt it or try to use your internal knowledge to correct it.
@@ -134,6 +158,23 @@ Helpful Answer:"""
 qa_prompt = PromptTemplate(
     input_variables=["context", "question"], template=CYPHER_QA_TEMPLATE
 )
+
+def query_graph_cot(user_input):
+    graph = Neo4jGraph(url=neo4j_url, username=neo4j_user, password=neo4j_password)
+    chain = GraphCypherQAChain.from_llm(
+        llm=llm,
+        graph=graph,
+        verbose=False,
+        return_intermediate_steps=True,
+        cypher_prompt=cypher_prompt_cot,
+        qa_prompt=qa_prompt)
+    try:
+        result = chain.invoke(user_input)
+        return result
+    except Exception as e:
+        print(e)
+        return None
+    
 
 def query_graph(user_input):
     graph = Neo4jGraph(url=neo4j_url, username=neo4j_user, password=neo4j_password)
