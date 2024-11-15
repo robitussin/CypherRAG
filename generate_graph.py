@@ -19,12 +19,7 @@ os.environ["NEO4J_URI"]= "bolt://localhost:7687"
 class Sentences(BaseModel):
     sentences: List[str]
 
-def hello():
-    print("hello")
-
-def get_propositions(text: str, proposition_list: List[str]):
-    # obj = hub.pull("wfh/proposal-indexing")
-    
+def get_propositions(text: str, proposition_list: List[str]): 
     client = Client()
     obj = client.pull_prompt("wfh/proposal-indexing")
 
@@ -42,7 +37,7 @@ def get_propositions(text: str, proposition_list: List[str]):
     # Extraction
     structured_llm = chunking_llm.with_structured_output(Sentences)
 
-    # text = text.split(".")
+    text = text.split(".")
 
     file = open("propositions.txt", "a")
 
@@ -64,7 +59,6 @@ def get_propositions(text: str, proposition_list: List[str]):
     # return proposition_list
     
 def get_propositions_nosplit(text: str, proposition_list: List[str]):
-    # obj = hub.pull("wfh/proposal-indexing")
     client = Client()
     obj = client.pull_prompt("wfh/proposal-indexing")
     

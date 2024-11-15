@@ -1,0 +1,40 @@
+'To break down the question "What government position was held by the woman who portrayed Corliss Archer in the film Kiss and Tell?" 
+into simpler questions and formulate Cypher queries, we can follow the steps outlined:\n\n### 
+Single-Hop Questions:\n1. Who portrayed Corliss Archer in the film "Kiss and Tell"?\n
+2. What government position did this person hold?\n\n### Single-Hop Cypher Queries:\n
+1. To find out who portrayed Corliss Archer in the film "Kiss and Tell":\n  
+ ```cypher\n   
+ MATCH (e:Entity {name: "Corliss Archer"})-[:RELATED {description: "portrayed"}]->(actor:Entity {label: "actor"})\n   RETURN actor.name, RELATED.metadata
+ 2. To find out what government position this actor held:\n   ```cypher\n   MATCH (actor:Entity)-[:RELATED {description: "held"}]->(position:Entity {label: "government position"})\n   RETURN position.name, RELATED.metadata\n   ```\n\n### 
+ Final Cypher Query:\nTo combine the single-hop queries into a complete Cypher query, we can use a pattern that connects the two steps:\n\n```cypher\n
+ MATCH (e:Entity {name: "Corliss Archer"})-[:RELATED {description: "portrayed"}]->(actor:Entity {label: "actor"})\nMATCH (actor)-[:RELATED {description: "held"}]->(position:Entity {label: "government position"})\nRETURN position.name, RELATED.metadata\n```\n\nThis final query retrieves the name of the government position held by the actor who portrayed Corliss Archer, along with the metadata of the relationships involved.
+
+
+BY PATH
+Correct query for question:
+MATCH (e:Entity)-[rel:RELATED]-(re:Entity)-[rell:RELATED]-(ree:Entity)
+WHERE ToLower(e.name) = "corliss archer" AND ToLower(ree.name) = "kiss and tell"
+RETURN re.name 
+
+MATCH (e:Entity)-[rel:RELATED]-(re:Entity)
+WHERE ToLower(e.name) CONTAINS "shirley temple"
+RETURN rel.metadata 
+
+MATCH (e:Entity)-[rel:RELATED]-(re)-[rell:RELATED]-(ree)
+WHERE ToLower(e.name) = "corliss archer" AND ToLower(ree.name) = "kiss and tell"
+WITH re.name as ACTOR 
+MATCH (e:Entity)-[rel:RELATED]-(re:Entity)
+WHERE ToLower(e.name) CONTAINS ToLower(ACTOR)
+RETURN rel.metadata 
+
+MATCH (role:Entity)-[]-(actor)-[]-(film)
+WHERE ToLower(role.name) = "corliss archer" AND ToLower(film.name) = "kiss and tell"
+WITH actor.name as ACTOR 
+MATCH (actor)-[rel]-()
+WHERE ToLower(actor.name) CONTAINS ToLower(ACTOR)
+RETURN DISTINCT rel.metadata 
+
+BY METADATA
+MATCH (e:Entity)-[rel:RELATED]-(re:Entity)
+WHERE ToLower(e.name) = 'corliss archer' AND ToLower(rel.metadata) CONTAINS 'kiss and tell'
+RETURN rel
