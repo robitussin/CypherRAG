@@ -1,0 +1,19 @@
+question: Were Scott Derrickson and Ed Wood of the same nationality?
+real_answer: yes
+model_answer: 
+cypher_query: cypher
+   MATCH (p:Person {name: 'Scott Derrickson'})-[:RELATED]->(e:Entity)
+   RETURN e.name AS nationality, e.label AS nationalityLabel, 
+          'Scott Derrickson' AS personName, 
+          'Scott Derrickson nationality' AS metadata
+   
+======================
+question: Were Scott Derrickson and Ed Wood of the same nationality?
+real_answer: yes
+model_answer: 
+cypher_query: cypher
+MATCH (p1:Person)-[r1:RELATED]-(e1:Entity), (p2:Person)-[r2:RELATED]-(e2:Entity)
+WHERE toLower(p1.name) contains 'scott derrickson' AND toLower(p2.name) contains 'ed wood'
+RETURN r1.description AS description1, r2.description AS description2, r1.metadata AS metadata1, r2.metadata AS metadata2
+
+======================

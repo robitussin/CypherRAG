@@ -34,6 +34,17 @@ MATCH (actor)-[rel]-()
 WHERE ToLower(actor.name) CONTAINS ToLower(ACTOR)
 RETURN DISTINCT rel.metadata 
 
+MATCH (role:Entity)-[]-(e)-[]-(film:Entity)
+WHERE ToLower(role.name) = "corliss archer" AND ToLower(film.name) = "kiss and tell"
+RETURN e.name
+
+MATCH (role:Entity)-[]-(e)-[]-(film:Entity)
+WHERE ToLower(role.name) = "corliss archer" AND ToLower(film.name) = "kiss and tell"
+WITH e.name AS actor
+MATCH (e)-[rel]->(f)
+WHERE ToLower(e.name) CONTAINS ToLower(actor)    
+RETURN rel.description
+
 BY METADATA
 MATCH (e:Entity)-[rel:RELATED]-(re:Entity)
 WHERE ToLower(e.name) = 'corliss archer' AND ToLower(rel.metadata) CONTAINS 'kiss and tell'

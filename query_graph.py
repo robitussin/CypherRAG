@@ -139,11 +139,20 @@ MATCH (e:Entity)-[r:RELATED]-(re:Entity)
 WHERE toLower(e.name) =~ '.*\\\\b(not|notre|dame|main|building)\\\\b.*'
 RETURN e.name, r.metadata, r.description, re.name
 
+Question: What government position was held by the woman who portrayed Corliss Archer in the film Kiss and Tell?
+Answer: 
+MATCH (role:Entity)-[]-(e:Person)-[]-(film:Entity)
+WHERE toLower(role.name) = "corliss archer" AND toLower(film.name) = "kiss and tell"
+WITH e
+MATCH (e)-[rel:RELATED]-(p:Entity)
+WHERE toLower(rel.description) CONTAINS 'government position' OR toLower(rel.description) CONTAINS 'position'
+RETURN rel.description
+
 Question: {question}
 # """
 
 cypher_prompt = PromptTemplate(
-    template = cypher_generation_template,
+    template = cypher_generation_template_fewshot,
     input_variables = ["schema", "question"]
 )
 
@@ -210,49 +219,83 @@ class QueryGraph:
         self._llm = lm
         self._graph = graphdb
 
-    def test_query(self, user_input):
+    # def test_query(self, user_input):
         
-        prompt = PromptTemplate.from_template("""
-        You are an expert Neo4j Cypher translator who converts a question in English to Cypher based on the Neo4j Schema provided below:
+    #     prompt = PromptTemplate.from_template("""
+    #     You are an expert Neo4j Cypher translator who converts a question in English to Cypher based on the Neo4j Schema provided below:
 
-        schema: {schema}
+    #     schema: {schema}
         
-        The question below cannot be answered directly and requires to be broken down into simpler questions:
+    #     The question below cannot be answered directly and requires to be broken down into simpler questions:
                                             
-        Question: {question}
+    #     Question: {question}
 
-        Let's break down this question into simpler, single-hop questions that will allow us to answer each part step-by-step and construct a Cypher Query:
+    #     Let's break down this question into simpler, single-hop questions that will allow us to answer each part step-by-step and construct a Cypher Query:
 
-        1. Identify the main objective: What is the final piece of information that the question is asking for?
-        2. Determine intermediate steps: What pieces of information or entities need to be found to reach the main objective? What are the relationships between them?
-        3. Formulate single-hop questions: For each step, write a single-hop question that focuses on finding one specific piece of information.
-        4. Formulate single-hop queries: For each step, create a single-hop cypher query to retrieve each entity or relationship needed for the final answer.
-        5. When formulating single-hop queries, return the metadata property of the relationship between the entities
-        6. Construct the final query: Combine the single-hop queries into a complete Cypher query that addresses the entire question.
-        7. When formulating the final query, return the metadata property of the relationship between the entities
+    #     1. Identify the main objective: What is the final piece of information that the question is asking for?
+    #     2. Determine intermediate steps: What pieces of information or entities need to be found to reach the main objective? What are the relationships between them?
+    #     3. Formulate single-hop questions: For each step, write a single-hop question that focuses on finding one specific piece of information.
+    #     4. Formulate single-hop queries: For each step, create a single-hop cypher query to retrieve each entity or relationship needed for the final answer.
+    #     5. When formulating single-hop queries, return the metadata property of the relationship between the entities
+    #     6. Construct the final query: Combine the single-hop queries into a complete Cypher query that addresses the entire question.
+    #     7. When formulating the final query, return the metadata property of the relationship between the entities
 
-        Single-Hop Questions:
-        1. [Insert the first single-hop question here]
-        2. [Insert the next single-hop question here]
-        3. Continue until each part of the question is covered
+    #     Single-Hop Questions:
+    #     1. [Insert the first single-hop question here]
+    #     2. [Insert the next single-hop question here]
+    #     3. Continue until each part of the question is covered
 
-        Single-Hop Cypher Query:
-        1. [Insert the first cypher query for the first single-hop question here]
-        2. [Insert the next cypher query for the first single-hop question here]
-        3. Continue until all single-hop questions is covered
+    #     Single-Hop Cypher Query:
+    #     1. [Insert the first cypher query for the first single-hop question here]
+    #     2. [Insert the next cypher query for the first single-hop question here]
+    #     3. Continue until all single-hop questions is covered
 
-        Final Cypher Query:
-        [Combine the single-hop queries into a complete Cypher query and insert here]
-        """)
+    #     Final Cypher Query:
+    #     [Combine the single-hop queries into a complete Cypher query and insert here]
+    #     """)
 
-        chain = prompt | self._llm
-        result = chain.invoke({"question": user_input, "schema": graph.schema})
-        return result
+    #     chain = prompt | self._llm
+    #     result = chain.invoke({"question": user_input, "schema": graph.schema})
+    #     return result
+
+    def test_query(self, user_input):
+            
+            prompt = PromptTemplate.from_template("""
+                You are an expert Neo4j Cypher translator who converts English to Cypher based on the Neo4j Schema provided, following the instructions below:
+                1. Generate Cypher query compatible ONLY for Neo4j Version 5
+                2. Do not use EXISTS, SIZE, HAVING keywords in the cypher. Use alias when using the WITH keyword
+                3. Use only nodes and relationships mentioned in the schema
+                4. Always do a case-insensitive and fuzzy search for any properties related search. Eg: to search for a Person named John, use `toLower(entity.name) contains 'john'`. 
+                5. Never use relationships that are not mentioned in the given schema
+                6. When asked about entities, Match the properties using case-insensitive matching, E.g, to find a person named John, use `toLower(entity.name) contains 'john'`.
+                7. If a person, place, object, event or a miscellaneous entity does not match an entity in the graph, Try matching the description property or the metadata property of a relationship using case-insensitive matching, E.g, to find information about Joe, use toLower(r.description) contains 'joe' OR toLower(r.metadata) contains 'joe'.
+                8. When asked about any information of an entity, Do not simply give the entity label. Try to get the answer from the entity's relationship description or metadata property
+                9. Use regex to help find an entity that contains multiple words, E.g, to find a the 'Notre Dame Main Building', use toLower(e.name) =~ '.*\\\\b(not|notre|dame|main|building)\\\\b.*'
+                10. When using MATCH traverse the relationship in both directions, E.g, (e:Entity)-[r:RELATED]-(re:Entity)
+
+                schema: {schema}
+
+                Examples:
+                Question: What government position was held by the woman who portrayed Corliss Archer in the film Kiss and Tell?
+                Answer: 
+                MATCH (role:Entity)-[]-(e:Person)-[]-(film:Entity)
+                WHERE toLower(role.name) = "corliss archer" AND toLower(film.name) = "kiss and tell"
+                WITH e
+                MATCH (e)-[rel:RELATED]-(p:Entity)
+                WHERE toLower(rel.description) CONTAINS 'government position' OR toLower(rel.description) CONTAINS 'position'
+                RETURN rel.description
+
+                Question: {question}
+                # """)
+
+            chain = prompt | self._llm
+            result = chain.invoke({"question": user_input, "schema": graph.schema})
+            return result
 
     def query_graph_cot(self, user_input):
         chain = GraphCypherQAChain.from_llm(
-            llm=self.llm,
-            graph=self.graph,
+            llm=self._llm,
+            graph=self._graph,
             verbose=True,
             return_intermediate_steps=True,
             cypher_prompt=self._cypher_prompt_cot,
@@ -264,7 +307,7 @@ class QueryGraph:
             print(e)
             return None
         
-    def runquestion(self, user_input):
+    def answer_question(self, user_input):
         chain = GraphCypherQAChain.from_llm(
             llm=self._llm,
             graph=self._graph,
@@ -316,7 +359,4 @@ class QueryGraph:
                 return None
 
         #print(cypher_refine_prompt.format(question=user_input, schema=graph.schema, prevquery=previous_query))
-
-    def hello(self):
-         print("hello")
          
