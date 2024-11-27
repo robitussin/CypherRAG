@@ -2,7 +2,7 @@ import os
 from knowledge_graph_maker import GraphMaker, Ontology, OpenAIClient, Edge
 from knowledge_graph_maker import Document
 import datetime
-# from langchain import hub
+
 from langsmith import Client
 from langchain_openai import ChatOpenAI
 from langchain_core.pydantic_v1 import BaseModel
@@ -143,3 +143,6 @@ def createGraph(graph: List[Edge]) -> bool:
     neo4j_graph.save()
 
     return True
+    
+
+    
