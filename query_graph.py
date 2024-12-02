@@ -81,22 +81,63 @@ Final Cypher Query:
 """
 
 # Cypher generation prompt
-cypher_generation_template = """
-You are an expert Neo4j Cypher translator who converts English to Cypher based on the Neo4j Schema provided, following the instructions below:
-1. Generate Cypher query compatible ONLY for Neo4j Version 5
-2. Do not use EXISTS, SIZE, HAVING keywords in the cypher. Use alias when using the WITH keyword
-3. Use only nodes and relationships mentioned in the schema
-4. Always do a case-insensitive and fuzzy search for any properties related search. Eg: to search for a Person named John, use `toLower(entity.name) contains 'john'`. 
-5. Never use relationships that are not mentioned in the given schema
-6. When asked about entities, Match the properties using case-insensitive matching, E.g, to find a person named John, use `toLower(entity.name) contains 'john'`.
-7. If a person, place, object, event or a miscellaneous entity does not match an entity in the graph, Try matching the description property or the metadata property of a relationship using case-insensitive matching, E.g, to find information about Joe, use toLower(r.description) contains 'joe' OR toLower(r.metadata) contains 'joe'.
-8. When asked about any information of an entity, Do not simply give the entity label. Try to get the answer from the entity's relationship description or metadata property
-9. Use regex to help find an entity that contains multiple words, E.g, to find a the 'Notre Dame Main Building', use toLower(e.name) =~ '.*\\\\b(not|notre|dame|main|building)\\\\b.*'
-10. When using MATCH traverse the relationship in both directions, E.g, (e:Entity)-[r:RELATED]-(re:Entity)
+# cypher_generation_template = """
+# You are an expert Neo4j Cypher translator who converts English to Cypher based on the Neo4j Schema provided, following the instructions below:
+# 1. Generate Cypher query compatible ONLY for Neo4j Version 5
+# 2. Do not use EXISTS, SIZE, HAVING keywords in the cypher. Use alias when using the WITH keyword
+# 3. Use only nodes and relationships mentioned in the schema
+# 4. Always do a case-insensitive and fuzzy search for any properties related search. Eg: to search for a Person named John, use `toLower(entity.name) contains 'john'`. 
+# 5. Never use relationships that are not mentioned in the given schema
+# 6. When asked about entities, Match the properties using case-insensitive matching, E.g, to find a person named John, use `toLower(entity.name) contains 'john'`.
+# 7. If a person, place, object, event or a miscellaneous entity does not match an entity in the graph, Try matching the description property or the metadata property of a relationship using case-insensitive matching, E.g, to find information about Joe, use toLower(r.description) contains 'joe' OR toLower(r.metadata) contains 'joe'.
+# 8. When asked about any information of an entity, Do not simply give the entity label. Try to get the answer from the entity's relationship description or metadata property
+# 9. Use regex to help find an entity that contains multiple words, E.g, to find a the 'Notre Dame Main Building', use toLower(e.name) =~ '.*\\\\b(not|notre|dame|main|building)\\\\b.*'
+# 10. When using MATCH traverse the relationship in both directions, E.g, (e:Entity)-[r:RELATED]-(re:Entity)
 
-schema: {schema}
-Question: {question}
-"""
+# schema: {schema}
+# Question: {question}
+# """
+
+# Cypher generation prompt
+cypher_generation_template = """
+    You are an expert Neo4j Cypher translator who converts English to Cypher based on the Neo4j Schema provided, following the instructions below:
+    1. Generate Cypher query compatible ONLY for Neo4j Version 5
+    2. Do not use EXISTS, SIZE, HAVING keywords in the cypher. Use alias when using the WITH keyword
+    3. Use only nodes and relationships mentioned in the schema
+    4. Always do a case-insensitive and fuzzy search for any properties related search. Eg: to search for a Person named John, use `toLower(entity.name) contains 'john'`. 
+    5. Never use relationships that are not mentioned in the given schema
+    6. When asked about entities, Match the properties using case-insensitive matching, E.g, to find a person named John, use `toLower(entity.name) contains 'john'`.
+    7. If a person, place, object, event or a miscellaneous entity does not match an entity in the graph, Try matching the description property or the metadata property of a relationship using case-insensitive matching, E.g, to find information about Joe, use toLower(r.description) contains 'joe' OR toLower(r.metadata) contains 'joe'.
+    8. When asked about any information of an entity, Do not simply give the entity label. Try to get the answer from the entity's relationship description or metadata property
+    9. Use regex to help find an entity that contains multiple words, E.g, to find a the 'Notre Dame Main Building', use toLower(e.name) =~ '.*\\\\b(not|notre|dame|main|building)\\\\b.*'
+    10. When using MATCH traverse the relationship in both directions, E.g, (e:Entity)-[r:RELATED]-(re:Entity)
+    11. When the question is a Multi-hop Question, you need to find multiple relationships in the MATCH CLAUSE.
+                                        
+    Example of a Multi-Hop Question: Which author wrote the book that inspired the movie Blade Runner??    
+
+    In the example multi-hop question, you need to identify the book where the movie was based from. The MATCH clause below finds the title of the book
+                                        
+    MATCH (movie:Object)-[r:RELATED]-(book:Object)                                  
+    WHERE (toLower(r.metadata) CONTAINS 'blade runner') OR (toLower(r.description) CONTAINS 'blade runner')
+    WITH book, book.name as booktitle 
+                                        
+    The next step is to determine the author of the book. The MATCH clause below finds the author of the book
+                                                                        
+    MATCH (book)-[r:RELATED]-(author:Person)
+    WHERE (toLower(r.metadata) CONTAINS booktitle) OR (toLower(r.description) CONTAINS booktitle)
+
+    The final step is to combine both queries. Combining both queries, we will get: 
+
+    MATCH (movie:Object)-[r:RELATED]-(book:Object)                                  
+    WHERE (toLower(r.metadata) CONTAINS 'blade runner') OR (toLower(r.description) CONTAINS 'blade runner')
+    WITH book, book.name as booktitle 
+    MATCH (book)-[r:RELATED]-(author:Person)
+    WHERE (toLower(r.metadata) CONTAINS booktitle) OR (toLower(r.description) CONTAINS booktitle)
+    RETURN author
+
+    schema: {schema}
+    Question: {question}
+    """
 
 # Cypher generation prompt
 cypher_generation_template_fewshot = """
@@ -152,7 +193,7 @@ Question: {question}
 # """
 
 cypher_prompt = PromptTemplate(
-    template = cypher_generation_template_fewshot,
+    template = cypher_generation_template,
     input_variables = ["schema", "question"]
 )
 
@@ -259,38 +300,85 @@ class QueryGraph:
     #     return result
 
     def test_query(self, user_input):
+                
+        prompt = PromptTemplate.from_template("""
+            You are an expert Neo4j Cypher translator who converts English to Cypher based on the Neo4j Schema provided, following the instructions below:
+            1. Generate Cypher query compatible ONLY for Neo4j Version 5
+            2. Do not use EXISTS, SIZE, HAVING keywords in the cypher. Use alias when using the WITH keyword
+            3. Use only nodes and relationships mentioned in the schema
+            4. Always do a case-insensitive and fuzzy search for any properties related search. Eg: to search for a Person named John, use `toLower(entity.name) contains 'john'`. 
+            5. Never use relationships that are not mentioned in the given schema
+            6. When asked about entities, Match the properties using case-insensitive matching, E.g, to find a person named John, use `toLower(entity.name) contains 'john'`.
+            7. If a person, place, object, event or a miscellaneous entity does not match an entity in the graph, Try matching the description property or the metadata property of a relationship using case-insensitive matching, E.g, to find information about Joe, use toLower(r.description) contains 'joe' OR toLower(r.metadata) contains 'joe'.
+            8. When asked about any information of an entity, Do not simply give the entity label. Try to get the answer from the entity's relationship description or metadata property
+            9. Use regex to help find an entity that contains multiple words, E.g, to find a the 'Notre Dame Main Building', use toLower(e.name) =~ '.*\\\\b(not|notre|dame|main|building)\\\\b.*'
+            10. When using MATCH traverse the relationship in both directions, E.g, (e:Entity)-[r:RELATED]-(re:Entity)
+            11. When the question is a Multi-hop Question, you need to find multiple relationships in the MATCH CLAUSE.
+                                              
+            Example of a Multi-Hop Question: Which author wrote the book that inspired the movie Blade Runner??    
             
-            prompt = PromptTemplate.from_template("""
-                You are an expert Neo4j Cypher translator who converts English to Cypher based on the Neo4j Schema provided, following the instructions below:
-                1. Generate Cypher query compatible ONLY for Neo4j Version 5
-                2. Do not use EXISTS, SIZE, HAVING keywords in the cypher. Use alias when using the WITH keyword
-                3. Use only nodes and relationships mentioned in the schema
-                4. Always do a case-insensitive and fuzzy search for any properties related search. Eg: to search for a Person named John, use `toLower(entity.name) contains 'john'`. 
-                5. Never use relationships that are not mentioned in the given schema
-                6. When asked about entities, Match the properties using case-insensitive matching, E.g, to find a person named John, use `toLower(entity.name) contains 'john'`.
-                7. If a person, place, object, event or a miscellaneous entity does not match an entity in the graph, Try matching the description property or the metadata property of a relationship using case-insensitive matching, E.g, to find information about Joe, use toLower(r.description) contains 'joe' OR toLower(r.metadata) contains 'joe'.
-                8. When asked about any information of an entity, Do not simply give the entity label. Try to get the answer from the entity's relationship description or metadata property
-                9. Use regex to help find an entity that contains multiple words, E.g, to find a the 'Notre Dame Main Building', use toLower(e.name) =~ '.*\\\\b(not|notre|dame|main|building)\\\\b.*'
-                10. When using MATCH traverse the relationship in both directions, E.g, (e:Entity)-[r:RELATED]-(re:Entity)
+            In the example multi-hop question, you need to identify the book where the movie was based from. The MATCH clause below finds the title of the book
+                                              
+            MATCH (movie:Object)-[]-(book:Object)                                  
+            WHERE toLower(movie.name) = "blade runner"
+            WITH book, book.name as title 
+                                              
+            The next step is to determine the author of the book. The MATCH clause below finds the author of the book
+                                                                                
+            MATCH (book)-[]-(author:Person)
+            WHERE toLower(book.name) CONTAINS title 
+                                              
+            The final step is to combine both queries. Combining both queries, we will get: 
+            
+            MATCH (movie:Object)-[]-(book:Object)                                  
+            WHERE toLower(movie.name) = "blade runner"
+            WITH book, book.name as booktitle 
+            MATCH (book)-[]-(author:Person)
+            WHERE toLower(book.name) CONTAINS booktitle 
+                                 
+            schema: {schema}
+            Question: {question}
+            # """)
 
-                schema: {schema}
+        chain = prompt | self._llm
+        result = chain.invoke({"question": user_input, "schema": graph.schema})
+        return result
 
-                Examples:
-                Question: What government position was held by the woman who portrayed Corliss Archer in the film Kiss and Tell?
-                Answer: 
-                MATCH (role:Entity)-[]-(e:Person)-[]-(film:Entity)
-                WHERE toLower(role.name) = "corliss archer" AND toLower(film.name) = "kiss and tell"
-                WITH e
-                MATCH (e)-[rel:RELATED]-(p:Entity)
-                WHERE toLower(rel.description) CONTAINS 'government position' OR toLower(rel.description) CONTAINS 'position'
-                RETURN rel.description
+    # def test_query(self, user_input):
+            
+#         prompt = PromptTemplate.from_template("""
+#             You are an expert Neo4j Cypher translator who converts English to Cypher based on the Neo4j Schema provided, following the instructions below:
+#             1. Generate Cypher query compatible ONLY for Neo4j Version 5
+#             2. Do not use EXISTS, SIZE, HAVING keywords in the cypher. Use alias when using the WITH keyword
+#             3. Use only nodes and relationships mentioned in the schema
+#             4. Always do a case-insensitive and fuzzy search for any properties related search. Eg: to search for a Person named John, use `toLower(entity.name) contains 'john'`. 
+#             5. Never use relationships that are not mentioned in the given schema
+#             6. When asked about entities, Match the properties using case-insensitive matching, E.g, to find a person named John, use `toLower(entity.name) contains 'john'`.
+#             7. If a person, place, object, event or a miscellaneous entity does not match an entity in the graph, Try matching the description property or the metadata property of a relationship using case-insensitive matching, E.g, to find information about Joe, use toLower(r.description) contains 'joe' OR toLower(r.metadata) contains 'joe'.
+#             8. When asked about any information of an entity, Do not simply give the entity label. Try to get the answer from the entity's relationship description or metadata property
+#             9. Use regex to help find an entity that contains multiple words, E.g, to find a the 'Notre Dame Main Building', use toLower(e.name) =~ '.*\\\\b(not|notre|dame|main|building)\\\\b.*'
+#             10. When using MATCH traverse the relationship in both directions, E.g, (e:Entity)-[r:RELATED]-(re:Entity)
 
-                Question: {question}
-                # """)
+#             11. When the question is a Multi-hop Question, you need to find multiple relationships in the MATCH CLAUSE. 
+#             In the example mult-hop question below, you need to find the woman first who portrayed Corliss Archer and then find her government position.
 
-            chain = prompt | self._llm
-            result = chain.invoke({"question": user_input, "schema": graph.schema})
-            return result
+#             Example of a Multi-Hop Question: What government position was held by the woman who portrayed Corliss Archer in the film Kiss and Tell?
+#             Answer: 
+                    
+#             MATCH (role:Entity)-[]-(e:Person)-[]-(film:Entity)
+#             WHERE toLower(role.name) = "corliss archer" AND toLower(film.name) = "kiss and tell"
+#             WITH e
+#             MATCH (e)-[rel:RELATED]-(p:Entity)
+#             WHERE toLower(rel.description) CONTAINS 'government position' OR toLower(rel.description) CONTAINS 'position'
+#             RETURN rel.description
+
+#             schema: {schema}
+#             Question: {question}
+#             # """)
+
+#         chain = prompt | self._llm
+#         result = chain.invoke({"question": user_input, "schema": graph.schema})
+#         return result
 
     def query_graph_cot(self, user_input):
         chain = GraphCypherQAChain.from_llm(

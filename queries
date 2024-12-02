@@ -49,3 +49,11 @@ BY METADATA
 MATCH (e:Entity)-[rel:RELATED]-(re:Entity)
 WHERE ToLower(e.name) = 'corliss archer' AND ToLower(rel.metadata) CONTAINS 'kiss and tell'
 RETURN rel
+
+First attempt by model with oneshot training
+MATCH (movie:Entity)-[r:RELATED]-(actress:Person)                                  
+WHERE (toLower(r.metadata) CONTAINS 'kiss and tell') OR (toLower(r.description) CONTAINS 'kiss and tell')
+WITH actress
+MATCH (actress)-[r2:RELATED]-(position:Entity)
+WHERE (toLower(r2.metadata) CONTAINS 'government') OR (toLower(r2.description) CONTAINS 'government')
+RETURN position
