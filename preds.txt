@@ -1,19 +1,136 @@
 question: Were Scott Derrickson and Ed Wood of the same nationality?
 real_answer: yes
-model_answer: 
-cypher_query: cypher
-   MATCH (p:Person {name: 'Scott Derrickson'})-[:RELATED]->(e:Entity)
-   RETURN e.name AS nationality, e.label AS nationalityLabel, 
-          'Scott Derrickson' AS personName, 
-          'Scott Derrickson nationality' AS metadata
-   
+model_answer: ""
+cypher_query: MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) CONTAINS 'scott derrickson' OR 
+    toLower(r1.metadata) CONTAINS 'nationality'
+)
+AND (
+    toLower(r2.metadata) CONTAINS 'ed wood' OR 
+    toLower(r2.description) CONTAINS 'nationality'
+)
+RETURN DISTINCT w,x,y
+LIMIT 100
 ======================
-question: Were Scott Derrickson and Ed Wood of the same nationality?
+question: What government position was held by the woman who portrayed Corliss Archer in the film Kiss and Tell?
+real_answer: Chief of Protocol
+model_answer: ""
+cypher_query: MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) CONTAINS 'kiss and tell' OR 
+    toLower(r1.metadata) CONTAINS 'corliss archer'
+)
+AND (
+    toLower(r2.metadata) CONTAINS 'government position' OR 
+    toLower(r2.description) CONTAINS 'government position'
+)
+RETURN DISTINCT w,x,y
+LIMIT 100
+======================
+question: What science fantasy young adult series, told in first person, has a set of companion books narrating the stories of enslaved worlds and alien species?
+real_answer: Animorphs
+model_answer: ""
+cypher_query: MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) CONTAINS 'science fantasy' OR 
+    toLower(r1.metadata) CONTAINS 'young adult' OR 
+    toLower(r1.metadata) CONTAINS 'first person'
+)
+AND (
+    toLower(r2.metadata) CONTAINS 'companion books' OR 
+    toLower(r2.description) CONTAINS 'enslaved worlds' OR 
+    toLower(r2.description) CONTAINS 'alien species'
+)
+RETURN DISTINCT w,x,y
+LIMIT 100
+======================
+question: Are the Laleli Mosque and Esma Sultan Mansion located in the same neighborhood?
+real_answer: no
+model_answer: 
+cypher_query: MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) CONTAINS 'laleli mosque' OR 
+    toLower(r1.metadata) CONTAINS 'esma sultan mansion'
+)
+AND (
+    toLower(r2.metadata) CONTAINS 'neighborhood' OR 
+    toLower(r2.description) CONTAINS 'neighborhood'
+)
+RETURN DISTINCT w,x,y
+LIMIT 100
+======================
+question: The director of the romantic comedy "Big Stone Gap" is based in what New York city?
+real_answer: Greenwich Village, New York City
+model_answer: Greenwich Village
+cypher_query: MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) CONTAINS 'big stone gap' OR 
+    toLower(r1.metadata) CONTAINS 'director'
+)
+AND (
+    toLower(r2.metadata) CONTAINS 'new york' OR 
+    toLower(r2.description) CONTAINS 'new york'
+)
+RETURN DISTINCT w,x,y
+LIMIT 100
+======================
+question: 2014 S/S is the debut album of a South Korean boy group that was formed by who?
+real_answer: YG Entertainment
+model_answer: YG Entertainment
+cypher_query: MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) CONTAINS '2014 s/s' OR 
+    toLower(r1.metadata) CONTAINS 'debut album'
+)
+AND (
+    toLower(r2.metadata) CONTAINS 'south korean boy group' OR 
+    toLower(r2.description) CONTAINS 'formed'
+)
+RETURN DISTINCT w,x,y
+LIMIT 100
+======================
+question: The arena where the Lewiston Maineiacs played their home games can seat how many people?
+real_answer: 3,677 seated
+model_answer: 3,677 seated capacity
+cypher_query: MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) CONTAINS 'lewiston maineiacs' OR 
+    toLower(r1.metadata) CONTAINS 'arena'
+)
+AND (
+    toLower(r2.metadata) CONTAINS 'seating capacity' OR 
+    toLower(r2.description) CONTAINS 'seating capacity'
+)
+RETURN DISTINCT w,x,y
+LIMIT 100
+======================
+question: Who is older, Annie Morton or Terry Richardson?
+real_answer: Terry Richardson
+model_answer: 
+cypher_query: MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) CONTAINS 'annie morton' OR 
+    toLower(r1.metadata) CONTAINS 'birthdate'
+)
+AND (
+    toLower(r2.metadata) CONTAINS 'terry richardson' OR 
+    toLower(r2.description) CONTAINS 'birthdate'
+)
+RETURN DISTINCT w,x,y
+LIMIT 100
+======================
+question: Are Local H and For Against both from the United States?
 real_answer: yes
 model_answer: 
-cypher_query: cypher
-MATCH (p1:Person)-[r1:RELATED]-(e1:Entity), (p2:Person)-[r2:RELATED]-(e2:Entity)
-WHERE toLower(p1.name) contains 'scott derrickson' AND toLower(p2.name) contains 'ed wood'
-RETURN r1.description AS description1, r2.description AS description2, r1.metadata AS metadata1, r2.metadata AS metadata2
-
+cypher_query: MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) CONTAINS 'local h' OR 
+    toLower(r1.metadata) CONTAINS 'for against'
+)
+AND (
+    toLower(r2.metadata) CONTAINS 'united states' 
+)
+RETURN DISTINCT w,x,y
+LIMIT 100
 ======================

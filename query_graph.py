@@ -28,6 +28,66 @@ neo4j_password = "12345678"
 graph = Neo4jGraph(url=neo4j_url, username=neo4j_user, password=neo4j_password)
 
 cypher_generation_template = """
+
+    You are a Cypher query generator for a Neo4j graph database. Your task is to translate user questions into precise Cypher queries. Handle both simple and multi-hop questions by following these steps:
+    
+    This is the question: {question}
+    These are the requirements for the question: {requirements}  
+    
+    Follow the steps to generate a cypher query using the requirements provided.
+    1. From the requirements, generate a cypher query following the given format below.
+    2. Do not use node labels.
+    3. Use generic node variables (e.g., w, x, y).
+    4. Define relationships explicitly (e.g., [r1], [r2]).
+    5. Include filters for metadata or descriptions using toLower() for case-insensitivity.
+    6. Use AND or OR in WHERE clauses to combine conditions.
+    7. Return DISTINCT results to avoid duplicates.
+    8. Always use LIMIT.
+    9. The variables in RETURN must answer satisfy the requirements.
+
+    Format:
+    MATCH (w)-[r1]-(x)-[r2]-(y)
+    WHERE (
+    toLower(r1.metadata) CONTAINS 'key entity' OR 
+    toLower(r1.metadata) CONTAINS 'key entity'
+    )
+    AND (
+    toLower(r2.metadata) CONTAINS 'key entity' OR 
+    toLower(r2.description) CONTAINS 'key entity'
+    )
+    RETURN DISTINCT w,x,y
+    LIMIT 100
+
+
+    Examples:
+
+    User Question: "What government position was held by the man who portrayed Jack Browning in the film The Killers?"
+    MATCH (w)-[r1]-(x)-[r2]-(y)
+    WHERE (
+        toLower(r1.metadata) CONTAINS 'the killers' OR 
+        toLower(r1.metadata) CONTAINS 'jack browning'
+    )
+    AND (
+        toLower(r2.metadata) CONTAINS 'position' OR 
+        toLower(r2.description) CONTAINS 'position'
+    )
+    RETURN DISTINCT w,x,y
+    LIMIT 100
+
+    User Question: "The director of the romantic comedy "Friends with Benefits" is based in what New York city?"
+    MATCH (w)-[r1]-(x)-[r2]-(y)
+    WHERE (
+        toLower(r1.metadata) CONTAINS 'Friends with Benefits' OR 
+        toLower(r1.metadata) CONTAINS 'director'
+    )
+    AND (
+        toLower(r2.metadata) CONTAINS 'new york' 
+    )
+    RETURN DISTINCT w,x,y
+    LIMIT 100
+    """
+
+cypher_generation_template_v3 = """
     You are a Cypher query generator for a Neo4j graph database. Your task is to translate user questions into precise Cypher queries. Handle both simple and multi-hop questions by following these steps:
 
     Simple Questions:
@@ -63,11 +123,12 @@ cypher_generation_template = """
     MATCH (w)-[r1]-(x)-[r2]-(y)
     WHERE (toLower(r1.metadata) CONTAINS 'director') AND (toLower(r2.metadata) CONTAINS 'los angeles')
     RETURN DISTINCT w
+    LIMIT 100
 
     Multi-hop Question
     User Question: "What government position was held by the man who portrayed Jack Browning in the film The Killers?"
     Cypher Query: 
-    MATCH (movie)-[r1]-(x)-[r2]-(y)
+    MATCH (w)-[r1]-(x)-[r2]-(y)
     WHERE (
         toLower(r1.metadata) CONTAINS 'the killers' OR 
         toLower(r1.metadata) CONTAINS 'jack browning'
@@ -76,7 +137,8 @@ cypher_generation_template = """
         toLower(r2.metadata) CONTAINS 'position' OR 
         toLower(r2.description) CONTAINS 'position'
     )
-    RETURN DISTINCT y
+    RETURN DISTINCT w,x,y
+    LIMIT 100
 
     Multi-hop Question
     User Question: "The director of the romantic comedy "Friends with Benefits" is based in what New York city?"
@@ -89,118 +151,119 @@ cypher_generation_template = """
     AND (
         toLower(r2.metadata) CONTAINS 'new york' 
     )
+    RETURN DISTINCT w,x,y
+    LIMIT 100
+
+    Question: {question}
+    """
+
+cypher_generation_template_v2 = """
+    You are a Cypher query generator for a Neo4j graph database. Your task is to translate user questions into precise Cypher queries. Handle both simple and multi-hop questions by following these steps:
+
+    Simple Questions:
+    1. Identify the key entity, relationship, and target property from the question.
+    2. Match the relevant nodes and relationships directly.
+    3. Return the result node or property that answers the question.
+
+    Multi-hop Questions:
+    1. Decompose the question into multiple steps, identifying intermediate entities and relationships.
+    2. Use intermediate variables to traverse through multiple hops in the graph.
+    3. Combine filters logically for multi-hop paths.
+    4. Return the final node or property that answers the question.
+
+
+    1. Analyze the Question and identify the following: 
+    - The intent of the question.
+    - Key entities or node types.
+    - Relationships to traverse.
+    - Filters or constraints at each hop.
+    2. Decompose Multi-hop Questions by break the question into sequential sub-queries representing each step, and chain them together.
+    3. Create a Cypher query that captures the full scope of the question, ensuring proper chaining of relationships.
+    4. Do not use node labels
+    5. Use generic node variables (e.g., w, x, y).
+    6. Define relationships explicitly (e.g., [r1], [r2]).
+    7. Include filters for metadata or descriptions using toLower() for case-insensitivity.
+    8. Use AND or OR in WHERE clauses to combine conditions.
+    9. Return DISTINCT results to avoid duplicates.
+    10. Identify key entities, relationships, and constraints in the question.
+    11. 1Match relevant nodes and relationships based on metadata or descriptions.
+    12. If multiple conditions exist, group them logically in the WHERE clause.
+    13. Return the specific variable that answers the question.
+
+    Examples:
+
+    Simple Question
+    Question: "Which movies were directed by someone living in Los Angeles?"
+
+    Cypher Query:
+    MATCH (w)-[r1]-(x)-[r2]-(y)
+    WHERE (toLower(r1.metadata) CONTAINS 'director') AND (toLower(r2.metadata) CONTAINS 'los angeles')
+    RETURN DISTINCT w
+
+    Multi-hop Question
+    User Question: "What government position was held by the woman who portrayed Corliss Archer in the film Kiss and Tell?"
+    Cypher Query: 
+    MATCH (movie)-[r1]-(x)-[r2]-(y)
+    WHERE (
+        toLower(r1.metadata) CONTAINS 'kiss and tell' OR 
+        toLower(r1.metadata) CONTAINS 'corliss archer'
+    )
+    AND (
+        toLower(r2.metadata) CONTAINS 'position' OR 
+        toLower(r2.description) CONTAINS 'position'
+    )
+    RETURN DISTINCT y
+
+    Multi-hop Question
+    User Question: "The director of the romantic comedy "Big Stone Gap" is based in what New York city?"
+    Cypher Query:
+    MATCH (w)-[r1]-(x)-[r2]-(y)
+    WHERE (
+        toLower(r1.metadata) CONTAINS 'big stone gap' OR 
+        toLower(r1.metadata) CONTAINS 'director'
+    )
+    AND (
+        toLower(r2.metadata) CONTAINS 'new york' 
+    )
     RETURN DISTINCT y
 
     Question: {question}
     """
 
-# cypher_generation_template = """
-#     You are a Cypher query generator for a Neo4j graph database. Your task is to translate user questions into precise Cypher queries. Handle both simple and multi-hop questions by following these steps:
-
-#     Simple Questions:
-#     1. Identify the key entity, relationship, and target property from the question.
-#     2. Match the relevant nodes and relationships directly.
-#     3. Return the result node or property that answers the question.
-
-#     Multi-hop Questions:
-#     1. Decompose the question into multiple steps, identifying intermediate entities and relationships.
-#     2. Use intermediate variables to traverse through multiple hops in the graph.
-#     3. Combine filters logically for multi-hop paths.
-#     4. Return the final node or property that answers the question.
-
-
-#     1. Analyze the Question and identify the following: 
-#     - The intent of the question.
-#     - Key entities or node types.
-#     - Relationships to traverse.
-#     - Filters or constraints at each hop.
-#     2. Decompose Multi-hop Questions by break the question into sequential sub-queries representing each step, and chain them together.
-#     3. Create a Cypher query that captures the full scope of the question, ensuring proper chaining of relationships.
-#     4. Do not use node labels
-#     5. Use generic node variables (e.g., w, x, y).
-#     6. Define relationships explicitly (e.g., [r1], [r2]).
-#     7. Include filters for metadata or descriptions using toLower() for case-insensitivity.
-#     8. Use AND or OR in WHERE clauses to combine conditions.
-#     9. Return DISTINCT results to avoid duplicates.
-#     10. Identify key entities, relationships, and constraints in the question.
-#     11. 1Match relevant nodes and relationships based on metadata or descriptions.
-#     12. If multiple conditions exist, group them logically in the WHERE clause.
-#     13. Return the specific variable that answers the question.
-
-#     Examples:
-
-#     Simple Question
-#     Question: "Which movies were directed by someone living in Los Angeles?"
-
-#     Cypher Query:
-#     MATCH (w)-[r1]-(x)-[r2]-(y)
-#     WHERE (toLower(r1.metadata) CONTAINS 'director') AND (toLower(r2.metadata) CONTAINS 'los angeles')
-#     RETURN DISTINCT w
-
-#     Multi-hop Question
-#     User Question: "What government position was held by the woman who portrayed Corliss Archer in the film Kiss and Tell?"
-#     Cypher Query: 
-#     MATCH (movie)-[r1]-(x)-[r2]-(y)
-#     WHERE (
-#         toLower(r1.metadata) CONTAINS 'kiss and tell' OR 
-#         toLower(r1.metadata) CONTAINS 'corliss archer'
-#     )
-#     AND (
-#         toLower(r2.metadata) CONTAINS 'position' OR 
-#         toLower(r2.description) CONTAINS 'position'
-#     )
-#     RETURN DISTINCT y
-
-#     Multi-hop Question
-#     User Question: "The director of the romantic comedy "Big Stone Gap" is based in what New York city?"
-#     Cypher Query:
-#     MATCH (w)-[r1]-(x)-[r2]-(y)
-#     WHERE (
-#         toLower(r1.metadata) CONTAINS 'big stone gap' OR 
-#         toLower(r1.metadata) CONTAINS 'director'
-#     )
-#     AND (
-#         toLower(r2.metadata) CONTAINS 'new york' 
-#     )
-#     RETURN DISTINCT y
-
-#     Question: {question}
-#     """
-
 # Cypher generation prompt
-# cypher_generation_template = """
-#     You are an expert Neo4j Cypher translator who converts English to Cypher based on the Neo4j Schema provided, following the instructions below:
-#     1. Generate Cypher query compatible ONLY for Neo4j Version 5
-#     2. Do not use EXISTS, SIZE, HAVING keywords in the cypher. Use alias when using the WITH keyword
-#     3. Use only nodes and relationships mentioned in the schema
-#     4. Always do a case-insensitive and fuzzy search for any properties related search. Eg: to search for a Person named John, use `toLower(entity.name) contains 'john'`. 
-#     5. Never use relationships that are not mentioned in the given schema
-#     6. When asked about entities, Match the properties using case-insensitive matching, E.g, to find a person named John, use `toLower(entity.name) contains 'john'`.
-#     7. If a person, place, object, event or a miscellaneous entity does not match an entity in the graph, Try matching the description property or the metadata property of a relationship using case-insensitive matching, E.g, to find information about Joe, use toLower(r.description) CONTAINS 'joe' OR toLower(r.metadata) CONTAINS 'joe'.
-#     8. When asked about any information of an entity, Do not simply give the entity label. Try to get the answer from the entity's relationship description or metadata property
-#     9. Use regex to help find an entity that contains multiple words, E.g, to find a the 'Notre Dame Main Building', use toLower(e.name) =~ '.*\\\\b(not|notre|dame|main|building)\\\\b.*'
-#     10. When using MATCH traverse the relationship in both directions, E.g, (e:Entity)-[r:RELATED]-(re:Entity)
-#     11. When matching a metadata or description property, split the words if it has more than one word. E.g use toLower(e.metadata) =~ '.*\\\\b(miliraty|rank)\\\\b.*'
-#     12. Metadata and Description are properties exclusive only to relationships. Do not use these properties for entities
+cypher_generation_template_v1 = """
+    You are an expert Neo4j Cypher translator who converts English to Cypher based on the Neo4j Schema provided, following the instructions below:
+    1. Generate Cypher query compatible ONLY for Neo4j Version 5
+    2. Do not use EXISTS, SIZE, HAVING keywords in the cypher. Use alias when using the WITH keyword
+    3. Use only nodes and relationships mentioned in the schema
+    4. Always do a case-insensitive and fuzzy search for any properties related search. Eg: to search for a Person named John, use `toLower(entity.name) contains 'john'`. 
+    5. Never use relationships that are not mentioned in the given schema
+    6. When asked about entities, Match the properties using case-insensitive matching, E.g, to find a person named John, use `toLower(entity.name) contains 'john'`.
+    7. If a person, place, object, event or a miscellaneous entity does not match an entity in the graph, Try matching the description property or the metadata property of a relationship using case-insensitive matching, E.g, to find information about Joe, use toLower(r.description) CONTAINS 'joe' OR toLower(r.metadata) CONTAINS 'joe'.
+    8. When asked about any information of an entity, Do not simply give the entity label. Try to get the answer from the entity's relationship description or metadata property
+    9. Use regex to help find an entity that contains multiple words, E.g, to find a the 'Notre Dame Main Building', use toLower(e.name) =~ '.*\\\\b(not|notre|dame|main|building)\\\\b.*'
+    10. When using MATCH traverse the relationship in both directions, E.g, (e:Entity)-[r:RELATED]-(re:Entity)
+    11. When matching a metadata or description property, split the words if it has more than one word. E.g use toLower(e.metadata) =~ '.*\\\\b(miliraty|rank)\\\\b.*'
+    12. Metadata and Description are properties exclusive only to relationships. Do not use these properties for entities
 
-#     Examples
+    Examples
 
-#     Who is known by his stage name 50 cent and owns G Unit Brands Inc?
-#     MATCH (person:Person)-[]-(stagename)
-#     WHERE ToLower(stagename.name) = "50 cent"
-#     RETURN person
+    Who is known by his stage name 50 cent and owns G Unit Brands Inc?
+    MATCH (person:Person)-[]-(stagename)
+    WHERE ToLower(stagename.name) = "50 cent"
+    RETURN person
      
-#     What is the gender who portrayed Steve Rogers in the film Captain America: The First Avenger?
-#     MATCH (role:Entity)-[]-(e)-[]-(film:Entity)
-#     WHERE ToLower(role.name) = "Steve Rogers" AND ToLower(film.name) = "Captain America: The First Avenger"
-#     WITH e
-#     MATCH (e)-[r]-(gender:Entity)
-#     WHERE ToLower(r.metadata) =~ '.*\\\\b(gender) OR ToLower(r.description) =~ '.*\\\\b(gender)
-#     RETURN r, gender
+    What is the gender who portrayed Steve Rogers in the film Captain America: The First Avenger?
+    MATCH (role:Entity)-[]-(e)-[]-(film:Entity)
+    WHERE ToLower(role.name) = "Steve Rogers" AND ToLower(film.name) = "Captain America: The First Avenger"
+    WITH e
+    MATCH (e)-[r]-(gender:Entity)
+    WHERE ToLower(r.metadata) =~ '.*\\\\b(gender) OR ToLower(r.description) =~ '.*\\\\b(gender)
+    RETURN r, gender
 
-#     Schema: {schema}
-#     Question: {question}
-#     """
+    Schema: {schema}
+    Question: {question}
+    """
 
 # Cypher generation prompt
 cypher_generation_template_fewshot = """
@@ -257,7 +320,7 @@ Question: {question}
 
 cypher_prompt = PromptTemplate(
     template = cypher_generation_template,
-    input_variables = ["schema", "question"]
+    input_variables = ["question", "requirements"]
 )
 
 CYPHER_QA_TEMPLATE = """
@@ -278,7 +341,6 @@ qa_prompt = PromptTemplate(
 )
 
 class QueryGraph:
-    _cypher_generation_template: str
     _cypher_prompt: PromptTemplate
     _CYPHER_QA_TEMPLATE: str
     _qa_prompt: PromptTemplate
@@ -286,7 +348,6 @@ class QueryGraph:
     _graph : Neo4jGraph
 
     def __init__(self, 
-                cgt: PromptTemplate = cypher_generation_template,
                 cp: PromptTemplate = cypher_prompt,
                 cqa: str = CYPHER_QA_TEMPLATE,
                 qap: PromptTemplate = qa_prompt,
@@ -294,14 +355,13 @@ class QueryGraph:
                 graphdb : Neo4jGraph = graph
                 ):
         
-        self._cypher_generation_template = cgt
         self._cypher_prompt = cp
         self._CYPHER_QA_TEMPLATE = cqa
         self._qa_prompt = qap
         self._llm = lm
         self._graph = graphdb
 
-    def test_query(self, user_input):
+    def test_prompt(self, user_input):
                 
         prompt = PromptTemplate.from_template("""
             
@@ -312,25 +372,50 @@ class QueryGraph:
             List the requirements here
             [requirements]
                                               
-            From the requirements, generate a cypher query based on the schema
-            Schema: {schema}   
+            From the requirements, generate a cypher query
+            Cypher Query:
             # """)
 
         chain = prompt | self._llm
         result = chain.invoke({"question": user_input, "schema": graph.schema})
         return result
-        
-    def answer_question(self, user_input):
+    
+    def get_requirements(self, user_input):
+               
+        prompt = PromptTemplate.from_template("""
+                                                    
+        You are an intelligent system that first analyzes the structure and requirements of a question, and then uses those insights to identify the relevant components needed to answer the question. You will then provide a list of requirements that are necessary to answer the question, before querying any databases.
+
+        Please perform the following steps:
+
+        1. Identify the key components of the question. What is the user asking for? What are the main aspects or topics involved? For example, the question may ask for a specific type of product, event, or characteristic.
+        2. Based on your understanding of the question, list the requirements needed to answer it. Requirements could include things like:
+        - The type of information or entities needed (e.g., book title, author, genre).
+        - Any conditions or constraints that must be met (e.g., "first-person narrative," "young adult audience").
+        - Context or additional information that will influence how the question is answered (e.g., related entities or categories, such as "sci-fi genre," or "companion books").
+        3. If any additional context or data is needed to answer the question, mention that here.
+        4. Do not provide any extra information except the list 
+        5. Do not provide any requirement to search information from other sources.
+
+        Question: {question}
+        """)
+
+        chain = prompt | self._llm
+        result = chain.invoke({"question": user_input})
+        return result
+  
+    def answer_question(self, user_input, req):
         chain = GraphCypherQAChain.from_llm(
             llm=self._llm,
             graph=self._graph,
             verbose=True,
             return_intermediate_steps=True,
             cypher_prompt=self._cypher_prompt,
-            qa_prompt=self._qa_prompt)
+            qa_prompt=self._qa_prompt)        
         
         try:
-            result = chain.invoke(user_input)
+            # result = chain.invoke(user_input)
+            result = chain.invoke(input={"query":user_input, "requirements":req})
             return result
         except Exception as e:
             print(e)
