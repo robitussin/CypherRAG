@@ -27,6 +27,7 @@ neo4j_password = "12345678"
 
 graph = Neo4jGraph(url=neo4j_url, username=neo4j_user, password=neo4j_password)
 
+
 cypher_generation_template = """
 
     You are a Cypher query generator for a Neo4j graph database. Your task is to translate user questions into precise Cypher queries. Handle both simple and multi-hop questions by following these steps:
@@ -42,50 +43,100 @@ cypher_generation_template = """
     5. Include filters for metadata or descriptions using toLower() for case-insensitivity.
     6. Use AND or OR in WHERE clauses to combine conditions.
     7. Return DISTINCT results to avoid duplicates.
-    8. Always use LIMIT.
-    9. The variables in RETURN must answer satisfy the requirements.
+    8. The variables in RETURN must answer satisfy the requirements.
 
     Format:
     MATCH (w)-[r1]-(x)-[r2]-(y)
     WHERE (
-    toLower(r1.metadata) CONTAINS 'key entity' OR 
-    toLower(r1.metadata) CONTAINS 'key entity'
+    toLower(r1.metadata) =~ '.*\\\\b(key entity)\\\\b.*' OR
+    toLower(r1.description) =~ '.*\\\\b(key entity)\\\\b.*'
     )
     AND (
-    toLower(r2.metadata) CONTAINS 'key entity' OR 
-    toLower(r2.description) CONTAINS 'key entity'
+    toLower(r2.metadata) =~ '.*\\\\b(key entity)\\\\b.*' OR
+    toLower(r2.description) =~ '.*\\\\b(key entity)\\\\b.*'
     )
-    RETURN DISTINCT w,x,y
-    LIMIT 100
-
-
+    RETURN DISTINCT r1.metadata,r1.description,r2.metadata,r2.description
+ 
     Examples:
-
     User Question: "What government position was held by the man who portrayed Jack Browning in the film The Killers?"
     MATCH (w)-[r1]-(x)-[r2]-(y)
     WHERE (
-        toLower(r1.metadata) CONTAINS 'the killers' OR 
-        toLower(r1.metadata) CONTAINS 'jack browning'
+        toLower(r1.metadata) =~ '.*\\\\b(the killers)\\\\b.*' OR
+        toLower(r1.description) =~ '.*\\\\b(jack browning)\\\\b.*'
     )
     AND (
-        toLower(r2.metadata) CONTAINS 'position' OR 
-        toLower(r2.description) CONTAINS 'position'
+        toLower(r2.metadata) =~ '.*\\\\b(government|position)\\\\b.*' OR 
+        toLower(r2.description) =~ '.*\\\\b(government|position)\\\\b.*'
     )
-    RETURN DISTINCT w,x,y
-    LIMIT 100
+    RETURN DISTINCT r1.metadata,r1.description,r2.metadata,r2.description
 
-    User Question: "The director of the romantic comedy "Friends with Benefits" is based in what New York city?"
+    User Question: "The director of the romantic comedy Friends with Benefits is based in what New York city?"
     MATCH (w)-[r1]-(x)-[r2]-(y)
     WHERE (
-        toLower(r1.metadata) CONTAINS 'Friends with Benefits' OR 
-        toLower(r1.metadata) CONTAINS 'director'
+        toLower(r1.metadata) =~ '.*\\\\b(friends with benefits)\\\\b.*' OR
+        toLower(r1.description) =~ '.*\\\\b(director)\\\\b.*'
     )
     AND (
-        toLower(r2.metadata) CONTAINS 'new york' 
+        toLower(r2.metadata) =~ '.*\\\\b(new york)\\\\b.*'
+        toLower(r2.description) =~ '.*\\\\b(new york)\\\\b.*'
     )
-    RETURN DISTINCT w,x,y
-    LIMIT 100
+    RETURN DISTINCT r1.metadata,r1.description,r2.metadata,r2.description
     """
+
+# cypher_generation_template = """
+
+#     You are a Cypher query generator for a Neo4j graph database. Your task is to translate user questions into precise Cypher queries. Handle both simple and multi-hop questions by following these steps:
+    
+#     This is the question: {question}
+#     These are the requirements for the question: {requirements}  
+    
+#     Follow the steps to generate a cypher query using the requirements provided.
+#     1. From the requirements, generate a cypher query following the given format below.
+#     2. Do not use node labels.
+#     3. Use generic node variables (e.g., w, x, y).
+#     4. Define relationships explicitly (e.g., [r1], [r2]).
+#     5. Include filters for metadata or descriptions using toLower() for case-insensitivity.
+#     6. Use AND or OR in WHERE clauses to combine conditions.
+#     7. Return DISTINCT results to avoid duplicates.
+#     8. The variables in RETURN must answer satisfy the requirements.
+
+#     Format:
+#     MATCH (w)-[r1]-(x)-[r2]-(y)
+#     WHERE (
+#     toLower(r1.metadata) =~ '.*\\\\b(key entity)\\\\b.*' OR
+#     toLower(r1.description) =~ '.*\\\\b(key entity)\\\\b.*'
+#     )
+#     AND (
+#     toLower(r2.metadata) =~ '.*\\\\b(key entity)\\\\b.*' OR
+#     toLower(r2.description) =~ '.*\\\\b(key entity)\\\\b.*'
+#     )
+#     RETURN DISTINCT r1.metadata,r1.description,r2.metadata,r2.description
+ 
+#     Examples:
+#     User Question: "What government position was held by the man who portrayed Jack Browning in the film The Killers?"
+#     MATCH (w)-[r1]-(x)-[r2]-(y)
+#     WHERE (
+#         toLower(r1.metadata) =~ '.*\\\\b(the killers)\\\\b.*' OR
+#         toLower(r1.description) =~ '.*\\\\b(jack browning)\\\\b.*'
+#     )
+#     AND (
+#         toLower(r2.metadata) =~ '.*\\\\b(government|position)\\\\b.*' OR 
+#         toLower(r2.description) =~ '.*\\\\b(government|position)\\\\b.*'
+#     )
+#     RETURN DISTINCT r1.metadata,r1.description,r2.metadata,r2.description
+
+#     User Question: "The director of the romantic comedy Friends with Benefits is based in what New York city?"
+#     MATCH (w)-[r1]-(x)-[r2]-(y)
+#     WHERE (
+#         toLower(r1.metadata) =~ '.*\\\\b(friends with benefits)\\\\b.*' OR
+#         toLower(r1.description) =~ '.*\\\\b(director)\\\\b.*'
+#     )
+#     AND (
+#         toLower(r2.metadata) =~ '.*\\\\b(new york)\\\\b.*'
+#         toLower(r2.description) =~ '.*\\\\b(new york)\\\\b.*'
+#     )
+#     RETURN DISTINCT r1.metadata,r1.description,r2.metadata,r2.description
+#     """
 
 cypher_generation_template_v3 = """
     You are a Cypher query generator for a Neo4j graph database. Your task is to translate user questions into precise Cypher queries. Handle both simple and multi-hop questions by following these steps:
@@ -380,8 +431,55 @@ class QueryGraph:
         result = chain.invoke({"question": user_input, "schema": graph.schema})
         return result
     
+    # def get_requirements(self, user_input):
+
+    #     prompt = PromptTemplate.from_template("""
+                                                    
+    #     You are an expert in natural language understanding. Your task is to extract key entities from a question and assign them to single-character variables. Use the following format for your output:
+
+    #     a = "Entity1"
+    #     b = "Entity2"
+    #     c = "Entity3"
+                                              
+    #     If an entity is not mentioned, assign its variable a null value. Ensure the variables are assigned in the order the entities appear in the question.
+
+    #     For example:
+    #     Question: "Who directed the movie Inception?"
+    #     Output:
+
+    #     a = "Inception"
+    #     b = null
+    #     c = null
+    #     Now extract the entities from this question:
+    #     Question: "{question}"
+
+    #     Output:
+    #     # """)   
+
+    #     prompt = PromptTemplate.from_template("""
+                                                    
+    #     You are an intelligent system that first analyzes the structure and requirements of a question, and then uses those insights to identify the relevant components needed to answer the question. You will then provide a list of requirements that are necessary to answer the question, before querying any databases.
+
+    #     Please perform the following steps:
+
+    #     1. Identify the key components of the question. What is the user asking for? What are the main aspects or topics involved? For example, the question may ask for a specific type of product, event, or characteristic.
+    #     2. Based on your understanding of the question, list the requirements needed to answer it. Requirements could include things like:
+    #     - The type of information or entities needed (e.g., book title, author, genre).
+    #     - Any conditions or constraints that must be met (e.g., "first-person narrative," "young adult audience").
+    #     - Context or additional information that will influence how the question is answered (e.g., related entities or categories, such as "sci-fi genre," or "companion books").
+    #     3. If any additional context or data is needed to answer the question, mention that here.
+    #     4. Do not provide any extra information except the list 
+    #     5. Do not provide any requirement to search information from other sources.
+
+    #     Question: {question}
+    #     """)
+
+    #     chain = prompt | self._llm
+    #     result = chain.invoke({"question": user_input})
+    #     return result
+    
     def get_requirements(self, user_input):
-               
+
         prompt = PromptTemplate.from_template("""
                                                     
         You are an intelligent system that first analyzes the structure and requirements of a question, and then uses those insights to identify the relevant components needed to answer the question. You will then provide a list of requirements that are necessary to answer the question, before querying any databases.
@@ -411,8 +509,8 @@ class QueryGraph:
             verbose=True,
             return_intermediate_steps=True,
             cypher_prompt=self._cypher_prompt,
-            qa_prompt=self._qa_prompt)        
-        
+            qa_prompt=self._qa_prompt,
+            top_k=50)
         try:
             # result = chain.invoke(user_input)
             result = chain.invoke(input={"query":user_input, "requirements":req})

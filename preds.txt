@@ -1,136 +1,170 @@
-question: Were Scott Derrickson and Ed Wood of the same nationality?
-real_answer: yes
+question: What screenwriter with credits for "Evolution" co-wrote a film starring Nicolas Cage and Téa Leoni?
+real_answer: David Weissman
 model_answer: ""
 cypher_query: MATCH (w)-[r1]-(x)-[r2]-(y)
 WHERE (
-    toLower(r1.metadata) CONTAINS 'scott derrickson' OR 
-    toLower(r1.metadata) CONTAINS 'nationality'
+    toLower(r1.metadata) =~ '.*\\b(evolution)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(evolution)\\b.*'
 )
 AND (
-    toLower(r2.metadata) CONTAINS 'ed wood' OR 
-    toLower(r2.description) CONTAINS 'nationality'
+    toLower(r2.metadata) =~ '.*\\b(nicolas cage|téa leoni)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(nicolas cage|téa leoni)\\b.*'
 )
-RETURN DISTINCT w,x,y
-LIMIT 100
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
 ======================
-question: What government position was held by the woman who portrayed Corliss Archer in the film Kiss and Tell?
-real_answer: Chief of Protocol
+question: What year did Guns N Roses perform a promo for a movie starring Arnold Schwarzenegger as a former New York Police detective?
+real_answer: 1999
 model_answer: ""
 cypher_query: MATCH (w)-[r1]-(x)-[r2]-(y)
 WHERE (
-    toLower(r1.metadata) CONTAINS 'kiss and tell' OR 
-    toLower(r1.metadata) CONTAINS 'corliss archer'
+    toLower(r1.metadata) =~ '.*\\b(guns n roses)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(guns n roses)\\b.*'
 )
 AND (
-    toLower(r2.metadata) CONTAINS 'government position' OR 
-    toLower(r2.description) CONTAINS 'government position'
-)
-RETURN DISTINCT w,x,y
-LIMIT 100
-======================
-question: What science fantasy young adult series, told in first person, has a set of companion books narrating the stories of enslaved worlds and alien species?
-real_answer: Animorphs
-model_answer: ""
-cypher_query: MATCH (w)-[r1]-(x)-[r2]-(y)
-WHERE (
-    toLower(r1.metadata) CONTAINS 'science fantasy' OR 
-    toLower(r1.metadata) CONTAINS 'young adult' OR 
-    toLower(r1.metadata) CONTAINS 'first person'
+    toLower(r2.metadata) =~ '.*\\b(arnold schwarzenegger)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(arnold schwarzenegger)\\b.*'
 )
 AND (
-    toLower(r2.metadata) CONTAINS 'companion books' OR 
-    toLower(r2.description) CONTAINS 'enslaved worlds' OR 
-    toLower(r2.description) CONTAINS 'alien species'
+    toLower(r2.metadata) =~ '.*\\b(former new york police detective)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(former new york police detective)\\b.*'
 )
-RETURN DISTINCT w,x,y
-LIMIT 100
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
 ======================
-question: Are the Laleli Mosque and Esma Sultan Mansion located in the same neighborhood?
+question: Are Random House Tower and 888 7th Avenue both used for real estate?
 real_answer: no
+model_answer: ""
+cypher_query: cypher
+MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(random house tower)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(random house tower)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(888 7th avenue)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(888 7th avenue)\\b.*'
+)
+AND (
+    toLower(r1.metadata) =~ '.*\\b(real estate)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(real estate)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(real estate)\\b.*' OR
+    toLower(r2.description) =~ '.*\\b(real estate)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+
+======================
+question: The football manager who recruited David Beckham managed Manchester United during what timeframe?
+real_answer: from 1986 to 2013
 model_answer: 
 cypher_query: MATCH (w)-[r1]-(x)-[r2]-(y)
 WHERE (
-    toLower(r1.metadata) CONTAINS 'laleli mosque' OR 
-    toLower(r1.metadata) CONTAINS 'esma sultan mansion'
+    toLower(r1.metadata) =~ '.*\\b(david beckham)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(recruited)\\b.*'
 )
 AND (
-    toLower(r2.metadata) CONTAINS 'neighborhood' OR 
-    toLower(r2.description) CONTAINS 'neighborhood'
+    toLower(r2.metadata) =~ '.*\\b(manchester united)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(managed)\\b.*'
 )
-RETURN DISTINCT w,x,y
-LIMIT 100
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
 ======================
-question: The director of the romantic comedy "Big Stone Gap" is based in what New York city?
-real_answer: Greenwich Village, New York City
-model_answer: Greenwich Village
+question: Brown State Fishing Lake is in a country that has a population of how many inhabitants ?
+real_answer: 9,984
+model_answer: ""
 cypher_query: MATCH (w)-[r1]-(x)-[r2]-(y)
 WHERE (
-    toLower(r1.metadata) CONTAINS 'big stone gap' OR 
-    toLower(r1.metadata) CONTAINS 'director'
+    toLower(r1.metadata) =~ '.*\\b(brown state fishing lake)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(brown state fishing lake)\\b.*'
 )
 AND (
-    toLower(r2.metadata) CONTAINS 'new york' OR 
-    toLower(r2.description) CONTAINS 'new york'
+    toLower(r2.metadata) =~ '.*\\b(country)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(country)\\b.*'
 )
-RETURN DISTINCT w,x,y
-LIMIT 100
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
 ======================
-question: 2014 S/S is the debut album of a South Korean boy group that was formed by who?
-real_answer: YG Entertainment
-model_answer: YG Entertainment
+question: The Vermont Catamounts men's soccer team currently competes in a conference that was formerly known as what from 1988 to 1996?
+real_answer: the North Atlantic Conference
+model_answer: ""
 cypher_query: MATCH (w)-[r1]-(x)-[r2]-(y)
 WHERE (
-    toLower(r1.metadata) CONTAINS '2014 s/s' OR 
-    toLower(r1.metadata) CONTAINS 'debut album'
+    toLower(r1.metadata) =~ '.*\\b(vermont catamounts)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(vermont catamounts)\\b.*'
 )
 AND (
-    toLower(r2.metadata) CONTAINS 'south korean boy group' OR 
-    toLower(r2.description) CONTAINS 'formed'
-)
-RETURN DISTINCT w,x,y
-LIMIT 100
-======================
-question: The arena where the Lewiston Maineiacs played their home games can seat how many people?
-real_answer: 3,677 seated
-model_answer: 3,677 seated capacity
-cypher_query: MATCH (w)-[r1]-(x)-[r2]-(y)
-WHERE (
-    toLower(r1.metadata) CONTAINS 'lewiston maineiacs' OR 
-    toLower(r1.metadata) CONTAINS 'arena'
+    toLower(r2.metadata) =~ '.*\\b(current conference|conference)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(current conference|conference)\\b.*'
 )
 AND (
-    toLower(r2.metadata) CONTAINS 'seating capacity' OR 
-    toLower(r2.description) CONTAINS 'seating capacity'
+    toLower(r2.metadata) =~ '.*\\b(1988|1996)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(1988|1996)\\b.*'
 )
-RETURN DISTINCT w,x,y
-LIMIT 100
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
 ======================
-question: Who is older, Annie Morton or Terry Richardson?
-real_answer: Terry Richardson
-model_answer: 
-cypher_query: MATCH (w)-[r1]-(x)-[r2]-(y)
-WHERE (
-    toLower(r1.metadata) CONTAINS 'annie morton' OR 
-    toLower(r1.metadata) CONTAINS 'birthdate'
-)
-AND (
-    toLower(r2.metadata) CONTAINS 'terry richardson' OR 
-    toLower(r2.description) CONTAINS 'birthdate'
-)
-RETURN DISTINCT w,x,y
-LIMIT 100
-======================
-question: Are Local H and For Against both from the United States?
+question: Are Giuseppe Verdi and Ambroise Thomas both Opera composers ?
 real_answer: yes
-model_answer: 
+model_answer: ""
 cypher_query: MATCH (w)-[r1]-(x)-[r2]-(y)
 WHERE (
-    toLower(r1.metadata) CONTAINS 'local h' OR 
-    toLower(r1.metadata) CONTAINS 'for against'
+    toLower(r1.metadata) =~ '.*\\b(giuseppe verdi)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(giuseppe verdi)\\b.*'
 )
 AND (
-    toLower(r2.metadata) CONTAINS 'united states' 
+    toLower(r2.metadata) =~ '.*\\b(ambroise thomas)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(ambroise thomas)\\b.*'
 )
-RETURN DISTINCT w,x,y
-LIMIT 100
+AND (
+    toLower(r1.metadata) =~ '.*\\b(opera composer)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(opera composer)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(opera composer)\\b.*' OR
+    toLower(r2.description) =~ '.*\\b(opera composer)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+======================
+question: Roger O. Egeberg was Assistant Secretary for Health and Scientific Affairs during the administration of a president that served during what years?
+real_answer: 1969 until 1974
+model_answer: ""
+cypher_query: MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(roger o. egeberg)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(assistant secretary for health and scientific affairs)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(president)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(president)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+======================
+question: Which writer was from England, Henry Roth or Robert Erskine Childers?
+real_answer: Robert Erskine Childers DSC
+model_answer: ""
+cypher_query: MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(henry roth)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(henry roth)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(robert erskine childers)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(robert erskine childers)\\b.*'
+)
+AND (
+    toLower(r1.metadata) =~ '.*\\b(england)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(england)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+======================
+question: Which other Mexican Formula One race car driver has held the podium besides the Force India driver born in 1990?
+real_answer: Pedro Rodríguez
+model_answer: ""
+cypher_query: MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(force india\\s+driver\\s+born\\s+in\\s+1990)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(force india\\s+driver\\s+born\\s+in\\s+1990)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(mexican\\s+formula\\s+one\\s+driver\\s+podium)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(mexican\\s+formula\\s+one\\s+driver\\s+podium)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
 ======================
