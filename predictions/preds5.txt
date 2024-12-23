@@ -1,0 +1,162 @@
+question: Were Scott Derrickson and Ed Wood of the same nationality?
+real_answer: yes
+model_answer: ""
+cypher_query: MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(scott derrickson)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(scott derrickson)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(ed wood)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(ed wood)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+======================
+question: What government position was held by the woman who portrayed Corliss Archer in the film Kiss and Tell?
+real_answer: Chief of Protocol
+model_answer: Shirley Temple Black held the position of Chief of Protocol of the United States.
+cypher_query: MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(kiss and tell)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(corliss archer)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(government|position)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(government|position)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+======================
+question: What science fantasy young adult series, told in first person, has a set of companion books narrating the stories of enslaved worlds and alien species?
+real_answer: Animorphs
+model_answer: ""
+cypher_query: cypher
+MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(science fantasy)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(science fantasy)\\b.*'
+)
+AND (
+    toLower(r1.metadata) =~ '.*\\b(young adult)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(young adult)\\b.*'
+)
+AND (
+    toLower(r1.metadata) =~ '.*\\b(first person)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(first person)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(companion books)\\b.*' OR
+    toLower(r2.description) =~ '.*\\b(companion books)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(enslaved worlds|alien species)\\b.*' OR
+    toLower(r2.description) =~ '.*\\b(enslaved worlds|alien species)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+
+======================
+question: Are the Laleli Mosque and Esma Sultan Mansion located in the same neighborhood?
+real_answer: no
+model_answer: No, the Laleli Mosque is located in Laleli, while the Esma Sultan Mansion is in the Ortaköy neighborhood.
+cypher_query: MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(laleli mosque)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(laleli mosque)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(esma sultan mansion)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(esma sultan mansion)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+======================
+question: The director of the romantic comedy "Big Stone Gap" is based in what New York city?
+real_answer: Greenwich Village, New York City
+model_answer: Greenwich Village
+cypher_query: MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(big stone gap)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(director)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(new york)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(new york)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+======================
+question: 2014 S/S is the debut album of a South Korean boy group that was formed by who?
+real_answer: YG Entertainment
+model_answer: 
+cypher_query: MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(2014 s/s)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(debut album)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(south korean boy group)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(south korean boy group)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+======================
+question: Who was known by his stage name Aladin and helped organizations improve their performance as a consultant?
+real_answer: Eenasul Fateh
+model_answer: Eenasul Fateh.
+cypher_query: MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(aladin)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(aladin)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(consultant|performance|organizations)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(consultant|performance|organizations)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+======================
+question: The arena where the Lewiston Maineiacs played their home games can seat how many people?
+real_answer: 3,677 seated
+model_answer: The Androscoggin Bank Colisée has a seating capacity of 3,677.
+cypher_query: MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(lewiston maineiacs)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(lewiston maineiacs)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(arena|seating capacity)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(arena|seating capacity)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+======================
+question: Who is older, Annie Morton or Terry Richardson?
+real_answer: Terry Richardson
+model_answer: 
+cypher_query: MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(annie morton)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(annie morton)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(terry richardson)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(terry richardson)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+======================
+question: Are Local H and For Against both from the United States?
+real_answer: yes
+model_answer: ""
+cypher_query: MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(local h)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(local h)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(for against)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(for against)\\b.*'
+)
+AND (
+    toLower(r1.metadata) =~ '.*\\b(united states)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(united states)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(united states)\\b.*' OR
+    toLower(r2.description) =~ '.*\\b(united states)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+======================

@@ -44,8 +44,9 @@ cypher_generation_template = """
     6. Use AND or OR in WHERE clauses to combine conditions.
     7. Return DISTINCT results to avoid duplicates.
     8. The variables in RETURN must answer satisfy the requirements.
+    9. Use UNION ALL if the question requires to compare two entities.
 
-    Format:
+    Format for multi-hop questions:
     MATCH (w)-[r1]-(x)-[r2]-(y)
     WHERE (
     toLower(r1.metadata) =~ '.*\\\\b(key entity)\\\\b.*' OR
@@ -57,6 +58,21 @@ cypher_generation_template = """
     )
     RETURN DISTINCT r1.metadata,r1.description,r2.metadata,r2.description
  
+    Format for comparison questions:
+    MATCH ()-[r1]-()
+    WHERE (
+        toLower(r1.metadata) =~ '.*\\b(entity 1)\\b.*' OR
+        toLower(r1.description) =~ '.*\\b(entity 1)\\b.*'
+    )
+    RETURN DISTINCT r1.metadata AS info1
+    UNION ALL
+    MATCH ()-[r2]-()
+    WHERE (
+        toLower(r2.metadata) =~ '.*\\b(entity 2)\\b.*' OR 
+        toLower(r2.description) =~ '.*\\b(entity 2)\\b.*'
+    )
+    RETURN DISTINCT r2.metadata AS info1
+
     Examples:
     User Question: "What government position was held by the man who portrayed Jack Browning in the film The Killers?"
     MATCH (w)-[r1]-(x)-[r2]-(y)
@@ -81,6 +97,21 @@ cypher_generation_template = """
         toLower(r2.description) =~ '.*\\\\b(new york)\\\\b.*'
     )
     RETURN DISTINCT r1.metadata,r1.description,r2.metadata,r2.description
+
+    User Question: "Are Lebron James and Jayson Tatum both basketball players??"
+    MATCH ()-[r1]-()
+    WHERE (
+        toLower(r1.metadata) =~ '.*\\b(lebron james)\\b.*' OR
+        toLower(r1.description) =~ '.*\\b(lebron james)\\b.*'
+    )
+    RETURN DISTINCT r1.metadata AS info1
+    UNION ALL
+    MATCH ()-[r2]-()
+    WHERE (
+        toLower(r2.metadata) =~ '.*\\b(jayson tatum)\\b.*' OR 
+        toLower(r2.description) =~ '.*\\b(jayson tatum)\\b.*'
+    )
+    RETURN DISTINCT r2.metadata AS info1
     """
 
 # cypher_generation_template = """
@@ -137,76 +168,6 @@ cypher_generation_template = """
 #     )
 #     RETURN DISTINCT r1.metadata,r1.description,r2.metadata,r2.description
 #     """
-
-cypher_generation_template_v3 = """
-    You are a Cypher query generator for a Neo4j graph database. Your task is to translate user questions into precise Cypher queries. Handle both simple and multi-hop questions by following these steps:
-
-    Simple Questions:
-    1. Identify the key entity, relationship, and target property from the question.
-    2. Match the relevant nodes and relationships directly.
-    3. Return the result node or property that answers the question.
-
-    Multi-hop Questions:
-    1. Decompose the question into multiple steps, identifying intermediate entities and relationships.
-    2. Use intermediate variables to traverse through multiple hops in the graph.
-    3. Combine filters logically for multi-hop paths.
-    4. Return the final node or property that answers the question.
-
-    For all questions:
-    1. Create a Cypher query that captures the full scope of the question, ensuring proper chaining of relationships.
-    2. Do not use node labels
-    3. Use generic node variables (e.g., w, x, y).
-    4. Define relationships explicitly (e.g., [r1], [r2]).
-    5. Include filters for metadata or descriptions using toLower() for case-insensitivity.
-    6. Use AND or OR in WHERE clauses to combine conditions.
-    7. Return DISTINCT results to avoid duplicates.
-    8. Identify key entities, relationships, and constraints in the question.
-    9. Match relevant nodes and relationships based on metadata or descriptions.
-    10. If multiple conditions exist, group them logically in the WHERE clause.
-    11. Return the specific variable that answers the question.
-
-    Examples:
-
-    Simple Question
-    Question: "Which movies were directed by someone living in Los Angeles?"
-
-    Cypher Query:
-    MATCH (w)-[r1]-(x)-[r2]-(y)
-    WHERE (toLower(r1.metadata) CONTAINS 'director') AND (toLower(r2.metadata) CONTAINS 'los angeles')
-    RETURN DISTINCT w
-    LIMIT 100
-
-    Multi-hop Question
-    User Question: "What government position was held by the man who portrayed Jack Browning in the film The Killers?"
-    Cypher Query: 
-    MATCH (w)-[r1]-(x)-[r2]-(y)
-    WHERE (
-        toLower(r1.metadata) CONTAINS 'the killers' OR 
-        toLower(r1.metadata) CONTAINS 'jack browning'
-    )
-    AND (
-        toLower(r2.metadata) CONTAINS 'position' OR 
-        toLower(r2.description) CONTAINS 'position'
-    )
-    RETURN DISTINCT w,x,y
-    LIMIT 100
-
-    Multi-hop Question
-    User Question: "The director of the romantic comedy "Friends with Benefits" is based in what New York city?"
-    Cypher Query:
-    MATCH (w)-[r1]-(x)-[r2]-(y)
-    WHERE (
-        toLower(r1.metadata) CONTAINS 'Friends with Benefits' OR 
-        toLower(r1.metadata) CONTAINS 'director'
-    )
-    AND (
-        toLower(r2.metadata) CONTAINS 'new york' 
-    )
-    RETURN DISTINCT w,x,y
-    LIMIT 100
-
-    Question: {question}
-    """
 
 cypher_generation_template_v2 = """
     You are a Cypher query generator for a Neo4j graph database. Your task is to translate user questions into precise Cypher queries. Handle both simple and multi-hop questions by following these steps:
@@ -356,15 +317,6 @@ Question: Describe the Notre Dame main building
 MATCH (e:Entity)-[r:RELATED]-(re:Entity)
 WHERE toLower(e.name) =~ '.*\\\\b(not|notre|dame|main|building)\\\\b.*'
 RETURN e.name, r.metadata, r.description, re.name
-
-Question: What government position was held by the woman who portrayed Corliss Archer in the film Kiss and Tell?
-Answer: 
-MATCH (role:Entity)-[]-(e:Person)-[]-(film:Entity)
-WHERE toLower(role.name) = "corliss archer" AND toLower(film.name) = "kiss and tell"
-WITH e
-MATCH (e)-[rel:RELATED]-(p:Entity)
-WHERE toLower(rel.description) CONTAINS 'government position' OR toLower(rel.description) CONTAINS 'position'
-RETURN rel.description
 
 Question: {question}
 # """
