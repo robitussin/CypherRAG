@@ -45,16 +45,128 @@ cypher_generation_template = """
     7. Return DISTINCT results to avoid duplicates.
     8. The variables in RETURN must answer satisfy the requirements.
     9. Use UNION ALL if the question requires to compare two entities.
+    10. When using UNION ALL, always use the same alias for both MATCH clauses.
 
+    Format for simple questions:
+    MATCH (w)-[r1]-(x)
+    WHERE (
+        toLower(r1.metadata) =~  '^.*\\\\b(keyentity)\\\\w*\\\\b.*$' OR
+        toLower(r1.description) =~  '^.*\\\\b(keyentity)\\\\w*\\\\b.*$'
+    )
+    RETURN DISTINCT r1.metadata, r1.description
+    
     Format for multi-hop questions:
     MATCH (w)-[r1]-(x)-[r2]-(y)
     WHERE (
-    toLower(r1.metadata) =~ '.*\\\\b(key entity)\\\\b.*' OR
-    toLower(r1.description) =~ '.*\\\\b(key entity)\\\\b.*'
+        toLower(r1.metadata) =~ '^.*\\\\b(keyentity)\\\\w*\\\\b.*$' OR
+        toLower(r1.description) =~ '^.*\\\\b(keyentity)\\\\w*\\\\b.*$'
     )
     AND (
-    toLower(r2.metadata) =~ '.*\\\\b(key entity)\\\\b.*' OR
-    toLower(r2.description) =~ '.*\\\\b(key entity)\\\\b.*'
+        toLower(r2.metadata) =~ '^.*\\\\b(keyentity)\\\\w*\\\\b.*$' OR
+        toLower(r2.description) =~ '^.*\\\\b(keyentity)\\\\w*\\\\b.*$'
+    )
+    RETURN DISTINCT r1.metadata,r1.description,r2.metadata,r2.description
+ 
+    Format for comparison questions:
+    MATCH ()-[r1]-()
+    WHERE (
+        toLower(r1.metadata) =~ '^.*\\\\b(keyentity)\\\\w*\\\\b.*$' OR
+        toLower(r1.description) =~ '^.*\\\\b(keyentity)\\\\w*\\\\b.*$'
+    )
+    RETURN DISTINCT r1.metadata AS col1
+    UNION ALL
+    MATCH ()-[r2]-()
+    WHERE (
+        toLower(r2.metadata) =~ '^.*\\\\b(keyentity)\\\\w*\\\\b.*$' OR 
+        toLower(r2.description) =~ '^.*\\\\b(keyentity)\\\\w*\\\\b.*$'
+    )
+    RETURN DISTINCT r2.metadata AS col1
+
+    Examples:
+    Question: Where is Manila?
+    Answer: 
+    MATCH (w)-[r1]-(x)
+    WHERE (
+        toLower(r1.metadata) =~ '^.*\\\\b(manila)\\\\w*\\\\b.*$'OR
+        toLower(r1.description) =~ '^.*\\\\b(manila)\\\\w*\\\\b.*$'
+    )
+    RETURN r1.metadata, r1.description 
+    
+    User Question: "What government position was held by the man who portrayed Jack Browning in the film The Killers?"
+    MATCH (w)-[r1]-(x)-[r2]-(y)
+    WHERE (
+        toLower(r1.metadata) =~ '^.*\\\\b(jack browning)\\\\w*\\\\b.*$' OR
+        toLower(r1.description) =~ '^.*\\\\b(the killers)\\\\w*\\\\b.*$'
+    )
+    AND (
+        toLower(r2.metadata) =~ '^.*\\\\b(government|position)\\\\w*\\\\b.*$'
+        toLower(r2.description) =~ '^.*\\\\b(government|position)\\\\w*\\\\b.*$'
+    )
+    RETURN DISTINCT r1.metadata,r1.description,r2.metadata,r2.description
+
+    User Question: "The director of the romantic comedy Friends with Benefits is based in what New York city?"
+    MATCH (w)-[r1]-(x)-[r2]-(y)
+    WHERE (
+        toLower(r1.metadata) =~ '^.*\\\\b(friends with benefits)\\\\w*\\\\b.*$' OR
+        toLower(r1.description) =~ '^.*\\\\b(director)\\\\w*\\\\b.*$'
+    )
+    AND (
+        toLower(r2.metadata) =~ '^.*\\\\b(new york)\\\\w*\\\\b.*$' OR
+        toLower(r2.description) =~ '^.*\\\\b(new york)\\\\w*\\\\b.*$'
+    )
+    RETURN DISTINCT r1.metadata,r1.description,r2.metadata,r2.description
+
+    User Question: "Are Lebron James and Jayson Tatum both basketball players??"
+    MATCH ()-[r1]-()
+    WHERE (
+        toLower(r1.metadata) =~ '^.*\\\\b(lebron james)\\\\w*\\\\b.*$' OR
+        toLower(r1.description) =~ '^.*\\\\b(lebron james)\\\\w*\\\\b.*$'
+    )
+    RETURN DISTINCT r1.metadata AS info1
+    UNION ALL
+    MATCH ()-[r2]-()
+    WHERE (
+        toLower(r2.metadata) =~ '^.*\\\\b(jayson tatum)\\\\w*\\\\b.*$' OR 
+        toLower(r2.description) =~ '^.*\\\\b(jayson tatum)\\\\w*\\\\b.*$'
+    )
+    RETURN DISTINCT r2.metadata AS info1
+    """
+
+cypher_generation_template2 = """
+
+    You are a Cypher query generator for a Neo4j graph database. Your task is to translate user questions into precise Cypher queries. Handle both simple and multi-hop questions by following these steps:
+    
+    This is the question: {question}
+    These are the requirements for the question: {requirements}  
+    
+    Follow the steps to generate a cypher query using the requirements provided.
+    1. From the requirements, generate a cypher query following the given format below.
+    2. Do not use node labels.
+    3. Use generic node variables (e.g., w, x, y).
+    4. Define relationships explicitly (e.g., [r1], [r2]).
+    5. Include filters for metadata or descriptions using toLower() for case-insensitivity.
+    6. Use AND or OR in WHERE clauses to combine conditions.
+    7. Return DISTINCT results to avoid duplicates.
+    8. The variables in RETURN must answer satisfy the requirements.
+    9. Use UNION ALL if the question requires to compare two entities.
+
+    Format for simple questions:
+    MATCH (w)-[r1]-(x)
+    WHERE (
+        toLower(r1.metadata) =~ '.*\\b(key entity)\\b.*' OR
+        toLower(r1.description) =~ '.*\\b(key entity)\\b.*'
+    )
+    RETURN DISTINCT r1.metadata, r1.description
+    
+    Format for multi-hop questions:
+    MATCH (w)-[r1]-(x)-[r2]-(y)
+    WHERE (
+        toLower(r1.metadata) =~ '.*\\\\b(key entity)\\\\b.*' OR
+        toLower(r1.description) =~ '.*\\\\b(key entity)\\\\b.*'
+    )
+    AND (
+        toLower(r2.metadata) =~ '.*\\\\b(key entity)\\\\b.*' OR
+        toLower(r2.description) =~ '.*\\\\b(key entity)\\\\b.*'
     )
     RETURN DISTINCT r1.metadata,r1.description,r2.metadata,r2.description
  
@@ -74,6 +186,15 @@ cypher_generation_template = """
     RETURN DISTINCT r2.metadata AS info1
 
     Examples:
+    Question: Where is Manila?
+    Answer: 
+    MATCH ()-[r1]-()
+    WHERE (
+        toLower(r1.metadata) =~ '.*\\b(manila)\\b.*' OR
+        toLower(r1.description) =~ '.*\\b(manila)\\b.*'
+    )
+    RETURN r1.metadata, r1.description 
+    
     User Question: "What government position was held by the man who portrayed Jack Browning in the film The Killers?"
     MATCH (w)-[r1]-(x)-[r2]-(y)
     WHERE (
@@ -279,47 +400,47 @@ cypher_generation_template_v1 = """
 
 # Cypher generation prompt
 cypher_generation_template_fewshot = """
-You are an expert Neo4j Cypher translator who converts English to Cypher based on the Neo4j Schema provided, following the instructions below:
-1. Generate Cypher query compatible ONLY for Neo4j Version 5
-2. Do not use EXISTS, SIZE, HAVING keywords in the cypher. Use alias when using the WITH keyword
-3. Use only nodes and relationships mentioned in the schema
-4. Always do a case-insensitive and fuzzy search for any properties related search. Eg: to search for a Person named John, use `toLower(entity.name) contains 'john'`. 
-5. Never use relationships that are not mentioned in the given schema
-6. When asked about entities, Match the properties using case-insensitive matching, E.g, to find a person named John, use `toLower(entity.name) contains 'john'`.
-7. If a person, place, object, event or a miscellaneous entity does not match an entity in the graph, Try matching the description property or the metadata property of a relationship using case-insensitive matching, E.g, to find information about Joe, use toLower(r.description) contains 'joe' OR toLower(r.metadata) contains 'joe'.
-8. When asked about any information of an entity, Do not simply give the entity label. Try to get the answer from the entity's relationship description or metadata property
-9. Use regex to help find an entity that contains multiple words, E.g, to find a the 'Notre Dame Main Building', use toLower(e.name) =~ '.*\\\\b(not|notre|dame|main|building)\\\\b.*'
-10. When using MATCH traverse the relationship in both directions, E.g, (e:Entity)-[r:RELATED]-(re:Entity)
+    You are an expert Neo4j Cypher translator who converts English to Cypher based on the Neo4j Schema provided, following the instructions below:
+    1. Generate Cypher query compatible ONLY for Neo4j Version 5
+    2. Do not use EXISTS, SIZE, HAVING keywords in the cypher. Use alias when using the WITH keyword
+    3. Use only nodes and relationships mentioned in the schema
+    4. Always do a case-insensitive and fuzzy search for any properties related search. Eg: to search for a Person named John, use `toLower(entity.name) contains 'john'`. 
+    5. Never use relationships that are not mentioned in the given schema
+    6. When asked about entities, Match the properties using case-insensitive matching, E.g, to find a person named John, use `toLower(entity.name) contains 'john'`.
+    7. If a person, place, object, event or a miscellaneous entity does not match an entity in the graph, Try matching the description property or the metadata property of a relationship using case-insensitive matching, E.g, to find information about Joe, use toLower(r.description) contains 'joe' OR toLower(r.metadata) contains 'joe'.
+    8. When asked about any information of an entity, Do not simply give the entity label. Try to get the answer from the entity's relationship description or metadata property
+    9. Use regex to help find an entity that contains multiple words, E.g, to find a the 'Notre Dame Main Building', use toLower(e.name) =~ '.*\\\\b(not|notre|dame|main|building)\\\\b.*'
+    10. When using MATCH traverse the relationship in both directions, E.g, (e:Entity)-[r:RELATED]-(re:Entity)
 
-schema: {schema}
+    schema: {schema}
 
-Examples:
-Question: Who is John?
-Answer:
-MATCH (e:Entity)-[r:RELATED]-(re:Entity)
-WHERE toLower(r.description) CONTAINS 'john'
-OR toLower(r.metadata) CONTAINS 'john'
-RETURN e.name, r.metadata, r.description, re.name
+    Examples:
+    Question: Who is John?
+    Answer:
+    MATCH (e:Entity)-[r:RELATED]-(re:Entity)
+    WHERE toLower(r.description) CONTAINS 'john'
+    OR toLower(r.metadata) CONTAINS 'john'
+    RETURN e.name, r.metadata, r.description, re.name
 
-Question: Where is Manila?
-Answer: 
-MATCH (e:Entity)-[r:RELATED]-(re:Entity)
-WHERE toLower(e.name) = 'manila'
-RETURN e.name, r.metadata, r.description, re.name
+    Question: Where is Manila?
+    Answer: 
+    MATCH (e:Entity)-[r:RELATED]-(re:Entity)
+    WHERE toLower(e.name) = 'manila'
+    RETURN e.name, r.metadata, r.description, re.name
 
-Question: List all the places mentioned in the document
-Answer: 
-MATCH (e:Entity)
-WHERE e.label = place;
-RETURN e
+    Question: List all the places mentioned in the document
+    Answer: 
+    MATCH (e:Entity)
+    WHERE e.label = place;
+    RETURN e
 
-Question: Describe the Notre Dame main building
-MATCH (e:Entity)-[r:RELATED]-(re:Entity)
-WHERE toLower(e.name) =~ '.*\\\\b(not|notre|dame|main|building)\\\\b.*'
-RETURN e.name, r.metadata, r.description, re.name
+    Question: Describe the Notre Dame main building
+    MATCH (e:Entity)-[r:RELATED]-(re:Entity)
+    WHERE toLower(e.name) =~ '.*\\\\b(not|notre|dame|main|building)\\\\b.*'
+    RETURN e.name, r.metadata, r.description, re.name
 
-Question: {question}
-# """
+    Question: {question}
+    # """
 
 cypher_prompt = PromptTemplate(
     template = cypher_generation_template,
@@ -331,7 +452,7 @@ You are an assistant that helps to form nice and human understandable answers.
 The information part contains the provided information that you must use to construct an answer.
 The provided information is authoritative, you must never doubt it or try to use your internal knowledge to correct it.
 Make the answer sound as a response to the question. Do not mention that you based the result on the given information.
-If the provided information is empty, say that you don't know the answer
+If the provided information is empty, say that you don't know the answer.
 Provide only the direct answer without any additional explanations, context, or elaboration. For example, if asked, 'In what country is Normandy located?' your response should simply be 'France' without any additional information."
 
 Information: {context}
@@ -458,7 +579,7 @@ class QueryGraph:
         chain = GraphCypherQAChain.from_llm(
             llm=self._llm,
             graph=self._graph,
-            verbose=True,
+            verbose=False,
             return_intermediate_steps=True,
             cypher_prompt=self._cypher_prompt,
             qa_prompt=self._qa_prompt,

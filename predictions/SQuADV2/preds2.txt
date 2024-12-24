@@ -1,0 +1,134 @@
+question: What religion were the Normans
+real_answer: Catholic
+model_answer: The Normans were primarily Catholic.
+cypher_query: cypher
+MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(normans)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(normans)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(religion)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(religion)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+
+======================
+question: What type of major impact did the Norman dynasty have on modern Europe?
+real_answer: ""
+model_answer: The Norman dynasty had a major cultural, political, and military impact on medieval Europe.
+cypher_query: cypher
+MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(norman dynasty)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(norman dynasty)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(impact|influence|modern europe)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(impact|influence|modern europe)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+
+======================
+question: Who was famed for their Christian spirit?
+real_answer: ""
+model_answer: ""
+cypher_query: cypher
+MATCH (w)-[r1]-(x)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(christian spirit)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(christian spirit)\\b.*'
+)
+RETURN DISTINCT w.metadata AS person, w.description AS description
+
+======================
+question: Who assimilted the Roman language?
+real_answer: ""
+model_answer: ""
+cypher_query: cypher
+MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(roman language)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(roman language)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(assimilated|assimilation)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(assimilated|assimilation)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+
+======================
+question: Who ruled the country of Normandy?
+real_answer: ""
+model_answer: Richard I of Normandy
+cypher_query: cypher
+MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(normandy)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(normandy)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(ruled|ruler|leader)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(ruled|ruler|leader)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+
+======================
+question: What principality did William the conquerer found?
+real_answer: ""
+model_answer: ""
+cypher_query: cypher
+MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(william the conqueror)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(william the conqueror)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(principality)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(principality)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+
+======================
+question: What is the original meaning of the word Norman?
+real_answer: Viking
+model_answer: 
+cypher_query: cypher
+MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(norman)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(norman)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(original meaning|etymology|historical context)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(original meaning|etymology|historical context)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+
+======================
+question: When was the Latin version of the word Norman first recorded?
+real_answer: 9th century
+model_answer: ""
+cypher_query: MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(latin version of the word norman)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(latin version of the word norman)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(first recorded instance|date|time period)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(first recorded instance|date|time period)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+======================
+question: What name comes from the English words Normans/Normanz?
+real_answer: ""
+model_answer: Norman
+cypher_query: cypher
+MATCH (w)-[r1]-(x)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(normans|normanz)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(normans|normanz)\\b.*'
+)
+RETURN DISTINCT w.metadata AS name
+
+======================
