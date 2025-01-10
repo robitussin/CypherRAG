@@ -579,7 +579,7 @@ class QueryGraph:
         chain = GraphCypherQAChain.from_llm(
             llm=self._llm,
             graph=self._graph,
-            verbose=True,
+            verbose=False,
             return_intermediate_steps=True,
             cypher_prompt=self._cypher_prompt,
             qa_prompt=self._qa_prompt,
