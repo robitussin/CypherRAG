@@ -37,7 +37,7 @@ def get_propositions(text: str, proposition_list: List[str]):
     # Extraction
     structured_llm = chunking_llm.with_structured_output(Sentences)
 
-    text = text.split(".")
+    # text = text.split(".")
 
     file = open("propositions.txt", "a")
 
