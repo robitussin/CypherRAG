@@ -3,6 +3,8 @@ from streamlit_chat import message
 from timeit import default_timer as timer
 from query_graph import QueryGraph
 
+qg = QueryGraph()
+
 st.set_page_config(layout="wide")
 
 if "user_msgs" not in st.session_state:
@@ -23,16 +25,18 @@ if user_input:
         st.session_state.user_msgs.append(user_input)
         start = timer()
 
-        print(user_input)
+        print("user input", user_input)
         try:
-            result = QueryGraph.runquestion(user_input)
+            requirements = qg.get_requirements(user_input)
+            result = qg.answer_question(user_input, requirements)
+            print("result: ", result)
             intermediate_steps = result["intermediate_steps"]
             cypher_query = intermediate_steps[0]["query"]
             database_results = intermediate_steps[1]["context"]
             answer = result["result"]   
 
             if answer == "I don't know the answer.":
-                result = QueryGraph.refine_query(cypher_query[6:], user_input)
+                result = qg.refine_query(cypher_query[6:], user_input)
                 intermediate_steps = result["intermediate_steps"]
                 cypher_query = intermediate_steps[0]["query"]
                 database_results = intermediate_steps[1]["context"]
@@ -43,7 +47,8 @@ if user_input:
             #     st.session_state.system_msgs.append(answer)
         except Exception as e:
             st.write("Failed to process question. Please try again.")
-            print(e)
+            print("error: ", e)
+            # print(e)
 
     st.write(f"Time taken: {timer() - start:.2f}s")
 
