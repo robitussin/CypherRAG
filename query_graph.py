@@ -468,7 +468,7 @@ class QueryGraph:
     _cypher_prompt: PromptTemplate
     _CYPHER_QA_TEMPLATE: str
     _qa_prompt: PromptTemplate
-    _llm :ChatOpenAI
+    _llm : ChatOpenAI
     _graph : Neo4jGraph
 
     def __init__(self, 
@@ -579,7 +579,7 @@ class QueryGraph:
         chain = GraphCypherQAChain.from_llm(
             llm=self._llm,
             graph=self._graph,
-            verbose=False,
+            verbose=True,
             return_intermediate_steps=True,
             cypher_prompt=self._cypher_prompt,
             qa_prompt=self._qa_prompt,

@@ -1,0 +1,1453 @@
+The document is a manual version control log.
+The title of the document is 'Version Control'.
+The log contains entries with a number, description, date, and remarks.
+The first entry is RAD – RI – D – M – 001.
+The description of the first entry is 'Guidelines on the conduct of Research efforts within National University'.
+The date of the first entry is November 1, 2020.
+The remarks for the first entry state that it was approved on 2020.
+The second entry is RAD – RS – D – M – 001.
+The description of the second entry is 'Guidelines on the conduct of Research efforts within National University'.
+The date of the second entry is April 4, 2022.
+The remarks for the second entry state that it was approved on 2022.
+The manual approval and distribution list was prepared by Johanna G. Minglana.
+Johanna G. Minglana holds the title of Quality Management Office Director.
+The manual approval and distribution list was checked by Johanna G. Minglana.
+The date of preparation is April 4, 2022.
+The manual approval and distribution list was concurred by Renato Carlos H. Ermita, Jr.
+Renato Carlos H. Ermita, Jr. holds the title of President.
+The date of concurrence is April 4, 2022.
+The manual approval and distribution list was approved by Renato Carlos H. Ermita, Jr.
+The date of approval is April 4, 2022.
+The distribution list includes the Quality Management Office.
+The Quality Management Office received the original copy.
+The distribution list includes the Office of the President.
+The Office of the President received copy 1.
+The distribution list includes the Office of the Vice-President for Research and Development.
+The Office of the Vice-President for Research and Development received copy 2.
+The distribution list includes the Center for Research.
+The Center for Research received copy 3.
+The distribution list includes the Center for Innovation and Entrepreneurship.
+The Center for Innovation and Entrepreneurship received copy 4.
+The distribution list includes the Center for Resilient Philippines.
+The Center for Resilient Philippines received copy 5.
+The distribution list includes all campuses.
+All campuses received copy 6.
+The document contains a table of contents.
+The table of contents includes a Manual Version Control Log.
+The table of contents includes a Manual Approval and Distribution List.
+The table of contents includes a Foreword.
+The table of contents includes a List of Abbreviations.
+The table of contents includes Chapter 1: Research and Development as Part of National University's Plan.
+Chapter 1 includes A. Center for Research.
+Chapter 1 includes B. Center for Innovation and Entrepreneurship.
+Chapter 1 includes C. Center for Resilient Philippines.
+The table of contents includes Chapter 2: National University Research Agenda.
+Chapter 2 includes A. Research Goals.
+Chapter 2 includes B. Research Themes.
+Chapter 2 includes C. Research Disciplines.
+The table of contents includes Chapter 3: College and Campus Research Agenda.
+Chapter 3 includes A. College of Education, Arts and Sciences.
+Chapter 3 includes B. College of Business and Accountancy.
+Chapter 3 includes C. College of Architecture.
+Chapter 3 includes D. College of Engineering.
+Chapter 3 includes E. College of Computing and Information Technologies.
+Chapter 3 includes F. College of Allied Health.
+Chapter 3 includes G. College of Dentistry.
+Chapter 3 includes H. College of Tourism and Hospitality Management.
+Chapter 3 includes I. NU MOA.
+Chapter 3 includes J. NU Philippines.
+The table of contents includes Chapter 4: The University Research and Development Council.
+The table of contents includes Chapter 5: Research As Defined By The College Faculty Ranking And Classification System.
+The table of contents includes Chapter 6: Types of Research Projects.
+Types of Research includes various categories.
+Commissioned Research Projects are a type of research.
+Specially Funded Research Projects are a type of research.
+Internally Funded Research Projects are a type of research.
+Externally Funded Research Projects are a type of research.
+Professorial Chairs are a type of research.
+Publication Criteria and Incentives are related to research.
+Chapter 7 is titled Journal of Sciences, Technology, And Arts (JSTAR).
+Chapter 8 is titled Research Policies.
+General Research Policy is a section within Research Policies.
+Research Grants are a section within Research Policies.
+Research Outputs are a section within Research Policies.
+Contractual Obligations of Researchers and National University is a section within Research Policies.
+Chapter 9 is titled Intellectual Property Policy.
+Purpose is a section within Intellectual Property Policy.
+Coverage of Policy Provision is a section within Intellectual Property Policy.
+Definition of Terms is a section within Intellectual Property Policy.
+Disclosure Requisites are a section within Intellectual Property Policy.
+Administration of the Policy is a section within Intellectual Property Policy.
+Ownership of Trademarks is a section within Intellectual Property Policy.
+Ownership of Copyright is a section within Intellectual Property Policy.
+Ownership of Patent is a section within Intellectual Property Policy.
+Distribution of Income from Intellectual Property is a section within Intellectual Property Policy.
+Resolution of Disputes is a section within Intellectual Property Policy.
+Penalties are a section within Intellectual Property Policy.
+Amendments are a section within Intellectual Property Policy.
+Waiving of Intellectual Property Policy is a section within Intellectual Property Policy.
+Repealing Clause is a section within Intellectual Property Policy.
+Chapter 10 is titled Authorship Policy.
+Purpose is a section within Authorship Policy.
+Coverage of Policy Provision is a section within Authorship Policy.
+Definition of Terms is a section within Authorship Policy.
+Guidelines are a section within Authorship Policy.
+E. Publication and Dissemination of Research.
+F. Annual Research Report.
+G. Research Recognition.
+Chapter 1. General Ethical Guidelines for National University Research.
+A. University Ethics Review Committee.
+B. Policy on Ethics.
+C. Research Misconduct.
+Chapter 1. Online Processing.
+Welcome to the National University.
+National University has prepared a Manual.
+The Manual provides an overview of National University's policies, processes, and regulations for the conduct of research in the university.
+The Manual will familiarize the constituents with important information about National University's Research and Innovation.
+The Manual provides guidelines for the conduct of efficient and ethical research within NU Manila and other NU campuses.
+NU Manila and other NU campuses are collectively called NU Philippines.
+The Manual cannot be construed as a legal document.
+The Manual provides general information governing the monitoring of National University Research agenda and contracts.
+The Manual is neither an expression nor an implied contract.
+The Manual is not a substitute for sound management judgment and discretion.
+It is not possible to anticipate every situation that may arise on the campus.
+The Manual may not provide information that answers all issues.
+Circumstances will require that policies and regulations, practices, and guidelines described in the Manual change from time to time.
+National University reserves the right to modify, supplement, remove, or revise any provision in the Manual as it deems necessary or appropriate.
+National University can make changes to the Manual with or without notice.
+If any statement in the Manual is not clear, individuals should check with their immediate superior for clarification.
+National University welcomes comments and suggestions for improving the Manual.
+The Manual supersedes any and all prior policies, procedures, and manuals of National University as stated in the Manual Control Version Log.
+The Office of the Vice President for Research and Development is part of National University.
+NU stands for National University.
+NU CentRES stands for National University Center for Research.
+NU CentIE stands for National University Center for Innovation and Entrepreneurship.
+NU CRP stands for National University Center for Resilient Philippines.
+URC/UIEC stands for University Research Coordinator / University Innovation & Entrepreneurship Coordinator.
+CRC stands for College Research Coordinator / Campus Research Coordinator.
+CCRC stands for College Center Research Coordinator.
+ASP stands for Academic/Administrative Support Personnel.
+ASEAN stands for Association of South East Asian Nations.
+CEAS stands for College of Education, Arts and Sciences.
+CBA stands for College of Business and Accountancy.
+COA stands for College of Architecture.
+COE stands for College of Engineering.
+CCIT stands for College of Computing and Information Technologies.
+CAH stands for College of Allied Health.
+COD stands for College of Dentistry.
+CTHM stands for College of Tourism and Hospitality Management.
+Comm RP stands for Commissioned Research Project.
+SFRP stands for Specially Funded Research Project.
+IFRP stands for Internally Funded Research Project.
+EFRP stands for Externally Funded Research Project.
+IP stands for Intellectual Property.
+CFP stands for Call for Proposal or Call for Paper.
+MOA stands for Memorandum of Agreement.
+MOU stands for Memorandum of Understanding.
+MOC stands for Memorandum of Cooperation.
+TOR stands for Terms of Reference.
+VPRnD stands for Vice President for Research and Development.
+CHED stands for Commission on Higher Education.
+PAASCU stands for Philippine Accrediting Association of Schools, Colleges and Universities.
+PACUCOA stands for Philippine Association of Colleges and Universities Commission on Accreditation.
+FDP stands for Faculty Development Plan.
+RA stands for Republic Act.
+UERC is an acronym that requires further context for its full meaning.
+NU stands for National University.
+The National University has a University Ethics Review Committee.
+The National University has a Research Council.
+Research is intended to complement and invigorate teaching at National University.
+Research collectively supports the preservation, dissemination, and advancement of knowledge for the betterment of society based on good scholarship.
+The utilization of knowledge and innovative ideas is relevant for the development of beneficial tangible and non-tangible outputs to nation building.
+National University recognizes the collective synergy through collaboration with the Main campus.
+National University collaborates with other separate NU campuses, collectively called NU Philippines or NU Phil.
+National University collaborates with other academic institutions in consortium agreements.
+Research in National University supports the ARC (Academic Research Community Engagement) framework of the University.
+The ARC framework closely integrates the Academic, Research, and Community Engagement endeavors into one significant whole.
+The University has established university-wide research centers to focus on specific goals.
+The intent of the university-wide research centers is to provide a formal forum for multi and trans-disciplinary strategies and activities within the National University community.
+The centers include the Center for Research.
+The centers include the Center for Innovation and Entrepreneurship.
+The centers include the Center for Resilient Philippines.
+The approved research budget is allocated among the colleges based on the number of full-time faculty members.
+The Colleges and Campuses may submit proposals for the formation of College-based research and innovation centers.
+The College-based research and innovation centers are based on the core competencies of the College/Campus.
+The College-based research and innovation centers can cater to the needs of the University constituency.
+National University endeavors to become a leading institution in advancing concepts and paradigms applicable to research.
+National University aims to be responsive to the development of national and global needs.
+National University sets up a Center for Research to serve as its research arm.
+The Center for Research aims to establish National University as a center of excellence in research.
+The Center for Research supports the further development of a research culture.
+The Center for Research broadens the development of the research capacity of National University across all disciplines.
+The Center for Research extends research-based knowledge to the national and international communities.
+The Center for Research encourages and empowers faculty members to manage, conduct, disseminate, and report research results.
+Establishing procedures to manage and use research resources effectively, efficiently, and fairly is important.
+Enhancing the quality of student research activity is a goal.
+Encouraging the research-teaching nexus is a priority.
+Improving the quality of outputs is necessary.
+The quality of outputs includes their impact, level of accountability, and timeliness of reporting.
+Providing a structure for continual improvement of research and development is essential.
+The Center for Innovation and Entrepreneurship is established.
+The rationale for the Center for Innovation and Entrepreneurship aligns with the Philippine government’s aim at uplifting the Philippine standing in terms of Innovation.
+National University must contribute to the creation of new ideas.
+The new ideas result in the development of new or improved products, processes, business models, or services.
+The new ideas are then spread, transferred, or commercialized.
+The commercialization creates social, economic, or environmental impact.
+The mission of the Center for Entrepreneurship is to promote innovation and entrepreneurship across the National University community.
+The Center for Entrepreneurship aims to uplift the strength in multidisciplinary fields.
+The vision of the Center for Entrepreneurship is to be an inclusive, realistic, and collaborative community.
+The Center for Entrepreneurship is the vehicle of National University in the creation of a Leading Innovation Culture within the University.
+The Leading Innovation Culture motivates creative individuals in an organization.
+Creative individuals are motivated to achieve their fullest potential as individuals.
+Creative individuals are also motivated to create wealth and value for all stakeholders.
+The Center will facilitate the innovation process of bringing ideas to market.
+The intention of the Center is aligned with National University’s strategic intent.
+The strategic intent includes competency to succeed as an entrepreneur through continuous strengthening of research capability of all stakeholders.
+The resources such as time and money spent for research and development are considered equity for potential commercializable products, services, and business models.
+It is envisioned to have a pool of inventors-turned-entrepreneurs emerging from the grassroots.
+The Center aims to create a rich collection of Intellectual Property Assets and Start-ups.
+Mind-setting and paradigm shifting are necessary to transform ideas into economically benefiting ventures.
+The Center will address various local and global challenges.
+The Center shall play a vital role in aligning its programs to the Philippine Development Plan.
+The Center shall align its programs to Executive Order No.5 Ambisyon Natin 2040.
+The Center shall align its programs to the Philippine Industry Roadmap.
+The Center shall align its programs to the United Nation’s Sustainable Development Goals (SDG).
+The Center shall align its programs to Industry 4.0.
+National University must be competitive and at par with the innovation initiatives of other Higher Education Institutions.
+The Center will employ and adhere to existing laws in order to effectively manage resources.
+The Center will manage human capital and knowledge generation and transfer.
+The functions of the Center include building and sustaining the 'Leading Innovation Culture'.
+The functions of the Center include project evaluation in terms of technical and market viability.
+Funding assistance is based on Technology Readiness Level (TRL) through IFRPP.
+Funding assistance includes Intellectual Property (IP) Filing.
+Funding assistance includes Prototype Improvement.
+Funding assistance includes Technology Validation.
+Funding assistance includes Field/Testing.
+Funding assistance includes Creative Output.
+The Support Eco-System includes Government.
+The Support Eco-System includes Industry.
+The Support Eco-System includes Community.
+The Support Eco-System includes Angel Investors.
+The Support Eco-System includes Venture Capitalists.
+The Support Eco-System includes Enablers.
+The Support Eco-System includes Accelerators.
+The Support Eco-System includes Mediators.
+IP management includes Review of IP Policy.
+IP management includes Drafting of IP Policy.
+IP management includes Implementation of IP Policy.
+IP management includes Facilitating agreements.
+IP management includes Facilitating assignments.
+IP management includes Facilitating technology transfers.
+IP management includes IP Incentives.
+IP management includes IP Valuation.
+IP management includes IP Prosecution Representation.
+Institutional Innovation Programs will be designed and implemented.
+Trainings and Advisory will be provided.
+A Technology Experts/Skills Inventory/Pools will be created as the Innovation Core.
+Entrepreneurship and Technopreneurship Courses will be managed across all Colleges.
+The Entrepreneurship Core will be a team of NU constituents.
+The Entrepreneurship Core will work closely with the Center.
+The objective of creating the Entrepreneurship Core is to assist the community with the innovation processes (idea-to-market).
+The objective of creating the Entrepreneurship Core is to serve as a venue for multi-disciplinary and multi-level collaboration beyond the classroom environment.
+The objective of creating the Entrepreneurship Core is to lead the establishment of innovation sub-center niches.
+The objective of creating the Entrepreneurship Core is to develop skills-based and competency-based innovation of NU.
+The objective of creating the Entrepreneurship Core is to build champions in the field of innovation.
+Champions in the field of innovation include Administrators.
+Champions in the field of innovation include Project Leaders.
+Champions in the field of innovation include Entrepreneurs.
+Champions in the field of innovation include Unicorns.
+Members of the Entrepreneurship Core will have benefits of personal and professional development.
+Members of the Entrepreneurship Core will have benefits of institutional support.
+Members of the Entrepreneurship Core will have benefits of creation of personal and organizational wealth.
+Creation of personal and organizational wealth includes Financial Freedom through Profit-sharing scheme.
+The commitment to accomplish in the next 3 years includes attaining the new KPIs of the Center.
+New KPIs of the Center include the number of Start-ups.
+New KPIs of the Center include the number of industry-based projects.
+New KPIs of the Center include the number of community-based projects.
+New KPIs of the Center include the number of institutional projects.
+The commitment to accomplish in the next 3 years includes opening a Self-sustaining Innovation Center.
+The commitment to accomplish in the next 3 years includes establishing technology niches.
+The commitment to accomplish in the next 3 years includes establishing a new laboratory.
+The commitment to accomplish in the next 3 years includes formulating trade/special/graduate degree courses on innovations and entrepreneurship.
+The Center for Resilient Philippines is mentioned.
+The Center for Resilient Philippines is a multi-disciplinary institution.
+The Center for Resilient Philippines is committed to improving the Philippines' ability to plan for and recover from natural and man-made disasters and disruptive events.
+The Center for Resilient Philippines aims to improve recovery without compromising long-term prospects for development.
+The Center for Resilient Philippines offers an integrated, whole-of-nation, ICT enabled resilience effort.
+The integrated resilience effort is based on a better understanding of the risk environment and disaster impacts.
+The integrated resilience effort involves partnerships and shared responsibility.
+The integrated resilience effort promotes adaptive and empowered communities.
+There has been an advent of natural disasters and calamities in the Philippines recently.
+There is an imperative for academic institutions to take part in the development of resilient communities in the Philippines.
+The Center for Resilient Philippines is National University’s contribution to its vision of nation building.
+The Center for Resilient Philippines supports the government’s National Resilience Council.
+The Center for Resilient Philippines supports National Disaster Risk Reduction Management.
+The Center for Resilient Philippines strengthens the core value of National University of resilience in character during difficult times.
+The Center for Resilient Philippines supports National University’s Academic, Research and Community Engagement framework.
+The Academic, Research and Community Engagement framework integrates academic, research, and community engagement endeavors into one framework.
+The university’s constituents engage in research and community engagement activities in their academic undertakings.
+The Center for Resilient Philippines is the University’s contribution from an academic institution to UNDRR’s movements.
+The Center for Resilient Philippines supports the initiatives of SM.
+National University is one of the leading academic institutions in the field of Information and Communication Technology.
+National University sees its contribution in the development of digital-based solutions as one of its key areas.
+The objectives of the Center for Resilient Philippines include innovating and conducting real-world, rigorous, timely, and appropriate research on resilience.
+The research focuses on using technology to enhance resilience.
+The objectives include contributing to the development of new programs and projects on resilience.
+The objectives include working with communities in managing the risks that they confront.
+The objectives include developing the capacity of government at all levels, civil society organizations, communities, the private sector, and other stakeholders in disaster risk reduction and management.
+The objectives include developing capacity in climate change adaptation and continuity management.
+The objectives include providing strategic advice and science-based policy recommendations to policymakers and implementers.
+Apart from research and training, the Center for Resilient Philippines advocates for a resilient Philippines through the use of technology.
+The Center for Resilient Philippines seeks to establish potential networks and linkages for collaboration in teaching, research, and engagement.
+The collaboration is for both faculty members and students of National University, nationally and internationally.
+The Center for Resilient Philippines identified competencies.
+The competencies include disaster resilience from the perspective of the social/political sciences.
+The competencies include disaster resilience from the perspective of the economic sciences.
+The competencies include disaster resilience from the perspective of the physical sciences.
+The competencies include new technology-enabled mechanisms to input planning and design solutions that help create a resilient community.
+The competencies include improved disaster resilience through social media interaction.
+The competencies include the development of innovative national and local resilience policies and practices.
+The competencies include private sector engagement in the development of disaster resilience.
+The competencies include capacity building for disaster mitigation and reconstruction.
+The competencies include networking with the academic community.
+The competencies include community engagement and participation in reconstruction.
+The competencies include the social impact of reconstruction.
+The competencies include the empowerment of women and other vulnerable groups.
+The competencies include the role of women in mitigating and managing disasters.
+The Office of the Vice President for Research and Development provides the overall direction of the research and development targets, strategies, and activities of the University.
+The Office of the Vice President for Research and Development functions as the University liaison to the global research arena.
+The Office of the Vice President for Research and Development is guided by the National University Research Agenda.
+NU Philippines includes other NU campuses and NU affiliates with consortium agreements with NU.
+NU Philippines may consider the NU research agenda as their basis for formulating their own research agenda.
+NU Philippines considers the regional directions and targets of their respective localities.
+The first objective is to recruit, develop, and retain faculty researchers to advance the research mission-vision of National University and all its affiliated campuses.
+The second objective is to provide a proactive, responsive, and friendly service to the academic community on research-related endeavors.
+The third objective is to assist faculty researchers in publishing research outputs in top international journals.
+The fourth objective is to assist faculty researchers in obtaining and managing externally funded research projects.
+The fifth objective is to foster collaboration and linkages with local and international higher education institutions.
+The sixth objective is to provide financial support for faculty and non-teaching personnel conducting researches.
+The seventh objective is to incorporate intellectual property (IP) concepts in the conduct of innovative researches to ensure the generation of patents, utility models, industrial designs, and copyrights.
+The eighth objective is to strengthen linkages with the industry, government agencies, and community in terms of technology and resource sharing to create a more effective, efficient, and productive research process.
+The ninth objective is to adhere and align research projects with the developmental plan and national research agenda of the Philippine government.
+The Philippine government includes the Commission of Higher Education (CHED), Department of Science and Technology (DOST), and National Economic Development Authority (NEDA).
+The tenth objective is to engage in research that will improve the quality of life of the community and the preservation of culture and the environment.
+The eleventh objective is to utilize research output through publications in both local and international research bodies, technology transfers, and commercialization.
+The twelfth objective is to prioritize technology-based, community-based, and industry-oriented research undertakings.
+The thirteenth objective is to serve as a benchmark in the regional and national research setting.
+The strand of Food, nutrition, and health refers to studies that focus on mitigating issues in food security.
+The strand of Food, nutrition, and health ensures food safety.
+The strand of Food, nutrition, and health promotes health more particularly in marginalized societies.
+The theme of Food, nutrition, and health is generally multi-disciplinary.
+The theme of Food, nutrition, and health draws expertise from various fields such as sciences, humanities, political science, business, medicine, engineering, and natural sciences.
+The strand of Emerging Industries on the Fourth Industrial Revolution refers to new or restructured industrial sectors.
+The new or restructured industrial sectors are growing at a rate faster than the overall economy.
+The new or restructured industrial sectors include Energy, Engineering, ICT, and others that lead to disruption.
+The strand of Development of vaccines and diagnostic kits using indigenous materials refers to studies that emphasize the country’s preparedness on emerging diseases.
+The emerging diseases include the Corona Virus and reemerging diseases.
+The studies focus on the development of vaccines and diagnostic kits using indigenous materials.
+The strand of Disaster risk management refers to studies that emphasize the country’s preparedness on disasters.
+The studies involve formulating policies.
+The studies involve initiating community development activities.
+The studies involve promoting public awareness.
+The strand of Tourism and Pollution control refers to studies that aim to mitigate environmental degradation.
+The studies aim for environmental protection.
+The studies promote local tourism.
+The strand of Climate change specifically on the issue of global warming refers to studies that promote technology transfer.
+The studies promote mitigation.
+The studies promote adaptation.
+The studies promote resource utilization in relation to climate change.
+The strand of Sports Technology refers to studies that aim to promote wellness through digital technologies.
+The studies promote wellness through wearable technologies.
+The studies promote wellness through simulator technologies.
+The strand of Education and learning innovations refers to the movement from the teaching and learning system of the 20th century to the teaching and learning system of the 21st century.
+Areas of research in Education and learning innovations include access to education and instructional materials.
+Areas of research in Education and learning innovations include ICT integration.
+Areas of research in Education and learning innovations include curriculum innovations.
+Areas of research in Education and learning innovations include personalized learning.
+Areas of research in Education and learning innovations include system development.
+Areas of research in Education and learning innovations include the development of new learning outcomes.
+The strand of Business sophistication refers to the development of innovative business models.
+The innovative business models aim to promote economic progress.
+The areas of research include Science and Mathematics.
+The areas of research include Education and Teacher Training.
+The areas of research include Health and Health Profession.
+Information and Communication Technology is a field of study.
+Engineering, Maritime and Architecture is a field of study.
+Agriculture is a field of study.
+Environmental Science is a field of study.
+Humanities is a field of study.
+Social Sciences is a field of study.
+Theoretical Research is a field of study.
+The academic units of National University define their specific research agenda.
+The specific research agenda is consistent with the overall research agenda of National University.
+The other separate campuses and affiliates of National University are guided by consortium agreements with National University.
+The College of Education, Arts and Sciences envisions itself to be a dynamic, receptive and innovative institution.
+The College of Education, Arts and Sciences aims to lead the frontiers of research.
+The College of Education, Arts and Sciences hopes to generate research outputs that are of value to policy making.
+The research outputs are intended for curricular improvement.
+The research outputs are intended for innovation in all levels of education in the country.
+The College of Education, Arts and Sciences commits itself to achieving specific research goals.
+The specific research goals include improving the research capability of the College’s faculty researchers toward global competitiveness.
+The specific research goals include increasing the research productivity of the College across disciplines.
+The specific research goals include spearheading innovations and producing knowledge that contribute to social and educational advancement.
+The specific research goals include facilitating the dissemination and utilization of research findings.
+To achieve the research goals, the College will implement strategic activities.
+The strategic activities include providing research capability building programs such as travel grants.
+The strategic activities include providing research capability building programs such as research grants.
+The strategic activities include providing statistical and data management assistance.
+The strategic activities include providing graduate scholarships.
+The strategic activities include providing research seminars.
+The College of Education, Arts and Sciences shall strengthen the conduct of research in graduate and undergraduate programs related to priority disciplines.
+The College of Education, Arts and Sciences shall commission multidisciplinary research on the priority disciplines and themes.
+The research disciplines include Science and Mathematics.
+The research disciplines include Education and Teacher Training.
+The research disciplines include Psychology.
+The research disciplines include Humanities and Social Sciences.
+The research disciplines include Language Education.
+The research sub-themes include Holistic Well Being.
+Holistic Well Being includes Positive Psychology.
+Holistic Well Being includes Industrial Psychology.
+Holistic Well Being includes Clinical Psychology.
+The research sub-themes include Education and Learning Innovations.
+Education and Learning Innovations includes Education Psychology.
+Education and Learning Innovations includes Special and Inclusive Education.
+Education and Learning Innovations includes Curriculum and Program Development.
+Education and Learning Innovations includes Blended Learning.
+Education and Learning Innovations includes Contexts and Content in Education.
+The research sub-themes include Literacy, numeracy and civic competencies in local fora to the global landscape.
+Literacy, numeracy and civic competencies in local fora to the global landscape includes Philippine English.
+Literacy, numeracy and civic competencies in local fora to the global landscape includes Pragmatics.
+Literacy, numeracy and civic competencies in local fora to the global landscape includes Phonology and Morphology.
+Literacy, numeracy and civic competencies in local fora to the global landscape includes Attitudes towards STEM.
+Literacy, numeracy and civic competencies in local fora to the global landscape includes Effective Assessment and Teaching STEM.
+Literacy, numeracy and civic competencies in local fora to the global landscape includes Process of Instruction.
+Literacy, numeracy and civic competencies in local fora to the global landscape includes Youth Movement and Participation.
+Literacy, numeracy and civic competencies in local fora to the global landscape includes Securitization in Asian Contexts.
+Literacy, numeracy and civic competencies in local fora to the global landscape includes Rizal in the highly globalized world.
+The College of Business and Accountancy is referred to as CBA.
+The College of Business and Accountancy envisions itself to be a research center.
+The College of Business and Accountancy aims to produce theory-led, applicable research.
+The research produced by the College of Business and Accountancy addresses contemporary organizational and management challenges faced by businesses.
+The research produced by the College of Business and Accountancy addresses contemporary organizational and management challenges faced by public organizations.
+The research produced by the College of Business and Accountancy addresses contemporary organizational and management challenges faced by regulatory bodies.
+The research produced by the College of Business and Accountancy addresses contemporary organizational and management challenges faced by policy-makers.
+The College of Business and Accountancy has specific research goals.
+The College of Business and Accountancy commits itself to improving the research capability of the College’s faculty researchers toward global competitiveness.
+The College of Business and Accountancy commits itself to increasing the research productivity of the College across disciplines.
+The College of Business and Accountancy commits itself to spearheading innovations and producing knowledge that are contributory to social and educational advancement.
+The College of Business and Accountancy commits itself to facilitating the dissemination and utilization of research findings.
+CBA will be focused on creating and sustaining a supportive, collaborative, and vibrant research culture.
+CBA aims to raise the quality and quantity of research output.
+CBA will achieve its goals through the continuous development of faculty.
+CBA will achieve its goals through exposure to business issues.
+Practitioner engagement is a major emphasis of the Business School.
+The Business School disseminates research in academic journals.
+The Business School disseminates research in practitioner journals.
+Each research group runs a variety of activities.
+The aim of the activities run by each research group is to provide a broad base of accessible evidence for practitioner-oriented activities.
+Management is one of the research disciplines.
+Mergers and acquisitions is a sub-discipline of Management.
+Leadership is a sub-discipline of Management.
+Ethical climate and culture is a sub-discipline of Management.
+Innovation is a sub-discipline of Management.
+Organizational justice is a sub-discipline of Management.
+Stakeholder theory is a sub-discipline of Management.
+Corporate governance is a sub-discipline of Management.
+Job satisfaction is a sub-discipline of Management.
+Accountancy is another research discipline.
+The role of accounting information in decision making generally and in capital markets in particular is a sub-discipline of Accountancy.
+The modeling of corporate failure and credit risk is a sub-discipline of Accountancy.
+Corporate takeovers and reconstructions is a sub-discipline of Accountancy.
+Corporate governance is a sub-discipline of Accountancy.
+Accounting standard setting, particularly the role of international financial reporting standards, is a sub-discipline of Accountancy.
+Market price accounting is a sub-discipline of Accountancy.
+Environmental and social reporting is a sub-discipline of Accountancy.
+Public sector accountability and financial reporting is a sub-discipline of Accountancy.
+Corporate Governance and Shareholder Values is a research sub-theme.
+Models for Evaluating Corporate Responsibility is a research sub-theme.
+Drivers and barriers to competitiveness of human resources in industries and service sectors is a research sub-theme.
+Accountability and performance measurement applied to a range of private, public, and non-profit organizations is a research sub-theme.
+Community Development and Social Sustainability is a research sub-theme.
+Competitive Intelligence in sales is a research sub-theme.
+The College of Architecture is abbreviated as COA.
+The College of Architecture seeks to be innovators and stewards of the environment through design and construction of 21st century sustainable and green buildings.
+The goal of the College of Architecture is to produce Nationalians who will be equals in the global arena of architecture.
+Nationalians will be innovators in whatever field of architecture they choose to partake in.
+The College of Architecture shall commit itself to achieving specific research goals.
+The first research goal is to produce Nationalians who will be part of the local and global arena of architecture through research.
+The second research goal is to endeavor research to promote good and green architecture.
+The third research goal is to utilize research as a vital tool in the architectural design process.
+The fourth research goal is to conduct research on 21st century new technologies that will provide innovative work.
+To achieve the research goals and produce the target research outputs, the College of Architecture will implement strategic activities.
+The first strategic activity is to provide or facilitate research capability building programs such as travel grants, research grants, statistical and data management assistance, graduate scholarships, and research seminars.
+The second strategic activity is to strengthen the conduct of research in the undergraduate programs related to priority disciplines.
+The third strategic activity is to commission multidisciplinary research on the priority disciplines and themes.
+The fourth strategic activity is to host or co-host a research forum every academic year.
+The fifth strategic activity is to produce 3 or 4 internally funded research projects of the faculty members.
+The sixth strategic activity is to encourage full-time faculty members to present research works at local and international conferences.
+The research disciplines include Science and Mathematics.
+The research disciplines include Education and Teacher Training.
+The research disciplines include Information and Communication Technology.
+The research disciplines include Engineering and Architecture.
+The research disciplines include Environmental Science.
+The research disciplines include Humanities.
+The College of Engineering envisions itself to be recognized as a lead contributor of scholarly output and smart solutions in the field of environmental sustainability.
+The College of Engineering envisions itself to be recognized as a lead contributor of scholarly output and smart solutions in the field of disaster risk response and resilience.
+The College of Engineering envisions itself to be recognized as a lead contributor of scholarly output and smart solutions in the field of engineering education.
+The College of Engineering envisions itself to be recognized as a lead contributor of scholarly output and smart solutions in the field of emerging technologies.
+The College of Engineering envisions itself to be recognized as a lead contributor of scholarly output and smart solutions in the field of other contemporary issues requiring engineering design solutions.
+The College of Engineering aims to bridge community needs, scientific discovery and applications, and instruction.
+The College of Engineering has research goals.
+The first research goal is to increase productivity on research and innovation through collaborative undertakings among faculty members, students, and communities.
+The second research goal is to revolutionize the approach in engineering research through design education.
+The third research goal is to improve the capability of the faculty members on research and design.
+The fourth research goal is to enhance student development on design education leading to research output.
+The fifth research goal is to focus on user- and community-based design and research.
+The College of Engineering will implement strategic activities to achieve the research goals and produce the target research outputs.
+The first strategic activity is to provide/facilitate research capability building programs such as travel grants, research grants, statistical and data management assistance, graduate scholarships, and research seminars.
+The second strategic activity is to strengthen the conduct of research and design in the undergraduate programs related to priority disciplines.
+The third strategic activity is to commission multidisciplinary research on the priority disciplines and themes.
+The fourth strategic activity is to host or cohost a research forum every academic year.
+The College of Engineering has research disciplines.
+The first research discipline is Civil Engineering.
+The first sub-discipline of Civil Engineering is Construction Engineering and Management.
+The second sub-discipline of Civil Engineering is Transportation Engineering.
+The third sub-discipline of Civil Engineering is Structural Engineering.
+The fourth sub-discipline of Civil Engineering is Water Resources Engineering.
+The second research discipline is Computer Engineering.
+The first sub-discipline of Computer Engineering is Systems and Network Administration.
+Embedded Systems is a field of study.
+Machine Learning is a field of study.
+Electrical Engineering is a field of study.
+Power Systems Protection is a subfield of Electrical Engineering.
+Renewable Energy is a subfield of Electrical Engineering.
+Electronics Engineering is a field of study.
+Microelectronics Engineering is a subfield of Electronics Engineering.
+Instrumental and Control Engineering is a subfield of Electronics Engineering.
+Artificial Intelligence is a subfield of Machine Learning.
+Digital Signal Processing is a subfield of Electronics Engineering.
+Environmental and Sanitary Engineering is a field of study.
+Water and Wastewater Engineering is a subfield of Environmental and Sanitary Engineering.
+Public Health Engineering is a subfield of Environmental and Sanitary Engineering.
+Mechanical Engineering is a field of study.
+Renewable Energy Engineering is a subfield of Mechanical Engineering.
+HVAC Engineering is a subfield of Mechanical Engineering.
+Environmental Sustainability is a research theme.
+Environmental Impact Assessment, Protection and Conservation is a subfield of Environmental Sustainability.
+Sustainable Materials is a subfield of Environmental Sustainability.
+Solid and Hazardous Waste Management is a subfield of Environmental Sustainability.
+Renewable Energies is a subfield of Environmental Sustainability.
+Disaster Risk Response and Resilience is a research theme.
+Disaster Response Technologies is a subfield of Disaster Risk Response and Resilience.
+Flood Hazard and Risk Assessment is a subfield of Disaster Risk Response and Resilience.
+Watershed Management is a subfield of Disaster Risk Response and Resilience.
+Resilient Structures is a subfield of Disaster Risk Response and Resilience.
+Resilient Homes is a subfield of Disaster Risk Response and Resilience.
+Emerging Technologies is a research theme.
+Smart City is a subfield of Emerging Technologies.
+Smart Agriculture is a subfield of Emerging Technologies.
+Intelligent Transportation Systems is a subfield of Emerging Technologies.
+Geographic Information Systems is a subfield of Emerging Technologies.
+Machine and Deep Learning is a subfield of Emerging Technologies.
+Image, Audio and Video Processing is a subfield of Emerging Technologies.
+Natural Language Processing is a subfield of Emerging Technologies.
+Artificial Intelligence is a subfield of Emerging Technologies.
+Additive Manufacturing is a subfield of Emerging Technologies.
+Engineering Education is a research theme.
+Design Education is a subfield of Engineering Education.
+Engineering Epistemologies is a subfield of Engineering Education.
+Engineering Teaching, Learning, Assessment is a subfield of Engineering Education.
+Sustainability in Engineering Education is a subfield of Engineering Education.
+STEM Education is a subfield of Engineering Education.
+The College of Computing and Information Technologies is envisioned to be an agent for economic growth.
+The College of Computing and Information Technologies is envisioned to be a leading industry hub.
+The College of Computing and Information Technologies is able to pioneer and direct the development of knowledge in the field of Information Technology.
+The College of Computing and Information Technologies is able to pioneer and direct the advancement of knowledge in the field of Information Technology.
+The College of Computing and Information Technologies is able to pioneer and direct the preservation of knowledge in the field of Information Technology.
+The College of Computing and Information Technologies is able to pioneer and direct the dissemination of knowledge in the field of Information Technology.
+The College of Computing and Information Technologies is able to pioneer and direct the development of knowledge in the field of Computer Science.
+The College of Computing and Information Technologies commits itself to achieving specific research goals.
+The specific research goals of the College of Computing and Information Technologies include revolutionizing and innovating computing research endeavors vis-à-vis with the NU Research Agenda.
+The specific research goals of the College of Computing and Information Technologies include providing solutions to pressing societal and research problems.
+The specific research goals of the College of Computing and Information Technologies include networking with other institutions locally and abroad.
+The College of Computing and Information Technologies will implement strategic activities to achieve the research goals.
+The strategic activities include identifying strategic research areas in coordination with partners in the industry, academe, and government sectors.
+The strategic activities include identifying existing avenues for the NU community to enrich research capabilities.
+The existing avenues for the NU community include ranked conferences and workshops.
+The existing avenues for the NU community include other important research events.
+The strategic activities include providing opportunities for the NU community to produce, disseminate, and showcase quality research output.
+The opportunities for the NU community include organizing lectures.
+The opportunities for the NU community include organizing workshops.
+The opportunities for the NU community include organizing seminars.
+The opportunities for the NU community include organizing conferences.
+The strategic activities include evaluating, endorsing, providing counterpart options, and tracking externally-funded computing research activities of both students and faculty members.
+The strategic activities include connecting with experts in the field.
+The strategic activities include maintaining a database of funding agencies.
+The strategic activities include maintaining a database of local and high impact research avenues.
+The strategic activities include formulating academic policies, guidelines, and frameworks that enhance the computing research capability of the NU community.
+The academic policies, guidelines, and frameworks include the transformation of research outputs and funded projects into academic electives for students.
+The academic policies, guidelines, and frameworks include the transformation of research outputs and funded projects into community output.
+The college’s research thrusts are identified based on the existing strength of the students and faculty members.
+One of the college’s research thrusts is Information Technology.
+One of the research areas under Information Technology is Games and Multimedia.
+Mobile Application Development is a field of study.
+Web Application Development is a field of study.
+ICT for Development is a field of study.
+IT Infrastructure is a field of study.
+Computer Science is a field of study.
+Human Computer Interaction is a subfield of Computer Science.
+Machine Learning is a subfield of Computer Science.
+Computer Vision is a subfield of Computer Science.
+Natural Language Processing is a subfield of Computer Science.
+Digital Signal Processing is a subfield of Computer Science.
+Digital Forensics is a subfield of Computer Science.
+Digital Forensics includes Mobile, Network, Database, and Computer forensics and analysis.
+IT and the Society is a field of study.
+Social Sciences is a subfield of IT and the Society.
+ICT and the Society is a subfield of IT and the Society.
+Food Nutrition and Health is a research theme.
+Remote Medical Consultation is a topic under Food Nutrition and Health.
+Image Processing for fruit defect detection is a topic under Food Nutrition and Health.
+Environment and Disasters is a research theme.
+A mobile application that introduces crowdsourcing and awareness is a topic under Environment and Disasters.
+A digital toolkit that can plot disaster-prone areas by classifying and clustering social media feeds is a topic under Environment and Disasters.
+Maternal Health is a research theme.
+A mobile/web application for maternal awareness is a topic under Maternal Health.
+Climate Change is a research theme.
+A mobile/web application for climate change awareness is a topic under Climate Change.
+Education and Learning Innovations is a research theme.
+E-Learning Systems is a topic under Education and Learning Innovations.
+M-Learning Systems is a topic under Education and Learning Innovations.
+Intelligent Tutoring Systems is a topic under Education and Learning Innovations.
+Cultural Heritage is a research theme.
+An interactive game/virtual reality/hologram for heritage learners is a topic under Cultural Heritage.
+Ontology-building for museums is a topic under Cultural Heritage.
+Governance is a research theme.
+E-participation is a topic under Governance.
+Cybersecurity and Digital Forensics is a field of study.
+Digital Forensics Education is a topic.
+Digital Forensic Tools is a topic.
+The College of Allied Health envisions itself to be globally competitive.
+The College of Allied Health engages in academic and scientific pursuits.
+The academic and scientific pursuits of the College of Allied Health contribute to Evidence-Based Practice.
+The academic and scientific pursuits of the College of Allied Health contribute to Allied Health Care.
+Allied Health Care includes Nursing, Pharmacy, and Medical Technology.
+The College of Allied Health seeks collaboration with other colleges and non-teaching departments of National University.
+The collaboration aims to help increase the research productivity of the College.
+The collaboration aims to help increase the research productivity of the entire University.
+The College of Allied Health has specific research goals.
+The College shall commit itself to contributing to the creation of a research culture in the university.
+The College shall commit itself to fostering innovation in the university.
+The College shall commit itself to fostering creativity in the university.
+The College shall commit itself to improving the research capability of the college faculty researchers.
+The improvement of research capability aims toward global competitiveness.
+The College shall commit itself to increasing the research productivity of the College.
+The College shall commit itself to spearheading innovations.
+The innovations produced by the College shall contribute to quality care.
+The innovations produced by the College shall specifically contribute to patient safety.
+The innovations produced by the College shall specifically contribute to improved patient outcomes.
+The innovations produced by the College shall specifically contribute to socio-cultural advancement.
+The innovations produced by the College shall specifically contribute to educational advancement.
+The innovations produced by the College shall specifically contribute to technological advancement.
+The College shall facilitate the dissemination of research findings.
+The College shall facilitate the utilization of research findings.
+The College will implement strategic activities to achieve the research goals.
+The College shall provide research capability building programs.
+The research capability building programs may include travel grants.
+The research capability building programs may include research grants.
+The research capability building programs may include statistical and data management assistance.
+The research capability building programs may include graduate scholarships.
+The research capability building programs may include research seminars.
+The College shall strengthen the conduct of research in the undergraduate program.
+The research in the undergraduate program shall relate to priority disciplines.
+The College shall allot a thesis adviser for each group of students doing a thesis.
+The thesis adviser is preferably an expert in the topic of interest.
+The thesis adviser ideally should not have more than two groups under his/her tutelage.
+The College shall include issues about research in each faculty meeting.
+Each faculty meeting must have the Dean present.
+Each faculty meeting must have the Program Chair present.
+Each faculty meeting must have the Research Coordinator present.
+The College shall have at least one full-time faculty member.
+The full-time faculty member shall be a member of a professional nursing research association or society.
+The professional nursing research association or society must be recognized by the only accredited professional nursing organization in the country.
+The College shall have provisions that may help facilitate and encourage the conduct of research.
+The provisions may include load assistance.
+The provisions may include financial assistance.
+The provisions may include favorable conditions for research.
+The workload for research includes a paid day-off for faculty members engaged in research.
+The paid day-off is referred to as a research day.
+The research disciplines include Nursing.
+The research disciplines include Medical Technology.
+The research disciplines include Pharmacy.
+The research disciplines include Medicine.
+The research disciplines include Education.
+The research disciplines include Psychology.
+The research disciplines include Information and Communication Technology.
+The research disciplines include Environmental Science.
+The research disciplines include Humanities.
+The research disciplines include Social Sciences.
+The research sub-themes include Patient Safety.
+The research sub-themes include Improved Patient Outcomes.
+The research sub-themes include Health Technology.
+The research sub-themes include Holistic Care.
+The research sub-themes include Socio-Environmental Health Concerns and the Community.
+The research sub-themes include Health Education.
+The research sub-themes include Leadership and Management.
+The research sub-themes include Core Values and Culture.
+The research sub-themes include Disaster Risk Management.
+The College of Tourism and Hospitality Management envisions itself to be a partner of community and industry in improving its systems through research orientation.
+The College of Tourism and Hospitality Management aims to instill the culture of research among its faculty members and students.
+The College of Tourism and Hospitality Management aims to tap the value of research and produce outputs that can contribute to the advancement of the industry and society in general.
+The College of Tourism and Hospitality Management commits itself to improving the research capability of the College’s faculty researchers toward global competitiveness.
+The College of Tourism and Hospitality Management commits itself to increasing the research productivity of the College across disciplines.
+The goal is to spearhead innovations and produce knowledge that is contributory to social and educational advancement.
+The goal is to facilitate the dissemination and utilization of research findings.
+To achieve the research goals and produce the target research outputs, strategic activities will be implemented.
+The College shall provide research capability building programs.
+Research capability building programs include travel grants.
+Research capability building programs include research grants.
+Research capability building programs include statistical and data management assistance.
+Research capability building programs include graduate scholarships.
+Research capability building programs include research seminars.
+The College shall strengthen the conduct of research in the graduate programs related to priority disciplines.
+The College shall strengthen the conduct of research in the undergraduate programs related to priority disciplines.
+The College shall commission multidisciplinary research on the priority disciplines and themes.
+Specific tourism and hospitality industry disciplines are included in the research disciplines.
+Humanities and social sciences are included in the research disciplines.
+Business management is included in the research disciplines.
+Environmental science is included in the research disciplines.
+Geography is included in the research disciplines.
+Foreign relations are included in the research disciplines.
+Education and training are included in the research disciplines.
+Information and communications technology is included in the research disciplines.
+Research sub-themes include destination development, promotion, and marketing.
+Tourism assessment is included in the destination development, promotion, and marketing sub-theme.
+Tourism planning and development is included in the destination development, promotion, and marketing sub-theme.
+Destination marketing and promotions is included in the destination development, promotion, and marketing sub-theme.
+Sustainable development in tourism and hospitality industry is a research sub-theme.
+Tourism and hospitality industry impacts (socio-cultural, economic, and environmental) are included in the sustainable development in tourism and hospitality industry sub-theme.
+Sustainable development goals are included in the sustainable development in tourism and hospitality industry sub-theme.
+Community and cultural pride, inclusivity, and accessibility is a research sub-theme.
+Cultural and heritage preservation and promotions are included in the community and cultural pride, inclusivity, and accessibility sub-theme.
+Inclusive and accessible tourism is included in the community and cultural pride, inclusivity, and accessibility sub-theme.
+Service quality and delivery is a research sub-theme.
+Service Quality Assessment is a component of the content.
+Service Quality Improvement is a component of the content.
+Hospitality Enterprise Operations and Management is a component of the content.
+Hospitality Operations and Management is a component of the content.
+Culinary Arts is a component of the content.
+Tourism and Hospitality Industry 4.0 is a component of the content.
+Digitization and Automation is a component of the content.
+Industrial Revolution is a component of the content.
+Technological Utilization is a component of the content.
+Contemporary Trends and Updates is a component of the content.
+Tourism and Hospitality Trends and Updates is a component of the content.
+Contemporary Tourism is a component of the content.
+NU MOA is a component of the content.
+The College of Dentistry envisions itself to be one of the revered institutions of higher learning.
+The College of Dentistry aims to pursue excellence in an academic environment.
+The academic environment of the College of Dentistry is enriched by faculty and students.
+Faculty and students of the College of Dentistry are professionally responsive to the progressive trends in Dentistry.
+The College of Dentistry has specific research goals.
+The College of Dentistry shall commit itself to improving research capability of the College’s faculty researchers toward global competitiveness.
+The College of Dentistry shall commit itself to increasing research productivity across disciplines.
+The College of Dentistry shall commit itself to spearheading innovations and producing knowledge that are contributory to social and educational advancement.
+The College of Dentistry shall commit itself to facilitating the dissemination and utilization of research findings.
+The College of Dentistry has strategic activities to achieve the research goals.
+The College shall provide research capability building programs.
+Research capability building programs include travel grants.
+Research capability building programs include research grants.
+Research capability building programs include statistical and data management assistance.
+Research capability building programs include graduate scholarships.
+Research capability building programs include research seminars.
+The College shall strengthen the conduct of research in the undergraduate programs related to priority disciplines.
+The College shall commission multidisciplinary research on the priority disciplines and themes.
+Research disciplines include Health and Health Profession.
+Research sub-themes include CBCT vs Panoramic, Cephalometric, Occlusal, and Periapical radiograph (analog).
+Research sub-themes include curing time of common LED light cure units.
+Research sub-themes include determining the bone density of Filipinos.
+Research sub-themes include comparison of the compressive strengths of different composite materials.
+The National University Research Council is advisory to the University President on matters relating to research.
+The National University Research Council is composed of the Executive Vice President.
+The National University Research Council is composed of the Vice President for Research and Development.
+The National University Research Council is composed of NU Centers for Research.
+The National University Research Council is composed of the Center for Innovation and Entrepreneurship.
+The National University Research Council is composed of the Center for Resilient Philippines Directors.
+The National University Research Council is composed of Academic Directors of the other NU campuses in NU Phil.
+The National University Research Council is composed of other affiliates guided by consortium agreements with NU.
+The Council will hold a meeting every fourth Thursday of the month.
+The primary functions of the Council include formulating research policies and agenda.
+The primary functions of the Council include reviewing and evaluating National University campus-wide research proposals.
+The primary functions of the Council include overseeing the implementation of university research ethics guidelines.
+The primary functions of the Council include conducting an annual review of research programs.
+Research and innovation outputs of faculty members are now integral in the ranking and promotion of NU faculty members.
+The evaluation of research and innovation outputs is based on existing global and regional databases and abstracting services.
+The evaluation criteria for research and innovation outputs are clearly stipulated in the NU Faculty Manual.
+A particular cluster of productive scholarship indicators is required.
+The productive scholarship indicators include completed research output, paper presentation, and output utilization.
+Output utilization can be in the form of publication or commercialization.
+The faculty member is expected to do research primarily in aid of instruction.
+The instruction of the faculty member is research-based and/or enriched by research.
+The faculty member is expected to engage with the community or industry.
+The faculty member is expected to generate intellectual property.
+The faculty member may conduct research for start-up purposes.
+The research outputs should not be limited to action research or participatory action research.
+The research outputs should not be limited to policy and project/program review and evaluation which are regional in scope.
+The research outputs should not be limited to treatise.
+The research outputs should not be limited to empirical or experimental research.
+Each output is awarded a raise in a professional rank according to the criteria set by the present research manual.
+For paper presentations, a higher requirement can satisfy a lower requirement.
+The higher requirement for paper presentations includes Scopus or ISI Indexed Publications.
+The lower requirement for paper presentations includes Paper Presentation and completed IFRPP.
+Any number of the lower requirement cannot replace a higher requirement for paper presentations.
+For intellectual property generation, a higher requirement can satisfy a lower requirement.
+The higher requirement for intellectual property generation includes a patent.
+The lower requirement for intellectual property generation includes a utility model.
+Any number of the lower requirement cannot replace a higher requirement for intellectual property generation.
+The lower requirements for intellectual property generation also include industrial design or trade secret.
+Research in National University (NU) is focused on three major types.
+The three major types of research in National University are fundamental research, applied research, and experimental development.
+Fundamental research refers to pure basic research or to strategic basic research.
+Pure basic research is experimental and theoretical work undertaken to acquire new knowledge.
+Pure basic research does not look for long-term benefits other than the advancement of knowledge.
+Strategic basic research is experimental and theoretical work undertaken to acquire new knowledge directed to specified broad areas.
+Strategic basic research is undertaken in the expectation of useful discoveries.
+Strategic basic research provides the broad base of knowledge necessary for the solution of recognized practical problems.
+Applied research is original work undertaken primarily to acquire new knowledge with a specific application in view.
+Applied research is undertaken to determine possible use for the findings of basic research.
+Applied research is also undertaken to determine new ways of achieving some specific and predetermined objectives.
+Experimental development is systematic work using existing knowledge gained from research or practical experience.
+Experimental development is directed to producing new materials, products, or devices.
+Experimental development is directed to installing new processes, systems, and services.
+Experimental development is directed to substantial improvement of already produced or installed systems.
+National University shall invest and give equal emphasis to all the above types of research in terms of resources and time allocation.
+National University also provides resources for creative works and other forms of intellectual property.
+CommRP refers to a project that has been recommended or initiated by the Office of the National University President or the President’s Council.
+The President of National University can directly assign or commission an academic teaching faculty, an academic service faculty, or a support staff to do a CommRP.
+Research proposals for CommRP should fall under the research priority areas of National University.
+CommRP will follow the forms of IFRPPs.
+All standard protocols for IFRPPs will be applied, except for the usual endorsements from the Curriculum Review Committee (CRC), the President’s Council (PC), and the Dean.
+The process of deliberation for CommRP will not include endorsements from the Curriculum Review Committee, the President’s Council, and the Dean.
+Endorsement and approval for CommRP will be solely undertaken by the President of National University.
+Once approved by the President of National University, the concerned National University units will be provided a copy of the approved CommRP proposal.
+SFRP refers to a product of a formal agreement between National U and government or non-government institutions.
+SFRP refers to a fast-track project meant to be undertaken as soon as possible to give a solution to an urgent problem.
+Research proposals for SFRP should fall on research priority areas agreed by the aforementioned institutions.
+Research proposals for SFRP should address an obvious emergency situation.
+Research proposals for SFRP must follow specific guidelines in carrying it out.
+Members of the NU faculty and ASP who are interested to apply for SFRP should look for co-researchers from partner institutions.
+Members of the NU faculty and ASP should preferably look for co-researchers from the consortium institutions.
+For fast-track projects, researchers can partner with internal and external proponents to ensure that the needed expertise is met.
+Members of the NU faculty and ASP with identified co-researchers can apply for SFRP by expressing their intention in writing to the Center for Research Director.
+The research proposal for internally funded SFRP shall be reviewed for its form and substance by two evaluators.
+One evaluator for the research proposal shall be from NU.
+One evaluator for the research proposal shall be from the partner institution or any identified expert.
+The research proposal shall be reviewed for its ethical value by the University Ethics Review Committee.
+The researchers of internally funded SFRP shall follow the existing guidelines set by their respective institutions.
+The research proposal for externally funded SFRP shall no longer be subjected to review by the evaluation committee of the partner institutions.
+The proponents of externally funded SFRP shall follow the guidelines set by the funding agency if EFRP.
+The proponents of externally funded SFRP must conform with NU guidelines if IFRP.
+Internally funded research project proposals should be based on the Research Agenda of NU and its colleges.
+A proponent is ideally allocated with seed funding to jump-start a research interest.
+Seed funding is meant to develop research capability aligned with the applicant’s long-term development plan.
+NU aims to facilitate and foster research.
+NU has created a set of guidelines to achieve the goal of facilitating and fostering research with respect to funding packages.
+Multi-disciplinary collaborative proposals are highly encouraged.
+The proposal must be reviewed and endorsed by the Program Chair or Immediate Supervisor.
+The proposal must be reviewed and endorsed by the CRC (College/Campus Research Coordinator).
+The proposal must be reviewed and endorsed by the Dean of the College or Academic Director where the proponents belong.
+It is a requirement that the output of the IFRP must be published or qualify with the criteria for IP filing.
+It is ideal that the internal funding results in research proposals submitted to outside research funding agencies.
+It is ideal that the internal funding results in successful external funding of the faculty members’ research activities.
+Research funding may come from a number of internal budget centers including the Center for Research.
+Funds become available.
+Faculty members and ASP may apply for support by filling out an IFRP Proposal Form.
+The application process is competitive in nature.
+The application must fall under one of NU’s priority research areas.
+Applied research leading to tangible technologies shall be given priority.
+Upstream basic research shall not be overlooked.
+An appropriate share of research funding shall be reserved to support upstream basic research activities.
+NU may provide seed money to support research projects.
+NU may provide seed money to support research programs composed of 2 or more projects.
+NU may provide seed money to support manuscript writing.
+NU may provide seed money to support review papers, including narrative and meta-analysis reports.
+NU may provide seed money to support creative output.
+NU may provide seed money to support materials development.
+NU may provide seed money to support pre-commercialization requirements such as IP application.
+NU may provide seed money to support prototype improvement.
+NU may provide seed money to support field testing.
+NU may provide seed money to support technology validation.
+The determination of support will be conducted through a technical and market evaluation.
+Representatives from the CentIE Core will conduct the technical and market evaluation.
+NU support may include financial support.
+NU support may include research load.
+There will be strict compliance on the expected research outputs.
+Expected research outputs include publications in a scientific journal for peer review.
+Expected research outputs include patents for proprietary inventions or scientific processes for potential future profit.
+Expected research outputs include products with potential commercialization.
+Expected research outputs include people services that provide technical knowledge and training.
+Expected research outputs include places and partnerships forged because of the study.
+Expected research outputs include policies that are science-based and crafted by the government or academe as a result of the study.
+Expected research outputs include social impact.
+Expected research outputs include economic impact.
+The criteria for a Lead Proponent for IFRP Ps include being a full-time faculty member.
+The criteria for a Lead Proponent for IFRP Ps include being an ASP that satisfies specific conditions.
+The conditions for an ASP include being a regular employee.
+The conditions for an ASP include having been a co-proponent in any previous research project in NU.
+The conditions for an ASP include having previous research experience outside NU.
+The conditions for an ASP include holding a Master's Degree.
+The conditions for an ASP include having attended trainings given by the Center for Research.
+External collaborators are allowed to be co-proponents if their expertise is needed in a project.
+An agreed honorarium is given to the external collaborator.
+Institutional Externally Funded Projects include research projects contracted by an external funding organization with NU.
+Institutional Externally Funded Projects include research projects made with a contract on memoranda of agreement between NU and the funding organization.
+Institutional Externally Funded Projects include research projects that are officially awarded to NU.
+The premise for research projects officially awarded to NU includes that an individual faculty member or ASP acts as Project Leader or Collaborator.
+The premise for research projects officially awarded to NU includes being endorsed by the NU University President.
+The premise for research projects officially awarded to NU includes that funds course through the NU Finance Department whenever NU is the Lead Institution.
+A grantee is a full-time faculty member.
+A grantee has completed at least one internally funded research project.
+If the funding agency requires, a grantee has completed at least one externally funded research project.
+A grantee must not engage in two ongoing internally funded research projects except in meritorious cases.
+A grantee must have proven a track record in meritorious cases.
+The National University shall adhere to the conditions stipulated in the contract between the funding agency and the National University proponents.
+The policy of the funding agency will be followed.
+If the funding agency policy is silent on a particular matter, the policy of the National University shall govern.
+The project must be aligned with the research thrust of the National University.
+Counterpart funding can be provided by the National University through its research proposal program.
+A management fee or other administrative cost of at least 7.5% shall be included in the research proposal for administrative services and use of university facilities and resources.
+The management fee will be distributed using the following scheme:
+10% of the management fee will go to the research center.
+If there is no research center, 10% of the management fee will go to the college.
+25% of the management fee will go to the college.
+35% of the management fee will go to the research fund (CentRES).
+30% of the management fee will go to the University.
+The share of the research center and the college is to be used for faculty research development.
+Faculty research development includes research capacity building programs, proposal writing for external funding, and college research projects.
+In cases where fund matching is required from the external funding organizations, such funding may be requested from the research fund.
+The cost of faculty load is subject to the approval of the President’s Council.
+Project proponents must be full-time faculty members.
+Part-time faculty members that have taught in the National University for at least one year may be allowed as co-proponents of a full-time faculty member.
+Administrators are qualified as project proponents.
+Academic support staff, such as admission staff, library staff, and COMEX staff, are qualified as project proponents.
+Counter-funding of the National University will be in the form of teaching units/hours load and use of National University resources.
+Only institutional EFRP are qualified for counterpart funding.
+Upon approval of the project proposal by the funding agency, the necessary official communication should be prepared.
+The necessary official communication includes a contract, memorandum of agreement (MOA), memorandum of understanding (MOU), or memorandum of cooperation (MOC).
+Researchers shall receive an honorarium on top of their monthly salary.
+The honorarium is for the roles of principal investigator, co-investigator, project leader, or co-project leader.
+The amount of the honorarium shall be based on the approved line item budget in the proposal.
+Each college research center shall be in charge of establishing linkages with external funding agencies.
+Faculty proponents shall submit a research proposal to their college research center for preliminary screening.
+The college research center shall check the alignment of the research proposal to the research agenda.
+The college research center recommends the research proposal to an external funding agency.
+The college research center provides a copy of the research proposal to CentRES.
+CentRES can provide assistance in procuring documents needed by the external funding organization.
+Examples of documents needed by the external funding organization include a bank account where the documents will be submitted and SEC registration.
+The OVPRnD endorses the research proposal to an external funding agency.
+A copy of the approved proposal with budget and MOA should be submitted to CentRES for verification.
+A project account should be opened through the accounting office.
+CentRES facilitates the opening of the project account.
+The project leader should oversee the implementation of the project.
+The project leader should oversee the use of the budget.
+The college research center and CentRES will monitor the project implementation.
+The project leader may be asked by the college research center and CentRES to submit financial and progress reports of the project.
+Both the college research center and CentRES will maintain records of expenses and balance.
+Disbursement procedure shall follow the accounting procedure of the University.
+The disbursement procedure shall be without prejudice to the procedure of the external funding organization.
+In case there is a conflict between the two procedures, the procedure of the external funding organization shall prevail.
+The project leader shall inform both the funding agency and the University of the project completion.
+The project leader shall request an audited financial report from the NU Accounting Office.
+CentRES will facilitate the auditing of the financial report.
+CentRES will shoulder the service fee for the audit if it is not included in the budget.
+Any unused savings or unused budget should be returned to the funding agency.
+If there is no need to return the said savings to the funding agency, the savings shall be distributed using a specific scheme.
+The distribution scheme includes 10% for the research center, 25% for the college, 35% for the research fund (CentRES), and 30% for the University.
+All equipment acquired during the implementation shall be surrendered to the funding agencies as they may require.
+All equipment acquired during the implementation may be donated to the University.
+The project leader may specifically identify the office to which the equipment shall be donated in coordination with CentRES.
+Priority is given to the research center for the donation of equipment.
+In the absence of a research center, priority is given to the college for the donation of equipment.
+The publication of the project results should be stipulated in the agreement.
+In the absence of stipulation and permission to publish the results in other venues, the publication shall use National University as the sole affiliation.
+The publication shall acknowledge the funding agency in case there is counterpart funding from National University.
+Faculty members who have completed an externally funded project shall be recognized during the annual research and publication recognition.
+The faculty researchers may apply for research load through the submission of an IFRPP as counterpart funding of National University to the externally funded project.
+All researchers will be subject to all the existing policies of the IFRPP.
+Certain laboratories and classrooms will be allotted for the use of externally-funded research projects in coordination with ITRO and Facilities.
+The use of facilities shall form part of the match granting.
+Facilities will provide regular maintenance for classrooms.
+ITRO will provide regular maintenance for laboratories.
+The workplace of the proponents and research personnel shall be coordinated by the project leader with CentRES.
+CentRES will regularly orient the center heads and offices concerned with regard to new projects and policies.
+The selection of Professorial Chairs shall be made every school year during the first week of March by the Office of the VPRD.
+The selection of Professorial Chairs shall be subsequently announced to the NU community.
+The nomination for Professorial Chair may be initiated by the College Deans through their Department Chair.
+All nominations shall be forwarded to the screening committee headed by the CentRES Office Director.
+The members of the screening committee and the qualifications of the professorial chair should be in consonance with the specifications made by the donor who established the award as indicated in the Memorandum of Agreement (MOA).
+The screening committee shall evaluate the qualifications of the nominees based on the qualifications set by the donor.
+In the event that the donor did not set any qualifications in the MOA, the following minimum qualifications may be applied by the institution: Must at least be an assistant professor.
+In the event that the donor did not set any qualifications in the MOA, the following minimum qualifications may be applied by the institution: Must have conducted at least one internally or externally-funded research project presented in an institutional or regional forum.
+In the event that the donor did not set any qualifications in the MOA, the following minimum qualifications may be applied by the institution: Should have at least published one article in a refereed journal within three years prior to nomination.
+A candidate must not have been sanctioned administratively within a year immediately prior to the date of appointment as Professorial Chair.
+If a candidate has been chosen, the screening committee shall endorse the name of the candidate to the Vice President for Research and Development (VPRD).
+The Vice President for Research and Development (VPRD) will then endorse the chosen candidate to the National University (NU) President for formal appointment.
+The formal appointment shall be announced to the academic community on the first week of May of every academic year.
+The duration of the appointment of the Professorial Chair shall be for one academic year.
+The holder of the Professorial Chair may choose among his/her existing completed researches in the last three years that are not externally funded.
+The holder of the Professorial Chair would present the chosen researches to the College Council.
+The College Council will deliberate and decide on which of the presented researches shall be lectured to the academic community.
+In this case, the holder of the Professorial Chair shall only receive a monthly salary topping from the proceeds of the endowment fund.
+If the Memorandum of Agreement (MOA) specifies that the holder of the chair must do research or has no completed research, the holder qualifies for the prescribed topic by the donor.
+The Center for Research will subsidize the research expenses of the holder following the specified procedure.
+The research project will undergo proposal deliberation in the same manner as a regular research project.
+All research expenses incurred in the research project will be shouldered by the Center for Research.
+A maximum of six academic load research incentive units per academic term shall be awarded to the Professorial Chair Holder.
+The salary or stipend of the holder will come from the donation of the assigned agency or company.
+The honorarium shall be paid on a monthly basis.
+Once subsidized, the completed research project shall be classified as one of the regular research projects of the Center for Research.
+The completed research project shall be governed by all policies and guidelines of the funding agency.
+Ownership of the completed research project belongs to National University (NU), the donor, and the Chair Holder.
+The Center for Research shall be in charge of organizing the formal lecture.
+The Professorial Chair Holder should present his/her study by the start of each school year.
+All expenses incurred during the Professorial Chair lecture shall be charged to the endowment fund.
+The Professorial Chair Holder should submit an annual report of his/her activities to the donor and to the Center for Research Director.
+The Professorial Chair Holder should deliver a lecture about the results or findings of his/her study in a forum organized by the Center for Research.
+A copy of the final research report must be submitted to the VPRD.
+A copy of the final research report must be submitted to the Center for Research Director.
+A copy of the final research report must be submitted to the donor.
+The goal of the guidelines for the accreditation of research journals and publication incentive is twofold.
+The first goal is to increase the number and impact of NU faculty publication in peer-reviewed journals.
+The second goal is to enhance NU’s chance of attaining CHED publication accreditation.
+The second goal is to enhance NU’s chance of attaining the highest accreditation Level 4 of PAASCU/PACUCOA.
+The second goal is to apply for international accreditation.
+Recognized journals must meet specific criteria.
+Category 1 includes journals that are included in the Thomson Reuters Master Journals List of the Institute of Scientific Information.
+Category 2 includes journals that are included in the Scopus Database.
+Category 3 includes peer-reviewed journals in any discipline as ranked in www.journal-ranking.com.
+Category 3 includes peer-reviewed journals with an impact factor.
+Category 3 includes peer-reviewed journals with regularity of release and an established track record.
+Category 3 includes peer-reviewed journals with contact information displayed on the web page.
+Category 3 includes peer-reviewed journals with a strong affiliation to established professional organizations.
+Category 3 includes peer-reviewed journals with established and reputable editors and editorial boards.
+Category 3 includes peer-reviewed journals that are part of IDEAS and RePec files.
+Category 3 includes peer-reviewed journals that are part of emerald abstract accredited journals.
+Category 3 includes peer-reviewed journals that are part of science direct accredited journals.
+Journals that fall under Category 3 are considered comparable to international journals.
+Category 4 includes peer-reviewed journals with good evaluation using specific criteria.
+The first criterion for Category 4 is the composition and qualifications of the Editorial Board members.
+The second criterion for Category 4 is the recruitment and qualifications of the peer reviewers/external referees.
+The third criterion for Category 4 is the type of refereeing system adopted.
+The fourth criterion for Category 4 is the overall appearance, timeliness, and regularity of release of the journal.
+Journals that fall under Category 4 are considered comparable to national journals.
+National University provides incentives for research output.
+The incentives depend on the categories of research output.
+The following categories are qualified for Research Incentives:
+Conference Presentation Subsidy is qualified for Research Incentives.
+Journal Publication Subsidy is qualified for Research Incentives.
+Publication Incentive for Journal articles is qualified for Research Incentives.
+Publication Incentive for Conference Proceedings indexed in SCOPUS is qualified for Research Incentives.
+IP Incentive for Invention Disclosed, Filed and Granted is qualified for Research Incentives.
+The Journal of Sciences, Technology, and Arts Research is the official publication of National University in the Philippines.
+The Journal of Sciences, Technology, and Arts Research is abbreviated as JSTAR.
+JSTAR is a peer-reviewed open-access journal.
+JSTAR is published annually by the Center for Research.
+The Journal aims to provide a venue for students to share their research works, empirical studies, and theories related to science, technology, and arts.
+The Journal aims to provide a venue for faculty members to share their research works, empirical studies, and theories related to science, technology, and arts.
+The Journal aims to provide a venue for non-teaching personnel to share their research works, empirical studies, and theories related to science, technology, and arts.
+The Journal aims to provide a venue for industry practitioners to share their research works, empirical studies, and theories related to science, technology, and arts.
+Articles in JSTAR are published in English or Filipino.
+The Journal is indexed in Google Scholar.
+The Journal has an ISSN of 2467-5776 for the Print Version.
+The Journal has an ISSN of 2467-625X for the Online Version.
+The Center for Research disseminates a Call for Paper (CFP) through an email blast.
+The email blast uses the NU email domain.
+The email blast is sent to all students, faculty members, and non-teaching personnel every January or February of each year.
+The JSTAR research template is attached to the email.
+A CFP is also posted at NU’s Official Website.
+The peer-review process starts after the deadline of the CFP.
+The Editor-in-Chief checks the papers submitted for appropriateness towards the Journal.
+The Editor-in-Chief checks the papers submitted for novelty.
+The Editor-in-Chief checks the papers submitted for timeliness.
+The Editor-in-Chief can reject the paper without being reviewed further.
+Articles that are accepted by the Editor-in-Chief are submitted to at least two invited reviewers.
+The invited reviewers may reject or accept the invitation to review, depending on their expertise and possible conflict of interest.
+If a reviewer agrees to check the paper, the reviewer is given two to three weeks to review the article.
+Once finished, the reviewed article is sent back to the authors for the needed revision.
+A deadline will be given to the authors to modify the paper.
+Upon completion, the revised paper is submitted to the reviewers for final checking.
+If all required revisions are met, the authors are notified of the acceptance of the article for publication.
+A print copy of the publication is released every September or October of the same year.
+The policy shall apply to NU Philippines.
+Research activities will aim at fulfilling the NU Vision.
+Research activities will aim at fulfilling the NU Mission.
+Research activities will aim at fulfilling the NU Core Values statements.
+Research activities will aim at fulfilling the Strategic Objectives.
+Research activities will aim at fulfilling the aspiration of the country.
+NU will take into account the goals established by appropriate government agencies in establishing its research priorities.
+NU will take into account the priorities established by appropriate government agencies in establishing its research priorities.
+NU will establish research priorities for both regional concerns and national concerns.
+The faculty members and ASP shall be free to research any area.
+The faculty members and ASP must adhere to NU’s ethical principles and values while conducting research.
+NU faculty members and ASP will strive for excellence in international research.
+NU faculty members and ASP will strive for excellence in national research.
+NU faculty members and ASP will strive for excellence in regional research.
+NU faculty members and ASP recognize the value of regionally recognized research.
+NU faculty members and ASP recognize the value of nationally recognized research.
+NU faculty members and ASP recognize the value of internationally recognized research.
+The research conducted by NU faculty members and ASP is directed for the benefit of the country.
+NU shall invest in resources needed for all types of research covered by this set of policies.
+NU shall give equal emphasis on the time allocation for all types of research covered by this set of policies.
+The NU research grants are also known as research seed grants.
+The NU research grants are open to full-time faculty members as project proponents.
+The NU research grants are open to regular ASP as project proponents.
+Part-time faculty members can be co-proponents for the NU research grants.
+Part-time faculty members must have a strong commitment to NU.
+Part-time faculty members must have a reasonable expectation of continued employment at NU.
+NU research grants are granted or allocated to NU faculty members and ASP on the basis of merit.
+NU research grants are designed to kick-start new research projects.
+Research projects should not continue to rely upon NU research grants as their principal sources of funding.
+Researchers are expected to access grants from non-university sources.
+Non-university sources include international grant sources.
+Non-university sources include corporate grant sources.
+Non-university sources include private grant sources.
+A Call for Proposal (CFP) is scheduled every academic term for projects intended to be implemented in the succeeding term(s).
+It is mandatory that any NU employee that will be part of any research project should attend a Research Orientation.
+The Research Orientation is scheduled at least a month prior to the CFP.
+The Research Orientation ensures that those involved with research projects are aware of the requirements.
+The processes of preparing a proposal include Line Item Budget, Work Plan, and all other deliverables.
+The Certificate of Attendance must be an attachment to the IFRP Form.
+The research project duration can be from one academic term for short-term projects up to three years for multiple phased long-term projects.
+Deliverables for long-term projects are determined per term.
+The NU research grants include a funding allocation value of Php 50,000 per project.
+More complex projects may have a higher funding allocation on a case-to-case basis approval.
+Funding allocations may also be set aside for special research projects identified by the Vice-President for Research and Development.
+The teaching/working hours load is nine units teaching load per research project.
+An 18-unit load may be given to more complex studies such as quasi-experimental and true experimental research and EFRP projects.
+ASP can apply for a once a month research leave for the whole duration of the project.
+The research leave can be in or out of campus.
+All research-related official leave of any employee must follow the OB Application Process.
+These grants are mainly for the support of primary data collection, such as surveys and interviews.
+The grants also cover travel expenses, photocopy of manuscripts or journals, purchase of books, and other research consumables.
+The grants cover experimental material supplies, remuneration for research assistants if needed, specialized software, hardware maintenance, rentals, and others.
+Publications resulting from research supported by the NU Research grants must acknowledge the support of the NU.
+The acknowledgment of support must be included in the author's address.
+Projects that qualify for Patents and Utility Model must secure an IP Application prior to public disclosure.
+The funding for research is P75,000.00 per researcher per year.
+The amount constitutes actual research funding up to P50,000.00, load, research seminars, research incentives, and publication funding.
+NU actively encourages faculty researchers to access external research grants.
+External research grants can come from official government sources, commercial/corporate funding, and research trusts from other academic institutions.
+External research grants can be in the form of individual or joint institutional research projects.
+External grants reflect external recognition of research competence.
+External grants enhance both the researcher’s reputation and the NU’s research standing.
+To enhance the chances of securing grants, the National University researchers are encouraged to establish regional research networks.
+To enhance the chances of securing grants, the National University researchers are encouraged to establish national research networks.
+To enhance the chances of securing grants, the National University researchers are encouraged to establish international research networks.
+To enhance the chances of securing grants, the National University researchers are encouraged to collaborate with their local counterparts.
+To enhance the chances of securing grants, the National University researchers are encouraged to collaborate with their international counterparts.
+The National University shall charge overhead at specific rates.
+The percentage distribution of overhead rates for grants from governments and international organizations is 10%.
+The percentage distribution of overhead rates for research contracts from industrial or business partners, if the results are to be published in an open forum, is 10%.
+The percentage distribution of overhead rates for contracts from industrial or business partners, if the results cannot be published in an open forum because they are considered proprietary and fully owned by the sponsor, is 5%.
+The overhead rate is negotiable if the sponsor has a pre-existing policy of lower overhead rates.
+The Center limits the leadership and membership of researchers in research work to ensure that research is completed on schedule.
+All full-time faculty member researchers are limited to leading a maximum of two research grants or projects at any one time.
+All full-time faculty member researchers are limited to participating in a maximum of two further projects as members of a research team.
+Holders of professorial chairs in the college undertaking cluster research may participate in as many research grants and projects as they can manage.
+Holders of professorial chairs in the college undertaking cluster research may participate in as many research grants and projects as may be allowed by their full-time dedication to high-quality research work.
+The levels of participation of holders of professorial chairs must not jeopardize the expected high quality of output of the college.
+The National University recognizes externally-refereed publications as concrete evidence of quality research output.
+Externally-refereed publications include articles or scientific papers in national and international journals of scholarly repute.
+Externally-refereed publications include articles or scientific papers in refereed open-access web-based academic journals.
+The National University recognizes monographs as concrete evidence of quality research output.
+The National University recognizes books as concrete evidence of quality research output.
+The National University recognizes chapters in books as concrete evidence of quality research output.
+The National University recognizes published conference proceedings as concrete evidence of quality research output.
+The National University recognizes research work presented in external international conferences as concrete evidence of quality research output.
+The National University recognizes research work presented in external national conferences as concrete evidence of quality research output.
+The National University recognizes research work presented in seminars as concrete evidence of quality research output.
+The National University recognizes research work presented in workshops as concrete evidence of quality research output.
+The National University recognizes in-house research working papers as concrete evidence of quality research output.
+The National University recognizes technical reports as concrete evidence of quality research output.
+The National University recognizes professional society publications as concrete evidence of quality research output.
+The National University recognizes publication in University Academic Journals as concrete evidence of quality research output.
+Research-based creative works include exhibitions and artistic performances.
+Research output must be able to succeed in attracting external research funding.
+Invention Disclosures must be filed after submission.
+Proof of community or industry adaptors is required.
+Supervision of research graduate students is necessary for the completion of their degrees.
+Researchers are obliged to complete all assigned and agreed upon research.
+Researchers are obliged to publish findings of such research as widely as possible.
+Researchers are obliged to submit Invention Disclosures.
+Research is supported by funds from Northwestern University (NU).
+Researcher recipients are expected to return the funding to Northwestern University by way of an output from the research conducted.
+Northwestern University is obliged to support and assist researchers in meeting all their research obligations.
+Publication of research should be current and of high quality.
+There should be a minimum amount of delay between the end of any research and the submission for publication of its findings.
+Any delay in submission for publication of research findings should not normally exceed a period of 12 months.
+Invention Disclosures must be submitted at least one month from project completion.
+Intellectual Property (IP) filing must be done within a period of 12 months.
+Failure of researchers to complete their research would mean payment of the total amount released from the unliquidated research grant.
+Payment for failure to complete research may occur through salary deduction or an equivalent units overload on succeeding terms.
+A written letter must be endorsed by the Dean or Director for payment arrangements.
+The written letter must be approved by the Director of Human Resources.
+The written letter must stipulate the academic term or terms that the payment be made by way of overload teaching.
+The University recognizes the necessity to provide policies with specific goals.
+The goals of the policies include creating an environment that encourages the generation of Intellectual Property by NU Philippines.
+The goals of the policies include motivating the development and wide dissemination of the products of research, authorship, and inventions by the University community.
+The University provides appropriate financial rewards, recognition, and administrative assistance to creators of intellectual property.
+This policy applies to intellectual property created by members of NU Philippines.
+This policy applies to other persons who make substantial use of University resources.
+The policy encompasses all forms of intellectual property as indicated in the Intellectual Property Code of the Philippines (RA 8293).
+Commissioned Work is defined as work commissioned or ordered in writing by the University from a Member of the University.
+Copyrightable Work is defined as any library or artistic work, whether original or derivative, which has been done in any tangible form of expression.
+Copyrightable Work is enumerated in Sec. 172 of the Intellectual Property Code of the Philippines.
+Creator is defined as any Member of the University whose creative activity results in an item of intellectual property.
+Externally Sponsored Work is defined as work conducted under an agreement between an external sponsor and the University.
+Faculty is defined as any person hired to render teaching services.
+Faculty may be hired on a full-time basis, in which case the faculty member is expected to render forty hours of service per week.
+Faculty may be hired on a part-time basis, in which case the faculty member's hours of service are dependent on the exigencies and needs of the University.
+Intellectual property is defined as any property defined as such by the Intellectual Property Code of the Philippines (RA 8293).
+Intellectual property consists of copyright and related rights, trademark and service marks, geographic indications, industrial designs, patents, layout designs of integrated circuits, and protection of undisclosed information.
+Internally Sponsored Work is work conducted by a Member of the University or which entailed substantial use of University facilities.
+An Invention is a novel creation, discovery, idea, or device that may be patented under the law.
+A Member of the University is any full-time or part-time faculty, staff, or student engaged in a creative activity.
+A Member of the University makes substantial use of University resources.
+Net Revenue is gross income received from the commercialization of the Intellectual Property less expenses incurred by the University.
+The expenses are in connection with the administration, protection, and commercialization of the Intellectual Property.
+A Patent is a statutory monopoly that protects the owner against unlicensed use of the patented product or process or any improvement thereof.
+A Patentable Invention is any technical solution of a problem in any field of human activity.
+A Patentable Invention is new, involves an inventive step, and is industrially applicable.
+Scholarly or Pedagogical Works are copyrightable works created for traditional academic purposes.
+Examples of Scholarly or Pedagogical Works include scholarly books, instructional materials, research articles, research monographs, student theses, and dissertations.
+Examples of Scholarly or Pedagogical Works also include novels, poems, films, videos, musical compositions and performances, dramatic works and performances, and visual works of art.
+Staff is any employee of the University, other than faculty, whether full-time or on part-time contractual status.
+A Student is any full-time or part-time graduate student enrolled in any College of the University.
+Substantial Use of University Facilities is extensive unreimbursed use of major University laboratory, studio, or computational facilities, or human resources.
+A Trademark is any visible sign capable of distinguishing the goods of an enterprise.
+A Service Mark is any visible sign capable of distinguishing the services of an enterprise.
+University Resources are resources available to a Member of the University or a person affiliated with the University.
+A Start-up is any person or entity registered in the Philippines which aims to develop an innovative product, process, or business model as per RA 11337, The Innovative Startup Act.
+A person refers to a natural person who is a Filipino citizen or foreign national.
+An entity refers to a juridical person registered in the Philippines, including but not limited to, sole proprietor, company, partnership, joint venture, cooperative, or association.
+The creator of any intellectual property that is or might be owned by the University under this policy shall make prompt written disclosure of his/her work to the Director of the Center.
+The creator shall execute any document deemed necessary to enable the University to file patent applications and applications for copyright negotiation when appropriate.
+Disclosure shall be made prior to submission of the Intellectual Property for publication.
+Disclosure shall be made prior to release of the Intellectual Property to the public domain.
+Disclosure shall be made prior to attempt to license, distribute, or manufacture the Intellectual Property commercially.
+Authority and responsibility for this policy shall reside with the CentIE.
+The CentIE includes administration of the policy to an individual or office.
+All trade marks, emblems, logos, and other marks in the goods and services that the University offers are owned by the National University.
+The copyright of authors’ works, which are not funded by the National University, is owned by the authors.
+The National University shall own the rights to copyright when the work is funded by the University partially or fully.
+The National University shall own the rights to copyright when the work is commissioned by the University.
+The National University shall own the rights to copyright when the work author receives any form of remuneration or allowance in completing the work.
+The National University shall own the rights to copyright when the author expressly transferred the rights to the University.
+The author shall execute a deed of assignment when transferring rights to the University.
+When the work is part of an externally funded project, the ownership of copyright shall be according to the terms stipulated in the agreement between the author and the third party.
+The copyright of students’ works, which are not funded by the National University and are part of their course work, is owned by the students.
+If the students’ work was created when the student was the recipient of financial support from the University, the Intellectual Property shall be owned by the University except for thesis/dissertation.
+In cases of collaboration between students and faculty members, the two parties shall have an agreement regarding task assignment, intellectual property rights, and royalty prior to the commencement of work.
+Copyrightable Work, other than scholarly or pedagogical work, and inventions created by an employee of the University shall be owned by the University.
+Examples of Copyrightable Work subject to this provision include personnel manuals.
+Examples of Copyrightable Work subject to this provision include written policies.
+Examples of Copyrightable Work subject to this provision include administration handbooks.
+Examples of Copyrightable Work subject to this provision include public relations materials.
+Examples of Copyrightable Work subject to this provision include audio and video recordings of University events.
+Examples of Copyrightable Work subject to this provision include University Web pages.
+The patent of authors’ works is owned by the authors except in conditions listed in item 2 below.
+National University shall own the rights to patent in certain conditions.
+The first condition for National University to own patent rights is when the invention is produced as part of the inventor’s regular duties.
+The second condition for National University to own patent rights is when the invention is funded by the University partially or fully.
+The third condition for National University to own patent rights is when the invention is produced making substantial use of the University’s resources.
+The fourth condition for National University to own patent rights is when the invention is commissioned by the University.
+The fifth condition for National University to own patent rights is when the inventor receives any form of remuneration or allowance in completing the work.
+The sixth condition for National University to own patent rights is when the inventor expressly transferred the rights to the University.
+In the case of the sixth condition, the inventor shall execute a deed of assignment.
+When the invention is part of an externally funded project, the patent rights shall be according to the terms stipulated in the agreement between the author and the third party.
+The patent rights of students’ inventions which are not funded by National University and are part of their coursework are owned by the students.
+If the students’ invention was created when the student was the recipient of financial support from the University, the Intellectual Property shall be owned by the University except for thesis/dissertation.
+In cases of collaboration between students and faculty members, the two parties shall have an agreement regarding task assignment, intellectual property rights, and royalty prior to the commencement of work.
+Patentable work and inventions created by an employee of the University within the scope of his/her employment shall be owned by the University.
+Net revenue obtained from commercialization of University-owned Intellectual Property shall be distributed subject to the terms of any sponsored work.
+50% of the profits are allocated to the Creator(s).
+50% of the profits are allocated to the University.
+When commercialization funding is from an external source, the parties must agree on a case-to-case basis profit-sharing scheme.
+The University’s share may be distributed among the units of the University responsible for the creation and commercialization of the Intellectual Property.
+The distribution of the University’s share is deemed appropriate by the President.
+Any questions of interpretation of claims arising out of or relating to this policy shall be settled by a specific procedure.
+Disputes as to ownership rights of Intellectual Property under this policy shall be settled by a specific procedure.
+The issue must first be submitted in the form of a letter to the Vice President for Research and Development (VPRnD).
+The letter must set forth the grievance or issue to be resolved.
+The Vice President for Research and Development (VPRnD) may convene a Panel to study the matter.
+The Panel shall submit its recommendation to the Vice President.
+The Vice President shall decide on the matter within 60 days from the submission of the letter.
+The decision of the Vice President may be appealed to the President.
+The decision of the President shall be final.
+Any person who violates any of the policies stated herein shall be subjected to disciplinary action.
+Disciplinary action shall be in accordance with the provisions in the Research Manual, Employee Manual, Faculty Manual, or other school policies on employment.
+Amendments to this policy may be proposed by any Member of the University.
+Amendments shall be approved by the Board of Directors.
+Amendments require the recommendation of the President.
+The President of the University may waive or modify any or all provisions of these policies on meritorious cases.
+The waiving of Intellectual Property policy may be executed by the President on his own initiative.
+The President may also execute the waiving of Intellectual Property policy in consultation with the University Research Ethics Committee.
+All University policies inconsistent with the policies contained herein are repealed.
+The purpose of the authorship policy is to guide authors on sequencing and listing authors in a collaborative project.
+The authorship policy aims to minimize authorship disputes if not eradicate them.
+The authorship policy applies to all authors affiliated to National University Philippines.
+The authorship policy is implemented through the National University Center for Research.
+The authorship policy should be reviewed periodically.
+The authorship policy should be reviewed to adapt to changes in scholarly publications.
+Authorship refers to an explicit assigning of responsibility and attributing credit for intellectual work.
+Planning and Management refers to the preparatory stage before conducting the actual research project.
+Planning and Management covers preparation of timeline, budget, and instruments.
+Executing refers to the actual implementation of the research project.
+Analyzing refers to the analysis of data using quantitative and qualitative methods.
+Interpreting refers to the explanation of results after analysis.
+Writing refers to the actual writing of the final paper for publication.
+Before the start of the research project, all authors should write a letter of understanding specifying the responsibilities of all parties.
+A Term of Reference must be attached to the letter of understanding.
+All authors should be involved in the preparation of the manuscript.
+The preparation of the manuscript includes drafting, reviewing, and approving.
+Upon completion of a research project, authors are encouraged to use a table in identifying the extent of contribution and order of authorship.
+The extent of contribution and order of authorship should be decided by all authors.
+The scoring system includes the following categories: Moderate with a score of 10, Major with a score of 20, Executing with a score of No 0, Minor with a score of 5, Analyzing with a score of No 0, Interpreting with a score of No 0, and Writing with a score of No 0.
+The total score for the categories listed is 100.
+Anyone achieving a total of 25 points in the co-authorship scoring system shares authorship.
+The order of authorship is decided according to the total scores obtained.
+In case of authorship disputes, it is highly suggested that these disputes be settled at the level of authors.
+Researchers are expected to publish their work guided by university research ethics guidelines.
+Researchers are expected to publish their work guided by other relevant guidelines.
+NU works to make research sponsors understand that researchers must have academic freedom.
+Every effort must be made to inform sponsors in advance of any potential publication or dissemination of research findings.
+Informing sponsors in advance gives them adequate time and accurate information to protect any arising intellectual property.
+Informing sponsors in advance allows them to plan their own public relations together with NU.
+Media publicity is increasingly important to industry, civil society organizations, and NU itself.
+Researchers should adhere to guidelines when publishing or disseminating their research findings.
+Researchers should make every effort to ensure that their research or research findings are peer-reviewed before they are published, publicized, or disseminated.
+If research is placed in the public realm before any peer review has been undertaken, this must be made clear by the researchers.
+Researchers should properly and expressly acknowledge co-authors or collaborators in any publications.
+Researchers should properly and expressly acknowledge the sources of funding in any publications.
+Principal researchers of every research project are responsible for generating an annual research report.
+The annual research report is submitted to the Center for Research for approval.
+The Center for Research acts as the secretariat to the NU Research and Development Council.
+The Center for Research is responsible for collating all approved reports into a University Annual Research Report.
+The University Annual Research Report is circulated to the entire NU Philippines.
+The University Annual Research Report informs the public about research in NU.
+The University Annual Research Report encourages the pursuit of research excellence.
+Publication of detailed annual research income and expenditure allows for transparency of all research funds.
+Publication of detailed annual research income and expenditure allows for accountability of all research funds.
+NU shall recognize research excellence through academic promotion.
+NU shall recognize research excellence through annual research recognition.
+NU recognizes research excellence in the following categories: publications in ISI or Scopus-indexed journals.
+NU recognizes research excellence in the following categories: completion of internally funded projects.
+NU recognizes research excellence in the following categories: citations.
+NU recognizes research excellence in the following categories: IP filed and granted.
+NU recognizes research excellence in the following categories: special awards.
+NU is committed to sponsoring research projects for external recognition.
+NU is committed to nominating researchers for external recognition.
+The University Ethics Review Committee (UERC) is composed of the CentRES Director as chair.
+The University Ethics Review Committee (UERC) includes members of the URDC who are not part of the college of the member involved in the investigation.
+The University Ethics Review Committee (UERC) includes a tenured full-time faculty researcher from the college of the member involved in the investigation.
+The University Ethics Review Committee (UERC) includes an external panel.
+The University Ethics Review Committee (UERC) reviews and approves the ethical aspects of research involving human and/or animal subjects.
+The University Ethics Review Committee (UERC) operates in accordance with the General Ethical Guidelines for University Research.
+The interests and rights of those involved or affected by the research must be appropriately safeguarded.
+The principle of voluntary participation and withdrawal of participation at any time by the participants must be respected.
+The researchers must ensure that the legislative requirements on human rights and confidentiality or anonymity of participants have been met.
+Anonymity is a stronger guarantee of privacy.
+If the researchers must know the names of participants, this information cannot be released to the public.
+The researchers must explain in writing how the participants’ right to privacy will be safeguarded.
+The researchers must secure informed consent before the work begins.
+The researchers must not expose the participants to risk of harm as a consequence of that participation.
+Harm includes both physical and psychological offenses against the sensibilities of the participants.
+Researchers must ensure that the research participants are informed about the procedures and possible risks before they sign the consent form.
+Signed consent forms must be presented on demand.
+In the case of children, the parent or guardian can give the informed consent.
+The researchers must maintain integrity and develop the highest possible standards of research practices.
+Research practices include research design, data collection, storage, analysis, interpretation, and reporting.
+Reporting may include providing the information back to the community from which the information was gathered depending on the sensitivity of the research.
+The researchers must be aware of the potential consequences of the research to various stakeholders.
+The researchers must submit their proposal to the Research Ethics Sub-Committee for approval when the situation calls for it.
+The researchers must submit their proposal to other appropriate external professional ethical committees for approval when the situation calls for it.
+Any significant change to the procedures after the proposal is approved must be submitted to the Research Ethics Sub-Committee for re-approval.
+The Research Ethics Sub-Committee shall consist of three members.
+The three members of the Research Ethics Sub-Committee include the Director of the Center for Research.
+Two other members of the Research Ethics Sub-Committee shall be appointed by the URDC.
+Researchers should observe research integrity at all times.
+Researchers should observe research integrity whatever type of research activity they are engaged in.
+Types of research activities include data gathering and analysis.
+Types of research activities include application for funding and grants.
+Types of research activities include publication.
+Researchers should acknowledge and/or include colleagues who have directly contributed to the work.
+Researchers should acknowledge and/or include colleagues who have indirectly contributed to the work.
+All researchers should actively practice emphasizing high quality research.
+All researchers should actively practice undertaking appropriate research supervision.
+All researchers should actively practice maintaining accurate and detailed research activity records and results.
+All researchers should actively practice being ethical about the objectives of one’s research.
+All researchers should actively practice being open to and cooperative with one’s fellow researchers and others.
+All researchers should actively practice being committed in publishing and further developing or commercializing one’s research findings.
+Researchers are accountable to society.
+Researchers are accountable to their respective professions.
+Researchers are accountable to communities where the research is taking place.
+Researchers are accountable to universities where the research is taking place.
+Researchers are accountable to the staff involved in the research.
+Researchers are accountable to the students involved in the research.
+Researchers are accountable to sponsors funding the research.
+At the beginning of a research project, researchers are required to declare in writing potential conflicts of interest.
+At the end of a research project, researchers are required to disclose any real financial or professional conflict of interest in writing.
+Areas of real or potential conflict of interests include researchers having an existing financial interest in the outcome of the research.
+Areas of real or potential conflict of interests include researchers having a potential financial interest in the outcome of the research.
+Areas of real or potential conflict of interests include researchers likely gaining any private benefit that is dependent on the research outcome.
+Areas of real or potential conflict of interests include a researcher’s professional or personal gain arising from the research outcome may be more than usual or normal in a specific research undertaking.
+The following actions violate commonly accepted principles and practices of research upheld by the general academic community.
+Such actions are serious offenses that Northwestern University considers as research misconduct.
+Research misconduct calls for strict disciplinary action.
+Fabrication of data involves dishonesty in reporting results.
+Fabrication of data includes the fabrication of data, improper adjustment of results, and gross negligence in collecting or analyzing data.
+Fabrication of data also includes selective reporting or omission of data for deceptive purposes.
+Falsification of research involves deliberately misrepresenting research.
+Falsification of research includes misrepresenting the progress of research.
+Falsification of research includes making grossly exaggerated claims of the significance of research results.
+Falsification of research includes falsely claiming priority by willfully ignoring prior relevant reports in research literature.
+Plagiarism involves taking credit for someone else’s work and ideas.
+Plagiarism includes stealing others’ results or methods.
+Plagiarism includes omitting acknowledgment of significant contributions received from others.
+Plagiarism includes copying the writing of others without proper acknowledgment.
+Plagiarism includes falsely taking credit for the work and ideas of others.
+Failure to acknowledge involves willfully ignoring and failing to acknowledge the source of materials used in laboratory research.
+Failure to acknowledge includes failing to acknowledge significant human assistance.
+Abuse of confidentiality involves taking or releasing ideas and data that were shared with the legitimate expectation of confidentiality.
+Abuse of confidentiality includes the use of confidential results without permission of other researchers or previous employers.
+Abuse of confidentiality includes stealing ideas from others’ grant proposals, award applications, or manuscript publication.
+Dishonesty in publication involves knowingly publishing material that will mislead readers.
+Dishonesty in publication includes misrepresenting data, particularly its originality.
+Dishonesty in publication includes misrepresenting research progress.
+Dishonesty in publication includes adding the names of other authors without their permission.
+Dishonesty in publication includes including honorary authorships or excluding a major collaborator as co-author of the paper.
+Misuse of funds involves failure to spend research funds in ways consistent with the goals stated in the relevant contract documents.
+Misuse of funds includes failure to maintain clear and proper records of expenditures.
+Mistreatment of human research subjects involves failing to inform individuals and communities of the results of research in which they have been involved as subjects.
+Researchers must supply a form of report to individuals or the community that was the subject of research.
+Researchers mistreat their research subjects if they fail to obtain informed consent from them.
+Researchers must protect the rights of their research subjects regarding their privacy, anonymity, and confidentiality of information sources.
+Failure to report known incidents of serious research misconduct involves covering up or otherwise failing to report major offenses of research known to oneself.
+Retaliation against informants involves taking punitive action against an individual for having reported alleged major research offenses.
+For a group research project, leaders are responsible for the supervision of the whole research process.
+The supervision of the whole research process includes designing the research project.
+The supervision of the whole research process includes preparing funding applications.
+The supervision of the whole research process includes designing experimental or research protocols.
+The supervision of the whole research process includes analyzing and recording data.
+The supervision of the whole research process includes publishing and disseminating results.
+The project leader is responsible for the appointment of suitably qualified research assistants.
+The project leader is responsible for the supervision of the research assistants in the course of the research.
+The OVPRnD advocates online submission and approval of documents.
+The purpose of online submission and approval of documents is to facilitate timely processing of proposals and requests.
+Additional guidelines will be adopted when physical or manual processing is eventually removed.
+The same guidelines for IFRP P processing will be observed.
+IFRP P processing will be done electronically through the attachments of eSignatures.
+In extreme circumstances when electronic processing becomes impossible, email threads are acceptable.
+Funds requests must be coursed through the lead proponent.
+All necessary reporting and documentation must be complied with.
+Reporting and documentation may be done electronically.

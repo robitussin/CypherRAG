@@ -1,0 +1,303 @@
+question: What is the primary purpose of the National University Research Manual?
+real_answer: The Manual provides an overview of National University's policies, processes, and regulations for the conduct of research, aiming to familiarize constituents with important information about Research and Innovation, and provide guidelines for efficient and ethical research within NU Manila and other NU campuses.
+model_answer: ""
+cypher_query: cypher
+MATCH (w)-[r1]-(x)
+WHERE (
+    toLower(r1.metadata) =~ '^.*\\b(national university research manual)\\w*\\b.*$' OR
+    toLower(r1.description) =~ '^.*\\b(national university research manual)\\w*\\b.*$'
+)
+RETURN DISTINCT r1.metadata, r1.description
+
+======================
+question: What is the reference number of this Research Manual?
+real_answer: The reference number of the Research Manual is RAD-RS-D-M-001.
+model_answer: I don't know.
+
+cypher_query: cypher
+MATCH (w)-[r1]-(x)
+WHERE (
+    toLower(r1.metadata) =~ '^.*\\b(research manual)\\w*\\b.*$' OR
+    toLower(r1.description) =~ '^.*\\b(research manual)\\w*\\b.*$'
+)
+RETURN DISTINCT r1.metadata, r1.description
+
+======================
+question: What are the three university-wide research centers established by National University?
+real_answer: The three university-wide research centers are the Center for Research, the Center for Innovation and Entrepreneurship, and the Center for Resilient Philippines.
+model_answer: 
+cypher_query: cypher
+MATCH (w)-[r1]-(x)
+WHERE (
+    toLower(r1.metadata) =~ '^.*\\b(research center)\\w*\\b.*$' OR
+    toLower(r1.description) =~ '^.*\\b(research center)\\w*\\b.*$'
+)
+AND (
+    toLower(r1.metadata) =~ '^.*\\b(national university)\\w*\\b.*$' OR
+    toLower(r1.description) =~ '^.*\\b(national university)\\w*\\b.*$'
+)
+RETURN DISTINCT x.metadata, x.description
+LIMIT 3
+
+======================
+question: What is the vision of the Center for Entrepreneurship?
+real_answer: The Center for Entrepreneurship is envisioned to be an inclusive, realistic, and collaborative community.
+model_answer: The vision of the Center for Entrepreneurship describes the goals and aspirations of the community associated with the Center for Entrepreneurship.
+
+cypher_query: MATCH (w)-[r1]-(x)
+WHERE (
+    toLower(r1.metadata) =~ '^.*\\b(center for entrepreneurship)\\w*\\b.*$' OR
+    toLower(r1.description) =~ '^.*\\b(center for entrepreneurship)\\w*\\b.*$'
+)
+RETURN DISTINCT r1.metadata, r1.description
+
+======================
+question: What are some of the core competencies identified by the Center for Resilient Philippines (CRP)?
+real_answer: The core competencies of the CRP include disaster resilience from social/political, economic, and physical sciences perspectives; new technology-enabled mechanisms for resilient community planning and design; development of innovative national and local resilience policies; private sector engagement in disaster resilience; capacity building for disaster mitigation and reconstruction; networking with the academic community; and community engagement and participation in reconstruction.
+model_answer: ""
+cypher_query: cypher
+MATCH (w)-[r1]-(x)
+WHERE (
+    toLower(r1.metadata) =~ '^.*\\b(core competencies)\\w*\\b.*$' OR
+    toLower(r1.description) =~ '^.*\\b(core competencies)\\w*\\b.*$'
+)
+AND (
+    toLower(x.metadata) =~ '^.*\\b(center for resilient philippines)\\w*\\b.*$' OR
+    toLower(x.description) =~ '^.*\\b(center for resilient philippines)\\w*\\b.*$'
+)
+RETURN DISTINCT r1.metadata, r1.description
+
+======================
+question: Name at least three research goals of the National University Research Agenda.
+real_answer: Some research goals include: to recruit, develop, and retain faculty researchers; to provide proactive service to the academic community on research-related endeavors; to assist faculty researchers in publishing outputs in top international journals; to obtain and manage externally funded research projects; and to foster collaboration with local and international higher education institutions.
+model_answer: I don't know.
+
+cypher_query: cypher
+MATCH (w)-[r1]-(x)
+WHERE (
+    toLower(r1.metadata) =~ '^.*\\b(national university research agenda)\\w*\\b.*$' OR
+    toLower(r1.description) =~ '^.*\\b(national university research agenda)\\w*\\b.*$'
+)
+RETURN DISTINCT r1.metadata, r1.description
+
+======================
+question: What are some of the Research Themes outlined in the National University Research Agenda?
+real_answer: Research Themes include Food, Nutrition, and Health; Emerging Industries on the Fourth Industrial Revolution; Development of vaccines and diagnostic kits using indigenous materials; Disaster risk management; Tourism and Pollution control; Climate change; Sports Technology; Education and learning innovations; and Business sophistication.
+model_answer: ""
+cypher_query: cypher
+MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '^.*\\b(national university research agenda)\\w*\\b.*$' OR
+    toLower(r1.description) =~ '^.*\\b(national university research agenda)\\w*\\b.*$'
+)
+AND (
+    toLower(r2.metadata) =~ '^.*\\b(research theme)\\w*\\b.*$' OR
+    toLower(r2.description) =~ '^.*\\b(research theme)\\w*\\b.*$'
+)
+RETURN DISTINCT r1.metadata,r1.description,r2.metadata,r2.description
+
+======================
+question: Which colleges or campuses have their research agenda defined in the manual?
+real_answer: The manual defines the research agendas for the College of Education, Arts and Sciences (CEAS), College of Business and Accountancy (CBA), College of Architecture (COA), College of Engineering (COE), College of Computing and Information Technologies (CCIT), College of Allied Health (CAH), College of Dentistry (COD), and College of Tourism and Hospitality Management (CTHM).
+model_answer: ""
+cypher_query: cypher
+MATCH (w)-[r1]-(x)
+WHERE (
+    toLower(r1.metadata) =~ '^.*\\b(colleges|campuses)\\w*\\b.*$' OR
+    toLower(r1.description) =~ '^.*\\b(colleges|campuses)\\w*\\b.*$'
+)
+AND (
+    toLower(r1.metadata) =~ '^.*\\b(research agenda)\\w*\\b.*$' OR
+    toLower(r1.description) =~ '^.*\\b(research agenda)\\w*\\b.*$'
+)
+AND (
+    toLower(r1.metadata) =~ '^.*\\b(manual)\\w*\\b.*$' OR
+    toLower(r1.description) =~ '^.*\\b(manual)\\w*\\b.*$'
+)
+RETURN DISTINCT r1.metadata,r1.description
+
+======================
+question: What is the Journal of Sciences, Technology, and Arts (JSTAR)?
+real_answer: JSTAR is the official, peer-reviewed, open-access publication of National University (Philippines), published annually by the Center for Research, providing a venue for students, faculty, non-teaching personnel, and industry practitioners to share research works, empirical studies, and theories related to science, technology, and arts.
+model_answer: ""
+cypher_query: cypher
+MATCH (w)-[r1]-(x)
+WHERE (
+    toLower(r1.metadata) =~ '^.*\\b(journal of sciences technology and arts)\\w*\\b.*$' OR
+    toLower(r1.description) =~ '^.*\\b(journal of sciences technology and arts)\\w*\\b.*$'
+)
+RETURN DISTINCT r1.metadata, r1.description
+
+======================
+question: According to the Authorship Policy, what is the minimum total points an individual needs in the co-authorship scoring system to share authorship?
+real_answer: Anyone achieving a total of 25 points in the co-authorship scoring system shares authorship.
+model_answer: ""
+cypher_query: cypher
+MATCH (w)-[r1]-(x)
+WHERE (
+    toLower(r1.metadata) =~ '^.*\\b(authorship policy)\\w*\\b.*$' OR
+    toLower(r1.description) =~ '^.*\\b(authorship policy)\\w*\\b.*$'
+)
+AND (
+    toLower(x.metadata) =~ '^.*\\b(co-authorship scoring system)\\w*\\b.*$' OR
+    toLower(x.description) =~ '^.*\\b(co-authorship scoring system)\\w*\\b.*$'
+)
+RETURN DISTINCT x.metadata, x.description
+
+======================
+question: What is the current budget allocated for the Center for Innovation and Entrepreneurship for the upcoming fiscal year?
+real_answer: ""
+model_answer: ""
+cypher_query: cypher
+MATCH (w)-[r1]-(x)
+WHERE (
+    toLower(r1.metadata) =~ '^.*\\b(center for innovation and entrepreneurship)\\w*\\b.*$' OR
+    toLower(r1.description) =~ '^.*\\b(center for innovation and entrepreneurship)\\w*\\b.*$'
+)
+AND (
+    toLower(r1.metadata) =~ '^.*\\b(budget)\\w*\\b.*$' OR
+    toLower(r1.description) =~ '^.*\\b(budget)\\w*\\b.*$'
+)
+RETURN DISTINCT r1.metadata, r1.description
+
+======================
+question: Who is the specific contact person for submitting research proposals for the College of Allied Health, including their email address and phone number?
+real_answer: ""
+model_answer: ""
+cypher_query: cypher
+MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '^.*\\b(college of allied health)\\w*\\b.*$' OR
+    toLower(r1.description) =~ '^.*\\b(college of allied health)\\w*\\b.*$'
+)
+AND (
+    toLower(r2.metadata) =~ '^.*\\b(research proposals)\\w*\\b.*$' OR
+    toLower(r2.description) =~ '^.*\\b(research proposals)\\w*\\b.*$'
+)
+AND (
+    toLower(r2.metadata) =~ '^.*\\b(contact person|grant coordinator|research administrator)\\w*\\b.*$' OR
+    toLower(r2.description) =~ '^.*\\b(contact person|grant coordinator|research administrator)\\w*\\b.*$'
+)
+RETURN DISTINCT y.name, y.email, y.phone
+
+======================
+question: What are the detailed procedures and forms required for intellectual property registration for a patent developed by a faculty member?
+real_answer: ""
+model_answer: ""
+cypher_query: cypher
+MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '^.*\\b(patent)\\w*\\b.*$' OR
+    toLower(r1.description) =~ '^.*\\b(patent)\\w*\\b.*$'
+)
+AND (
+    toLower(r2.metadata) =~ '^.*\\b(intellectual property registration)\\w*\\b.*$' OR
+    toLower(r2.description) =~ '^.*\\b(intellectual property registration)\\w*\\b.*$'
+)
+AND (
+    toLower(r1.metadata) =~ '^.*\\b(faculty member)\\w*\\b.*$' OR
+    toLower(r1.description) =~ '^.*\\b(faculty member)\\w*\\b.*$'
+)
+RETURN DISTINCT r1.metadata,r1.description,r2.metadata,r2.description
+
+======================
+question: What is the average duration of a research project from proposal submission to final dissemination of results?
+real_answer: ""
+model_answer: ""
+cypher_query: cypher
+MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '^.*\\b(research project)\\w*\\b.*$' OR
+    toLower(r1.description) =~ '^.*\\b(research project)\\w*\\b.*$'
+)
+AND (
+    toLower(r2.metadata) =~ '^.*\\b(proposal submission)\\w*\\b.*$' OR
+    toLower(r2.description) =~ '^.*\\b(proposal submission)\\w*\\b.*$'
+)
+AND (
+    toLower(r1.metadata) =~ '^.*\\b(final dissemination of results)\\w*\\b.*$' OR
+    toLower(r1.description) =~ '^.*\\b(final dissemination of results)\\w*\\b.*$'
+)
+RETURN DISTINCT (r1.end_date - r1.start_date) AS duration
+
+======================
+question: Are there any specific grants or funding opportunities available exclusively for student-led research initiatives?
+real_answer: ""
+model_answer: ""
+cypher_query: cypher
+MATCH (w)-[r1]-(x)
+WHERE (
+    toLower(r1.metadata) =~ '^.*\\b(grants|funding opportunities)\\w*\\b.*$' OR
+    toLower(r1.description) =~ '^.*\\b(grants|funding opportunities)\\w*\\b.*$'
+)
+AND (
+    toLower(r1.metadata) =~ '^.*\\b(student-led research)\\w*\\b.*$' OR
+    toLower(r1.description) =~ '^.*\\b(student-led research)\\w*\\b.*$'
+)
+AND (
+    toLower(r1.metadata) =~ '^.*\\b(available)\\w*\\b.*$' OR
+    toLower(r1.description) =~ '^.*\\b(available)\\w*\\b.*$'
+)
+RETURN DISTINCT r1.metadata,r1.description
+
+======================
+question: What is the protocol for handling research misconduct cases involving external collaborators?
+real_answer: ""
+model_answer: ""
+cypher_query: cypher
+MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '^.*\\b(research misconduct)\\w*\\b.*$' OR
+    toLower(r1.description) =~ '^.*\\b(research misconduct)\\w*\\b.*$'
+)
+AND (
+    toLower(r2.metadata) =~ '^.*\\b(external collaborators)\\w*\\b.*$' OR
+    toLower(r2.description) =~ '^.*\\b(external collaborators)\\w*\\b.*$'
+)
+AND (
+    toLower(r1.metadata) =~ '^.*\\b(protocol|procedure)\\w*\\b.*$' OR
+    toLower(r1.description) =~ '^.*\\b(protocol|procedure)\\w*\\b.*$'
+)
+RETURN DISTINCT r1.metadata,r1.description,r2.metadata,r2.description
+
+======================
+question: What are the benefits or incentives offered to faculty members who successfully obtain external funding for their research?
+real_answer: ""
+model_answer: ""
+cypher_query: cypher
+MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '^.*\\b(faculty member)\\w*\\b.*$' OR
+    toLower(r1.description) =~ '^.*\\b(faculty member)\\w*\\b.*$'
+)
+AND (
+    toLower(r2.metadata) =~ '^.*\\b(external funding)\\w*\\b.*$' OR
+    toLower(r2.description) =~ '^.*\\b(external funding)\\w*\\b.*$'
+)
+AND (
+    toLower(r1.metadata) =~ '^.*\\b(benefits|incentives)\\w*\\b.*$' OR
+    toLower(r1.description) =~ '^.*\\b(benefits|incentives)\\w*\\b.*$'
+)
+RETURN DISTINCT r1.metadata,r1.description,r2.metadata,r2.description
+
+======================
+question: When is the next scheduled workshop or training session for new faculty members on research ethics and compliance?
+real_answer: ""
+model_answer: ""
+cypher_query: cypher
+MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '^.*\\b(workshop|training)\\w*\\b.*$' OR
+    toLower(r1.description) =~ '^.*\\b(workshop|training)\\w*\\b.*$'
+)
+AND (
+    toLower(r2.metadata) =~ '^.*\\b(new faculty)\\w*\\b.*$' OR
+    toLower(r2.description) =~ '^.*\\b(new faculty)\\w*\\b.*$'
+)
+AND (
+    toLower(r1.metadata) =~ '^.*\\b(research ethics and compliance)\\w*\\b.*$' OR
+    toLower(r1.description) =~ '^.*\\b(research ethics and compliance)\\w*\\b.*$'
+)
+RETURN DISTINCT r1.metadata,r1.description
+
+======================
