@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import List, Dict, Union
+from typing import List, Dict, Union, Any
 from abc import ABC, abstractmethod
 
 
@@ -28,6 +28,7 @@ class Ontology(BaseModel):
 class Node(BaseModel):
     label: str
     name: str
+    properties: Dict[str, Any] = {} 
 
 
 class Edge(BaseModel):
@@ -40,4 +41,4 @@ class Edge(BaseModel):
 
 class Document(BaseModel):
     text: str
-    metadata: dict
+    metadata: dict 

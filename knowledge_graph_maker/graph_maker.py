@@ -14,14 +14,11 @@ verbose_logger = GraphLogger(name="GRAPH MAKER VERBOSE", color="blue").getLogger
 
 default_ontology = Ontology(
     labels=[
-        {"Person": "Person name without any adjectives"},
-        "Place",
+        "Person",
         "Object",
-        "Document",
-        "Concept",
-        "Organisation",
         "Event",
-        "Action",
+        "Place",
+        "Miscellaneous",
     ],
     relationships=["Relationship between Any two labeled entities"],
 )
@@ -46,24 +43,79 @@ class GraphMaker:
         return f"input text: ```\n{text}\n```"
 
     def system_message(self) -> str:
-        return (
-            "You are an expert at creating Knowledge Graphs. "
-            "Consider the following ontology. \n"
-            f"{self._ontology} \n"
-            "The user will provide you with an input text delimited by ```. "
-            "Extract all the entities and relationships from the user-provided text as per the given ontology. Do not use any previous knowledge about the context."
-            "Remember there can be multiple direct (explicit) or implied relationships between the same pair of nodes. "
-            "Be consistent with the given ontology. Use ONLY the labels and relationships mentioned in the ontology. "
-            "Format your output as a json with the following schema. \n"
-            "[\n"
-            "   {\n"
-            '       node_1: Required, an entity object with attributes: {"label": "as per the ontology", "name": "Name of the entity"},\n'
-            '       node_2: Required, an entity object with attributes: {"label": "as per the ontology", "name": "Name of the entity"},\n'
-            "       relationship: Describe the relationship between node_1 and node_2 as per the context, in a few sentences.\n"
-            "   },\n"
-            "]\n"
-            "Do not add any other comment before or after the json. Respond ONLY with a well formed json that can be directly read by a program."
-        )
+        return f"""
+            You are an expert at creating Knowledge Graphs.
+
+            Consider the following ontology:
+            {self._ontology}
+
+            The user will provide input text delimited by ```.
+            Your task is to extract **entities and relationships** according to the ontology.
+
+            IMPORTANT SCHEMA RULES:
+            - Every extracted relationship must be represented as an object with:
+            {{
+                "node_1": {{"label": <ontology label>, "name": <entity name>, "properties": {{...}}}},
+                "node_2": {{"label": <ontology label>, "name": <entity name>, "properties": {{...}}}},
+                "relationship": <string describing the relation>,
+                "metadata": {{}},
+                "order": null
+            }}
+
+            - **Use ONLY** "node_1" and "node_2" keys for entities.
+            Never output "entity" or any other field name.
+
+            - Each entity must include:
+            {{
+                "label": "as per ontology",
+                "name": "string name of the entity",
+                "properties": {{
+                    "key1": "value1",
+                    "key2": "value2"
+                }}
+            }}
+
+            - Properties should be appropriate for the label type:
+            * Person → {{ "birth_date": ..., "birth_place": ..., "occupation": ... }}
+            * Object → {{ "type": ..., "material": ..., "function": ... }}
+            * Event → {{ "date": ..., "location": ..., "participants": ... }}
+            * Place → {{ "country": ..., "region": ..., "coordinates": ... }}
+
+            - If no properties are available, return "properties": {{}} (an empty dict).
+
+            - Respond ONLY with a JSON array, no text before or after.
+
+            Example (toy output):
+            [
+            {{
+                "node_1": {{"label": "Person", "name": "Barack Obama", "properties": {{"birth_date": "1961", "birth_place": "Hawaii"}}}},
+                "node_2": {{"label": "Place", "name": "United States", "properties": {{"country": "USA"}}}},
+                "relationship": "Barack Obama served as the 44th President of the United States.",
+                "metadata": {{}},
+                "order": null
+            }}
+            ]
+        """
+
+    # def system_message(self) -> str:
+    #     return (
+    #         "You are an expert at creating Knowledge Graphs. "
+    #         "Consider the following ontology. \n"
+    #         f"{self._ontology} \n"
+    #         "The user will provide you with an input text delimited by ```. "
+    #         "Extract all the entities and relationships from the user-provided text as per the given ontology. Do not use any previous knowledge about the context."
+    #         "Remember there can be multiple direct (explicit) or implied relationships between the same pair of nodes. "
+    #         "Be consistent with the given ontology. Use ONLY the labels and relationships mentioned in the ontology. "
+    #         "Format your output as a json with the following schema. \n"
+    #         "[\n"
+    #         "   {\n"
+    #         '       node_1: Required, an entity object with attributes: {"label": "as per the ontology", "name": "Name of the entity"},\n'
+    #         '       node_2: Required, an entity object with attributes: {"label": "as per the ontology", "name": "Name of the entity"},\n'
+    #         "       relationship: Describe the relationship between node_1 and node_2 as per the context, in a few sentences.\n"
+    #         "   },\n"
+    #         "]\n"
+    #         "Do not add any other comment before or after the json. Respond ONLY with a well formed json that can be directly read by a program."
+    #     )
 
     def generate(self, text: str) -> str:
         # verbose_logger.info(f"SYSTEM_PROMPT: {self.system_message()}")
@@ -80,8 +132,8 @@ class GraphMaker:
             # green_logger.info(f"JSON Parsing Successful!")
             return parsed_json
         except json.JSONDecodeError as e:
-            # json_parse_logger.info(f"JSON Parsing failed with error: { e.msg}")
-            # verbose_logger.info(f"FAULTY JSON: {text}")
+            json_parse_logger.info(f"JSON Parsing failed with error: { e.msg}")
+            verbose_logger.info(f"FAULTY JSON: {text}")
             return None
 
     def manually_parse_json(self, text: str):
@@ -113,17 +165,17 @@ class GraphMaker:
         try:
             edge = Edge(**edge_dict)
         except ValidationError as e:
-            # json_parse_logger.info(
-            #     f"Failed to parse the Edge: \n{e.errors(include_url=False, include_input=False)}"
-            # )
-            # verbose_logger.info(f"FAULTY EDGE: {edge_dict}")
+            json_parse_logger.info(
+                f"Failed to parse the Edge: \n{e.errors(include_url=False, include_input=False)}"
+            )
+            verbose_logger.info(f"FAULTY EDGE: {edge_dict}")
             edge = None
         finally:
             return edge
 
     def from_text(self, text, metadata, order):
         response = self.generate(text)
-        # verbose_logger.info(f"LLM Response:\n{response}")
+        verbose_logger.info(f"LLM Response:\n{response}")
 
         if response.strip() != "[]":
             json_data = self.parse_json(response)
@@ -133,18 +185,21 @@ class GraphMaker:
 
             # edges = [self.json_to_edge(edg) for edg in json_data]
             
-            file = open("list_of_edges.txt", "a")
+            # file = open("list_of_edges.txt", "a")
             edges = []
+
+            # print(type(json_data))
+            # print(json_data)
 
             for edg in json_data:
                 edg = self.json_to_edge(edg)
                 edg.metadata = metadata
                 edg.order = order
                 edges.append(edg)
-                file.write(str(edg) + "\n")
+                # file.write(str(edg) + "\n")
     
             edges = list(filter(None, edges))
-            file.close()
+            # file.close()
             
             return edges
         else:

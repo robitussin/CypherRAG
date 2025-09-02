@@ -9,7 +9,7 @@ from neomodel import (
     RelationshipTo,
     StructuredRel,
     JSONProperty,
-    IntegerProperty,
+    IntegerProperty
 )
 from typing import List
 from .types import Edge, Node
@@ -17,18 +17,6 @@ from .types import Edge, Node
 from dotenv import dotenv_values
 
 config = dotenv_values(".env")
-
-class Relationship(StructuredRel):
-    description = StringProperty()
-    metadata = JSONProperty()
-    order = IntegerProperty()
-
-
-class Entity(StructuredNode):
-    label = StringProperty()
-    name = StringProperty(unique_index=True)
-    relationship = RelationshipTo("Entity", "RELATED", model=Relationship)
-
 
 @contextmanager
 def neo4jDb():
@@ -50,7 +38,33 @@ def neo4jDb():
     finally:
         # Code to release resource, e.g.:
         db.close_connection()
+        
 
+class Relationship(StructuredRel):
+    description = StringProperty()
+    metadata = JSONProperty()
+    order = IntegerProperty()
+
+class BaseEntity(StructuredNode):
+    name = StringProperty(required=True, unique_index=True)
+    label = StringProperty(required=True)  # ontology label (e.g., Person, Place)
+    properties = JSONProperty(default={})
+    relationship = RelationshipTo('BaseEntity', "RELATED", model=Relationship)
+
+
+ENTITY_CLASSES = {}
+def get_entity_class(label: str):
+    """
+    Returns a neomodel StructuredNode subclass for the given ontology label.
+    Creates one dynamically if it does not exist yet.
+    """
+    if label not in ENTITY_CLASSES:
+        ENTITY_CLASSES[label] = type(
+            label,  # class name
+            (BaseEntity,),  # parent class
+            {}  # extra attributes can be injected here if needed
+        )
+    return ENTITY_CLASSES[label]
 
 class Neo4jGraphModel:
     _edges: List[Edge]
@@ -63,16 +77,39 @@ class Neo4jGraphModel:
     def migrate(self):
         if self._create_indices:
             with neo4jDb as db:
-                install_labels(Entity, Relationship)
+                # install indices only once
+                for label in ENTITY_CLASSES.values():
+                    install_labels(label, BaseEntity.relationship.definition)
 
     def save(self):
         count = 0
         for edge in self._edges:
             with neo4jDb() as db:
                 with db.transaction:
-                    [entity_1, entity_2] = Entity.get_or_create(
-                        edge.node_1.model_dump(), edge.node_2.model_dump()
-                    )
+                    # Get correct classes for source and target nodes
+                    Entity1Class = get_entity_class(edge.node_1.label)
+                    Entity2Class = get_entity_class(edge.node_2.label)
+
+                    # Create or fetch nodes (unwrap list!)
+                    entity_1 = Entity1Class.get_or_create({
+                        "name": edge.node_1.name,
+                        "label": edge.node_1.label,
+                    })[0]
+
+                    entity_2 = Entity2Class.get_or_create({
+                        "name": edge.node_2.name,
+                        "label": edge.node_2.label,
+                    })[0]
+
+                    # ✅ Ensure properties are merged/updated
+                    if edge.node_1.properties:
+                        entity_1.properties.update(edge.node_1.properties)
+                        entity_1.save()
+
+                    if edge.node_2.properties:
+                        entity_2.properties.update(edge.node_2.properties)
+                        entity_2.save()
+
                     entity_1.relationship.connect(
                         entity_2,
                         {
