@@ -36,6 +36,7 @@ streamlit = "^1.39.0"
 streamlit-chat = "^0.1.1"
 pypdf2 = "^3.0.1"
 matplotlib = "^3.8.0"
+sentence-transformers = "^5.1.1"
 
 [build-system]
 requires = ["poetry-core"]

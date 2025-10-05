@@ -13,12 +13,13 @@ json_parse_logger = GraphLogger(name="GRAPH MAKER ERROR", color="magenta").getLo
 verbose_logger = GraphLogger(name="GRAPH MAKER VERBOSE", color="blue").getLogger()
 
 default_ontology = Ontology(
-    labels=[
-        "Person",
-        "Object",
-        "Event",
-        "Place",
-        "Miscellaneous",
+   labels=[
+        {"Person": "Named individual (can be referenced by name or pronoun)."},
+        {"Organization": "Corporation, institution, agency, or association."},
+        {"Place": "Geographic or physical location where events or entities exist."},
+        {"Event": "Something that happens at a specific time and/or place."},
+        {"Object": "Inanimate entity used by persons or found in places."},
+        {"Miscellaneous": "Important concept not covered by the above labels."},
     ],
     relationships=["Relationship between Any two labeled entities"],
 )

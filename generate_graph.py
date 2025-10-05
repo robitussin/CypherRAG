@@ -108,12 +108,13 @@ def generate_summary(text: str, llm: OpenAIClient):
 def generateEdges(proposition_list: List[str]) -> List[Edge]:
 
     ontology = Ontology(
-    labels=[
-        {"Person": "Person name without any adjectives, Remember a person may be referenced by their name or using a pronoun"},
-        {"Object": "Objects are inanimate things that a person uses, Do not add the definite article 'the' in the object name"},
-        {"Event": "An entity that happens at a specific time and place"},
-        {"Place": "Places are locations where specific events took place and where persons can go to and where objects can be found"},
-        {"Miscellaneous": "Any important concept can not be categorised with any other given label"},
+   labels=[
+        {"Person": "Named individual (can be referenced by name or pronoun)."},
+        {"Organization": "Corporation, institution, agency, or association."},
+        {"Place": "Geographic or physical location where events or entities exist."},
+        {"Event": "Something that happens at a specific time and/or place."},
+        {"Object": "Inanimate entity used by persons or found in places."},
+        {"Miscellaneous": "Important concept not covered by the above labels."},
     ],
     relationships=[
         "Relation between any pair of Entities"

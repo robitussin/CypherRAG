@@ -15,8 +15,12 @@ from typing import List
 from .types import Edge, Node
 
 from dotenv import dotenv_values
+from sentence_transformers import SentenceTransformer
 
 config = dotenv_values(".env")
+# Load embedding model once
+embedder = SentenceTransformer("all-MiniLM-L6-v2")
+ENTITY_CLASSES = {}
 
 @contextmanager
 def neo4jDb():
@@ -38,21 +42,8 @@ def neo4jDb():
     finally:
         # Code to release resource, e.g.:
         db.close_connection()
-        
-
-class Relationship(StructuredRel):
-    description = StringProperty()
-    metadata = JSONProperty()
-    order = IntegerProperty()
-
-class BaseEntity(StructuredNode):
-    name = StringProperty(required=True, unique_index=True)
-    label = StringProperty(required=True)  # ontology label (e.g., Person, Place)
-    properties = JSONProperty(default={})
-    relationship = RelationshipTo('BaseEntity', "RELATED", model=Relationship)
 
 
-ENTITY_CLASSES = {}
 def get_entity_class(label: str):
     """
     Returns a neomodel StructuredNode subclass for the given ontology label.
@@ -65,6 +56,21 @@ def get_entity_class(label: str):
             {}  # extra attributes can be injected here if needed
         )
     return ENTITY_CLASSES[label]
+
+def flatten_properties(properties: dict) -> str:
+    # Convert dict -> text string for embedding
+    return " ".join([f"{k}: {v}" for k, v in properties.items()])
+
+class Relationship(StructuredRel):
+    description = StringProperty()
+    metadata = JSONProperty()
+    order = IntegerProperty()
+
+class BaseEntity(StructuredNode):
+    name = StringProperty(required=True, unique_index=True)
+    label = StringProperty(required=True)  # ontology label (e.g., Person, Place)
+    properties = JSONProperty(default={})
+    relationship = RelationshipTo('BaseEntity', "RELATED", model=Relationship)
 
 class Neo4jGraphModel:
     _edges: List[Edge]
@@ -104,10 +110,20 @@ class Neo4jGraphModel:
                     # ✅ Ensure properties are merged/updated
                     if edge.node_1.properties:
                         entity_1.properties.update(edge.node_1.properties)
+
+                        # make embedding from properties
+                        text1 = flatten_properties(edge.node_1.properties)
+                        entity_1.embedding = embedder.encode(text1, normalize_embeddings=True).tolist()
+
                         entity_1.save()
 
                     if edge.node_2.properties:
                         entity_2.properties.update(edge.node_2.properties)
+
+                        # make embedding from properties
+                        text2 = flatten_properties(edge.node_2.properties)
+                        entity_2.embedding = embedder.encode(text2, normalize_embeddings=True).tolist()
+
                         entity_2.save()
 
                     entity_1.relationship.connect(
@@ -119,3 +135,6 @@ class Neo4jGraphModel:
                     )
                     count += 1
         return count
+    
+
+    
