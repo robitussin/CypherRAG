@@ -107,6 +107,60 @@ def generate_summary(text: str, llm: OpenAIClient):
 
 def generateEdges(proposition_list: List[str]) -> List[Edge]:
 
+    # ontology = Ontology(
+    #     labels=[
+    #         {"University": "The overall institution that governs all campuses, colleges, and departments."},
+    #         {"Campus": "A physical site of the university, typically with its own facilities and offices."},
+    #         {"College": "An academic unit within the university overseeing multiple departments."},
+    #         {"Department": "A division within a college focused on a specific academic discipline or administrative function."},
+    #         {"Person": "An individual such as a faculty member, staff, administrator, or student."},
+    #         {"Position": "A designated role or office held by a person within the institution’s structure."},
+    #         {"Committee": "A group formed to perform specific governance, academic, or administrative functions."},
+    #         {"Policy": "A documented rule, guideline, or procedure governing academic or administrative matters."},
+    #         {"Rank": "An academic or administrative level assigned to a person (e.g., Assistant Professor, Dean)."},
+    #         {"Course": "An instructional unit offered by a department or college."},
+    #         {"Activity": "An academic or administrative task, event, or project performed within the institution."},
+    #         {"LeaveType": "A form of authorized absence from duty (e.g., sabbatical, sick leave)."},
+    #         {"Publication": "A scholarly or creative work authored by faculty or staff."},
+    #     ],
+
+    #          relationships=[
+    #             "University HAS_COLLEGE College",
+    #             "College HAS_DEPARTMENT Department",
+    #             "Department WORKS_IN Person",
+    #             "Person HAS_ROLE Position",
+    #             "Position REPORTS_TO Position",
+    #             "Person MEMBER_OF Committee",
+    #             "Committee PART_OF Department",
+    #             "Department HAS_POLICY Policy",
+    #             "Policy MENTIONS Department",
+    #             "Department LOCATED_AT Campus",
+    #             "Person SUPERVISES Person",
+    #             "Person REPLACES Person",
+    #             "Person TEACHES Course",
+    #             "Department OFFERS Course",
+    #             "Person PUBLISHED Publication"
+    #     ],
+        
+        # relationships=[
+        #     "University HAS_COLLEGE College",
+        #     "College HAS_DEPARTMENT Department",
+        #     "Department WORKS_IN Person",
+        #     "Person HAS_ROLE Position",
+        #     "Position REPORTS_TO Position",
+        #     "Person MEMBER_OF Committee",
+        #     "Committee PART_OF Department",
+        #     "Department HAS_POLICY Policy",
+        #     "Policy MENTIONS Department",
+        #     "Department LOCATED_AT Campus",
+        #     "Person SUPERVISES Person",
+        #     "Person REPLACES Person",
+        #     "Person TEACHES Course",
+        #     "Department OFFERS Course",
+        #     "Person PUBLISHED Publication"
+        # ],
+    # )
+
     ontology = Ontology(
    labels=[
         {"Person": "Named individual (can be referenced by name or pronoun)."},

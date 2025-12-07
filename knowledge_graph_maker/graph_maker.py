@@ -24,6 +24,41 @@ default_ontology = Ontology(
     relationships=["Relationship between Any two labeled entities"],
 )
 
+# default_ontology = Ontology(
+#     labels=[
+#         {"University": "The overall institution that governs all campuses, colleges, and departments."},
+#         {"Campus": "A physical site of the university, typically with its own facilities and offices."},
+#         {"College": "An academic unit within the university overseeing multiple departments."},
+#         {"Department": "A division within a college focused on a specific academic discipline or administrative function."},
+#         {"Person": "An individual such as a faculty member, staff, administrator, or student."},
+#         {"Position": "A designated role or office held by a person within the institution’s structure."},
+#         {"Committee": "A group formed to perform specific governance, academic, or administrative functions."},
+#         {"Policy": "A documented rule, guideline, or procedure governing academic or administrative matters."},
+#         {"Rank": "An academic or administrative level assigned to a person (e.g., Assistant Professor, Dean)."},
+#         {"Course": "An instructional unit offered by a department or college."},
+#         {"Activity": "An academic or administrative task, event, or project performed within the institution."},
+#         {"LeaveType": "A form of authorized absence from duty (e.g., sabbatical, sick leave)."},
+#         {"Publication": "A scholarly or creative work authored by faculty or staff."},
+#     ],
+#     relationships=[
+#         "University HAS_COLLEGE College",
+#         "College HAS_DEPARTMENT Department",
+#         "Department WORKS_IN Person",
+#         "Person HAS_ROLE Position",
+#         "Position REPORTS_TO Position",
+#         "Person MEMBER_OF Committee",
+#         "Committee PART_OF Department",
+#         "Department HAS_POLICY Policy",
+#         "Policy MENTIONS Department",
+#         "Department LOCATED_AT Campus",
+#         "Person SUPERVISES Person",
+#         "Person REPLACES Person",
+#         "Person TEACHES Course",
+#         "Department OFFERS Course",
+#         "Person PUBLISHED Publication"
+#     ],
+# )
+
 class GraphMaker:
     _ontology: Ontology
     _llm_client: LLMClient
@@ -58,7 +93,7 @@ class GraphMaker:
             {{
                 "node_1": {{"label": <ontology label>, "name": <entity name>, "properties": {{...}}}},
                 "node_2": {{"label": <ontology label>, "name": <entity name>, "properties": {{...}}}},
-                "relationship": <string describing the relation>,
+                "relationship": <the predicate describing the relation>,
                 "metadata": {{}},
                 "order": null
             }}
@@ -77,10 +112,19 @@ class GraphMaker:
             }}
 
             - Properties should be appropriate for the label type:
-            * Person → {{ "birth_date": ..., "birth_place": ..., "occupation": ... }}
-            * Object → {{ "type": ..., "material": ..., "function": ... }}
-            * Event → {{ "date": ..., "location": ..., "participants": ... }}
-            * Place → {{ "country": ..., "region": ..., "coordinates": ... }}
+            * University → {{  }}
+            * Campus → {{ "location": ..., "size": ..., "facilities": ... }}
+            * College → {{ "dean": ..., "established": ..., "programs": ... }}
+            * Department → {{ "head": ..., "founded": ..., "focus_area": ... }}
+            * Person → {{ "rank": ..., "birth_place": ..., "occupation": ... }}
+            * Position → {{ "title": ..., "level": ..., "responsibilities": ... }}
+            * Committee → {{ "purpose": ..., "members": ..., "term_length": ... }}
+            * Policy → {{ "type": ..., "effective_date": ..., "scope": ... }}
+            * Rank → {{ "level": ..., "criteria": ..., "duration": ... }}
+            * Course → {{ "code": ..., "credits": ..., "semester": ... }}
+            * Activity → {{ "type": ..., "date": ..., "participants": ... }}
+            * LeaveType → {{ "duration": ..., "eligibility": ..., "benefits": ... }}
+            * Publication → {{ "title": ..., "journal": ..., "year": ... }}
 
             - If no properties are available, return "properties": {{}} (an empty dict).
 
@@ -90,13 +134,68 @@ class GraphMaker:
             [
             {{
                 "node_1": {{"label": "Person", "name": "Barack Obama", "properties": {{"birth_date": "1961", "birth_place": "Hawaii"}}}},
-                "node_2": {{"label": "Place", "name": "United States", "properties": {{"country": "USA"}}}},
-                "relationship": "Barack Obama served as the 44th President of the United States.",
+                "node_2": {{"label": "Department", "name": "Computer Science", "properties": {{"head": "Eliseo Ramire"}}}},
+                "relationship": "HAS_ROLE",
                 "metadata": {{}},
                 "order": null
             }}
             ]
         """
+
+    # def system_message(self) -> str:
+    #     return f"""
+    #         You are an expert at creating Knowledge Graphs.
+
+    #         Consider the following ontology:
+    #         {self._ontology}
+
+    #         The user will provide input text delimited by ```.
+    #         Your task is to extract **entities and relationships** according to the ontology.
+
+    #         IMPORTANT SCHEMA RULES:
+    #         - Every extracted relationship must be represented as an object with:
+    #         {{
+    #             "node_1": {{"label": <ontology label>, "name": <entity name>, "properties": {{...}}}},
+    #             "node_2": {{"label": <ontology label>, "name": <entity name>, "properties": {{...}}}},
+    #             "relationship": <string describing the relation>,
+    #             "metadata": {{}},
+    #             "order": null
+    #         }}
+
+    #         - **Use ONLY** "node_1" and "node_2" keys for entities.
+    #         Never output "entity" or any other field name.
+
+    #         - Each entity must include:
+    #         {{
+    #             "label": "as per ontology",
+    #             "name": "string name of the entity",
+    #             "properties": {{
+    #                 "key1": "value1",
+    #                 "key2": "value2"
+    #             }}
+    #         }}
+
+    #         - Properties should be appropriate for the label type:
+    #         * Person → {{ "birth_date": ..., "birth_place": ..., "occupation": ... }}
+    #         * Object → {{ "type": ..., "material": ..., "function": ... }}
+    #         * Event → {{ "date": ..., "location": ..., "participants": ... }}
+    #         * Place → {{ "country": ..., "region": ..., "coordinates": ... }}
+
+    #         - If no properties are available, return "properties": {{}} (an empty dict).
+
+    #         - Respond ONLY with a JSON array, no text before or after.
+
+    #         Example (toy output):
+    #         [
+    #         {{
+    #             "node_1": {{"label": "Person", "name": "Barack Obama", "properties": {{"birth_date": "1961", "birth_place": "Hawaii"}}}},
+    #             "node_2": {{"label": "Place", "name": "United States", "properties": {{"country": "USA"}}}},
+    #             "relationship": "Barack Obama served as the 44th President of the United States.",
+    #             "metadata": {{}},
+    #             "order": null
+    #         }}
+    #         ]
+    #     """
 
     # def system_message(self) -> str:
     #     return (
@@ -117,6 +216,8 @@ class GraphMaker:
     #         "]\n"
     #         "Do not add any other comment before or after the json. Respond ONLY with a well formed json that can be directly read by a program."
     #     )
+    
+    
 
     def generate(self, text: str) -> str:
         # verbose_logger.info(f"SYSTEM_PROMPT: {self.system_message()}")

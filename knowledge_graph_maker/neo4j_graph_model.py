@@ -107,7 +107,7 @@ class Neo4jGraphModel:
                         "label": edge.node_2.label,
                     })[0]
 
-                    # ✅ Ensure properties are merged/updated
+                    # Ensure properties are merged/updated
                     if edge.node_1.properties:
                         entity_1.properties.update(edge.node_1.properties)
 
