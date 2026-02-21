@@ -1,0 +1,102 @@
+[
+  {
+    "Question": "What is the official title of this document and its reference number?",
+    "GroundTruth": "The official title of this document is \"FACULTY MANUAL\" and its reference number is \"OPR-HRD-D-M-003\".",
+    "Prediction": "MANUAL APPROVAL CONTROL LOG ACO.\n"
+  },
+  {
+    "Question": "When is the date of effectivity for this Faculty Manual and what previous version does it supersede?",
+    "GroundTruth": "The date of effectivity for this Faculty Manual is August 1, 2023, and it supersedes the version from December 1, 2019.",
+    "Prediction": "I don't know the answer.\n"
+  },
+  {
+    "Question": "What is the purpose of this Faculty Manual, according to the Foreword?",
+    "GroundTruth": "According to the Foreword, this Faculty Manual is prepared to provide an overview of National University's policies, rules, regulations, and benefits. It also aims to familiarize faculty with important information and provide employment guidelines to foster a safe and healthy work environment.",
+    "Prediction": "I don't know the answer.\n"
+  },
+  {
+    "Question": "What are the \"5 Commandments\" for data privacy compliance emphasized by the Commission on Higher Education (CHED) as mentioned in the Privacy Statement?",
+    "GroundTruth": "The \"5 Commandments\" for data privacy compliance emphasized by CHED are: appointing a Data Protection Officer (DPO); conducting a Privacy Impact Assessment; creating a Privacy Management Program; implementing privacy and data protection measures; and performing Breach Reporting Procedure.",
+    "Prediction": "I don't know the answer.\n"
+  },
+  {
+    "Question": "Who founded National University and when?",
+    "GroundTruth": "National University was founded by Don Mariano Fortunato Jhocson on August 1, 1900.",
+    "Prediction": "After 21 years of educational service, on January 17, 1921, the Board of Trustees applied for and secured permission from the Department of Public Instruction to change the name of the National Academy to NATIONAL UNIVERSITY.\n"
+  },
+  {
+    "Question": "What is the vision of National University?",
+    "GroundTruth": "The vision of National University is to be a dynamic private institution committed to nation-building, recognized internationally in education and research.",
+    "Prediction": "National University Vision, Mission, Dynamic Filipinism and Goals.\n"
+  },
+  {
+    "Question": "What are the types of contracts applicable to employees as listed in Section 5.1 of Chapter 3?",
+    "GroundTruth": "The types of contracts applicable to employees include: Probationary Employment Contract (For Full-time Faculty Member), Employment Contract (For regularization), Contractual Full-Time Employment Agreement (Non-Regular faculty), Contractual Employment Contract (For Part-time Faculty Member), Adjunct Faculty Contract, Project-based Employment Contract (For Non-Teaching Personnel), and Consultancy Contract.",
+    "Prediction": "I don't know the answer.\n"
+  },
+  {
+    "Question": "What is the policy regarding solicitation and distribution of materials in the campus?",
+    "GroundTruth": "For the safety, convenience, and protection of all faculty, National University always prohibits solicitation and distribution of materials in the campus.",
+    "Prediction": "National University prohibits solicitation and distribution of materials on the campus for the safety, convenience, and protection of all faculty.\n"
+  },
+  {
+    "Question": "What is the maximum score a faculty can achieve in Research and Innovation, and what are some categories for points allocation?",
+    "GroundTruth": "A faculty's maximum score in Research and Innovation is 30 points. Categories for points allocation include: Publication: Journal Articles, Publication: Conference Proceedings, Publication: Book Chapters and International Handbook and Encyclopedia, Externally Funded Research/Innovation/Resiliency Project, and Completed Internally Funded Research/Innovation/Resiliency Project.",
+    "Prediction": "I don't know the answer.\n"
+  },
+  {
+    "Question": "What is the \"No Work, No Pay\" policy specifically for Part-time Faculty regarding tardiness and absences?",
+    "GroundTruth": "There is a \"No Work, No Pay\" policy for Part-time Faculty, and tardiness and absences are computed based on their hourly rate.",
+    "Prediction": "I don't know the answer.\n"
+  },
+  {
+    "Question": "What is the current student enrollment for the upcoming academic year across all programs?",
+    "GroundTruth": "",
+    "Prediction": "I don't know the answer.\n"
+  },
+  {
+    "Question": "What specific pedagogical approaches are recommended for teaching a master's level course in computer science?",
+    "GroundTruth": "",
+    "Prediction": "I don't know the answer.\n"
+  },
+  {
+    "Question": "Who are the current deans of each college, and what are their academic backgrounds?",
+    "GroundTruth": "",
+    "Prediction": "Dean, faculty member, Program Chair, Coordinator.\n"
+  },
+  {
+    "Question": "What is the total budget allocated for faculty research grants in the next fiscal year?",
+    "GroundTruth": "",
+    "Prediction": "I don't know the answer.\n"
+  },
+  {
+    "Question": "What are the technical specifications of the university's learning management system?",
+    "GroundTruth": "",
+    "Prediction": "I don't know the answer.\n"
+  },
+  {
+    "Question": "What is the university's strategy for international partnerships in the next five years?",
+    "GroundTruth": "",
+    "Prediction": "I don't know the answer.\n"
+  },
+  {
+    "Question": "What is the university's strategy for international partnerships in the next five years?",
+    "GroundTruth": "",
+    "Prediction": "I don't know the answer.\n"
+  },
+  {
+    "Question": "What is the average student-to-faculty ratio in undergraduate programs?",
+    "GroundTruth": "",
+    "Prediction": "I don't know the answer.\n"
+  },
+  {
+    "Question": "What are the detailed architectural plans for the new campus building under construction?",
+    "GroundTruth": "",
+    "Prediction": "I don't know the answer.\n"
+  },
+  {
+    "Question": "What are the detailed architectural plans for the new campus building under construction?",
+    "GroundTruth": "",
+    "Prediction": "I don't know the answer.\n"
+  }
+]
