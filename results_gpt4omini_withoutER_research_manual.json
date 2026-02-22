@@ -2,17 +2,17 @@
   {
     "Question": "What is the primary purpose of the National University Research Manual?",
     "GroundTruth": "The Manual provides an overview of National University's policies, processes, and regulations for the conduct of research, aiming to familiarize constituents with important information about Research and Innovation, and provide guidelines for efficient and ethical research within NU Manila and other NU campuses.",
-    "Prediction": "I don't know the answer."
+    "Prediction": ""
   },
   {
     "Question": "What is the reference number of this Research Manual?",
     "GroundTruth": "The reference number of the Research Manual is RAD-RS-D-M-001.",
-    "Prediction": "I don't know the answer."
+    "Prediction": ""
   },
   {
     "Question": "What are the three university-wide research centers established by National University?",
     "GroundTruth": "The three university-wide research centers are the Center for Research, the Center for Innovation and Entrepreneurship, and the Center for Resilient Philippines.",
-    "Prediction": "I don't know the answer."
+    "Prediction": ""
   },
   {
     "Question": "What is the vision of the Center for Entrepreneurship?",
@@ -22,17 +22,17 @@
   {
     "Question": "What are some of the core competencies identified by the Center for Resilient Philippines (CRP)?",
     "GroundTruth": "The core competencies of the CRP include disaster resilience from social/political, economic, and physical sciences perspectives; new technology-enabled mechanisms for resilient community planning and design; development of innovative national and local resilience policies; private sector engagement in disaster resilience; capacity building for disaster mitigation and reconstruction; networking with the academic community; and community engagement and participation in reconstruction.",
-    "Prediction": "I don't know the answer."
+    "Prediction": ""
   },
   {
     "Question": "Name at least three research goals of the National University Research Agenda.",
     "GroundTruth": "Some research goals include: to recruit, develop, and retain faculty researchers; to provide proactive service to the academic community on research-related endeavors; to assist faculty researchers in publishing outputs in top international journals; to obtain and manage externally funded research projects; and to foster collaboration with local and international higher education institutions.",
-    "Prediction": "I don't know the answer."
+    "Prediction": ""
   },
   {
     "Question": "What are some of the Research Themes outlined in the National University Research Agenda?",
     "GroundTruth": "Research Themes include Food, Nutrition, and Health; Emerging Industries on the Fourth Industrial Revolution; Development of vaccines and diagnostic kits using indigenous materials; Disaster risk management; Tourism and Pollution control; Climate change; Sports Technology; Education and learning innovations; and Business sophistication.",
-    "Prediction": "I don't know the answer."
+    "Prediction": ""
   },
   {
     "Question": "Which colleges or campuses have their research agenda defined in the manual?",
@@ -47,56 +47,56 @@
   {
     "Question": "According to the Authorship Policy, what is the minimum total points an individual needs in the co-authorship scoring system to share authorship?",
     "GroundTruth": "Anyone achieving a total of 25 points in the co-authorship scoring system shares authorship.",
-    "Prediction": "I don't know the answer."
+    "Prediction": ""
   },
   {
     "Question": "What is the current budget allocated for the Center for Innovation and Entrepreneurship for the upcoming fiscal year?",
     "GroundTruth": "",
-    "Prediction": "I don't know the answer."
+    "Prediction": ""
   },
   {
     "Question": "Who is the specific contact person for submitting research proposals for the College of Allied Health, including their email address and phone number?",
     "GroundTruth": "",
-    "Prediction": "I don't know the answer."
+    "Prediction": ""
   },
   {
     "Question": "What are the detailed procedures and forms required for intellectual property registration for a patent developed by a faculty member?",
     "GroundTruth": "",
-    "Prediction": "I don't know the answer."
+    "Prediction": ""
   },
   {
     "Question": "What are the detailed procedures and forms required for intellectual property registration for a patent developed by a faculty member?",
     "GroundTruth": "",
-    "Prediction": "I don't know the answer."
+    "Prediction": ""
   },
   {
     "Question": "What is the average duration of a research project from proposal submission to final dissemination of results?",
     "GroundTruth": "",
-    "Prediction": "I don't know the answer."
+    "Prediction": ""
   },
   {
     "Question": "Are there any specific grants or funding opportunities available exclusively for student-led research initiatives?",
     "GroundTruth": "",
-    "Prediction": "I don't know the answer."
+    "Prediction": ""
   },
   {
     "Question": "What is the protocol for handling research misconduct cases involving external collaborators?",
     "GroundTruth": "",
-    "Prediction": "I don't know the answer."
+    "Prediction": ""
   },
   {
     "Question": "Which specific software or tools are recommended by the Office of the Vice President for Research and Development for data analysis in research projects?",
     "GroundTruth": "",
-    "Prediction": "I don't know the answer."
+    "Prediction": ""
   },
   {
     "Question": "What are the benefits or incentives offered to faculty members who successfully obtain external funding for their research?",
     "GroundTruth": "",
-    "Prediction": "I don't know the answer."
+    "Prediction": ""
   },
   {
     "Question": "When is the next scheduled workshop or training session for new faculty members on research ethics and compliance?",
     "GroundTruth": "",
-    "Prediction": "I don't know the answer."
+    "Prediction": ""
   }
 ]
