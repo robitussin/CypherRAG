@@ -1,0 +1,158 @@
+question: In what country is Normandy located?
+real_answer: France
+model_answer: France
+cypher_query: MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(normandy)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(normandy)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(country)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(country)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+======================
+question: When were the Normans in Normandy?
+real_answer: 10th and 11th centuries
+model_answer: The Normans lived in the 10th and 11th centuries.
+cypher_query: cypher
+MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(normans)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(normans)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(normandy)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(normandy)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+
+======================
+question: From which countries did the Norse originate?
+real_answer: Denmark, Iceland and Norway
+model_answer: Norway and Denmark.
+cypher_query: cypher
+MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(norse)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(norse)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(countries|origins)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(countries|origins)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+
+======================
+question: Who was the Norse leader?
+real_answer: Rollo
+model_answer: ""
+cypher_query: cypher
+MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(norse leader)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(norse leader)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(name|time period|achievements|characteristics)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(name|time period|achievements|characteristics)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+
+======================
+question: What century did the Normans first gain their separate identity?
+real_answer: 10th century
+model_answer: ""
+cypher_query: cypher
+MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(normans)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(normans)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(separate identity)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(separate identity)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+
+======================
+question: Who gave their name to Normandy in the 1000's and 1100's
+real_answer: ""
+model_answer: 
+cypher_query: cypher
+MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(naming|name|normandy)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(naming|name|normandy)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(1000|1100|hundreds)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(1000|1100|hundreds)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+
+======================
+question: What is France a region of?
+real_answer: ""
+model_answer: 
+cypher_query: cypher
+MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(france)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(france)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(region|continent|union)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(region|continent|union)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+
+======================
+question: Who did King Charles III swear fealty to?
+real_answer: ""
+model_answer: 
+cypher_query: cypher
+MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(king charles iii)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(swear fealty)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(fealty|oath|allegiance)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(fealty|oath|allegiance)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+
+======================
+question: When did the Frankish identity emerge?
+real_answer: ""
+model_answer: ""
+cypher_query: cypher
+MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(frankish identity)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(frankish identity)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(emergence|historical|period|events)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(emergence|historical|period|events)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+
+======================
+question: Who was the duke in the battle of Hastings?
+real_answer: William the Conqueror
+model_answer: Duke William II of Normandy
+cypher_query: cypher
+MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(battle of hastings)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(duke)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(duke)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(battle of hastings)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+
+======================

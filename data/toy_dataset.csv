@@ -1,0 +1,11 @@
+id,source_id,subject,predicate,object,context,subject_type,object_type
+1,doc1,Microsoft Corporation,employs,John Doe,John Doe works at Microsoft Corporation as a software engineer.,Organization,Person
+2,doc2,Microsoft,has employee,J. Doe,J. Doe is an employee of Microsoft.,Organization,Person
+3,doc3,Google LLC,employs,Alice Smith,Alice Smith is employed by Google LLC.,Organization,Person
+4,doc4,Google,employs,A. Smith,A. Smith works at Google.,Organization,Person
+5,doc5,Amazon,develops,Alexa,Amazon develops the voice assistant Alexa.,Organization,Product
+6,doc6,Amazon Inc.,produces,Alexa voice assistant,Amazon Inc. produces the Alexa voice assistant.,Organization,Product
+7,doc7,SpaceX,led by,Elon Musk,Elon Musk leads SpaceX.,Organization,Person
+8,doc8,Space Exploration Technologies,CEO,Elon Musk,Elon Musk is the CEO of Space Exploration Technologies.,Organization,Person
+9,doc9,Apple,founded by,Steve Jobs,Apple was founded by Steve Jobs.,Organization,Person
+10,doc10,Apple Inc.,co-founded by,S. Jobs,Apple Inc. was co-founded by S. Jobs.,Organization,Person
