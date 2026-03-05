@@ -1,0 +1,130 @@
+question: This singer of A Rather Blustery Day also voiced what hedgehog?
+real_answer: Sonic
+model_answer: Catherine Davis 'Kate' Higgins voiced Miles 'Tails' Prower in the video game series 'Sonic the Hedgehog'.
+cypher_query: cypher
+MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(a rather blustery day)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(singer)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(hedgehog)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(voiced)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+
+======================
+question: Aside from the Apple Remote, what other device can control the program Apple Remote was originally designed to interact with?
+real_answer: keyboard function keys
+model_answer: 
+cypher_query: cypher
+MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(apple remote)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(apple remote)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(control|device|program)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(control|device|program)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+
+======================
+question: What was the father of Kasper Schmeichel voted to be by the IFFHS in 1992?
+real_answer: World's Best Goalkeeper
+model_answer: ""
+cypher_query: cypher
+MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(kasper schmeichel)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(father)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(iffhs)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(voted)\\b.*'
+)
+AND toLower(r2.metadata) =~ '.*\\b(1992)\\b.*'
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+
+======================
+question: The 2011–12 VCU Rams men's basketball team, led by third year head coach Shaka Smart, represented Virginia Commonwealth University which was founded in what year?
+real_answer: 1838
+model_answer: Virginia Commonwealth University was founded in 1838.
+cypher_query: cypher
+MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(2011–12 vcu rams men\'s basketball team)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(shaka smart)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(virginia commonwealth university)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(virginia commonwealth university)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+
+======================
+question: Are both Dictyosperma, and Huernia described as a genus?
+real_answer: yes
+model_answer: Yes, both Dictyosperma and Huernia are described as a genus.
+cypher_query: cypher
+MATCH ()-[r1]-()
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(dictyosperma)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(dictyosperma)\\b.*'
+)
+RETURN DISTINCT r1.metadata AS info1
+UNION ALL
+MATCH ()-[r2]-()
+WHERE (
+    toLower(r2.metadata) =~ '.*\\b(huernia)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(huernia)\\b.*'
+)
+RETURN DISTINCT r2.metadata AS info1
+
+======================
+question: Kaiser Ventures corporation was founded by an American industrialist who became known as the father of modern American shipbuilding?
+real_answer: Henry J. Kaiser
+model_answer: ""
+cypher_query: cypher
+MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(kaiser ventures corporation)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(kaiser ventures corporation)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(american industrialist|father of modern american shipbuilding)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(american industrialist|father of modern american shipbuilding)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+
+======================
+question: What is the name for the adventure in "Tunnels and Trolls", a game designed by Ken St. Andre?
+real_answer: Arena of Khazan
+model_answer: ""
+cypher_query: cypher
+MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(tunnels and trolls)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(tunnels and trolls)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(ken st. andre)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(ken st. andre)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+
+======================
+question: When was Poison's album "Shut Up, Make Love" released?
+real_answer: 2000
+model_answer: 
+cypher_query: MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(poison)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(poison)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(shut up, make love)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(shut up, make love)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+======================

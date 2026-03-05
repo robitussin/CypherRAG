@@ -1,0 +1,37 @@
+question: What is the vision of National University?
+real_answer: The vision of National University is to be a leading Philippine university providing quality education that works.
+model_answer: The vision of National University is stated in the document, along with other information about the institution's policies and practices.
+
+cypher_query: cypher
+MATCH (w)-[r1]-(x)
+WHERE (
+    toLower(r1.metadata) =~ '^.*\\b(national university)\\w*\\b.*$' OR
+    toLower(r1.description) =~ '^.*\\b(national university)\\w*\\b.*$'
+)
+RETURN DISTINCT r1.metadata, r1.description
+
+======================
+question: What is the mission of National University regarding its students?
+real_answer: National University's mission regarding its students is to develop them as dynamic and responsible members of society.
+model_answer: National University’s mission regarding its students includes:
+
+*   Recruiting and retaining personnel based on competence, character, and commitment to National University’s Vision-Mission and Goals.
+*   Projecting an image compatible with National University’s Vision-Mission, Goals, and Core Values.
+*   Ensuring students are customers along with parents and other stakeholders.
+*   Expecting members of the organization to be directed to the vision-mission.
+*   Developing students into customers.
+
+
+cypher_query: cypher
+MATCH (w)-[r1]-(x)
+WHERE (
+    toLower(r1.metadata) =~ '^.*\\b(national university)\\w*\\b.*$' OR
+    toLower(r1.description) =~ '^.*\\b(national university)\\w*\\b.*$'
+)
+AND (
+    toLower(r1.metadata) =~ '^.*\\b(mission|student)\\w*\\b.*$' OR
+    toLower(r1.description) =~ '^.*\\b(mission|student)\\w*\\b.*$'
+)
+RETURN DISTINCT r1.metadata, r1.description
+
+======================

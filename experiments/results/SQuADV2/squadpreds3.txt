@@ -1,0 +1,162 @@
+question: When was the Duchy of Normandy founded?
+real_answer: 911
+model_answer: The Duchy of Normandy was founded in 911.
+cypher_query: MATCH (w)-[r1]-(x)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(duchy of normandy)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(duchy of normandy)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description
+======================
+question: Who did Rollo sign the treaty of Saint-Clair-sur-Epte with?
+real_answer: King Charles III
+model_answer: ""
+cypher_query: cypher
+MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(w.metadata) =~ '.*\\b(rollo)\\b.*' OR
+    toLower(w.description) =~ '.*\\b(rollo)\\b.*'
+)
+AND (
+    toLower(r1.metadata) =~ '.*\\b(treaty of saint-clair-sur-epte)\\b.*' OR 
+    toLower(r1.description) =~ '.*\\b(treaty of saint-clair-sur-epte)\\b.*'
+)
+AND (
+    toLower(y.metadata) =~ '.*\\b(other party|individual)\\b.*' OR 
+    toLower(y.description) =~ '.*\\b(other party|individual)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, y.metadata, y.description
+
+======================
+question: What river originally bounded the Duchy
+real_answer: Seine
+model_answer: The river Seine originally bounded the Duchy.
+cypher_query: cypher
+MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(duchy)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(duchy)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(river)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(river)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+
+======================
+question: when did Nors encampments ivolve into destructive incursions?
+real_answer: ""
+model_answer: ""
+cypher_query: cypher
+MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(nors encampments)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(nors encampments)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(destructive incursions)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(destructive incursions)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+
+======================
+question: What treaty was established in the 9th century?
+real_answer: ""
+model_answer: ""
+cypher_query: cypher
+MATCH (w)-[r1]-(x)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(treaty)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(treaty)\\b.*'
+)
+AND (
+    toLower(r1.metadata) =~ '.*\\b(9th century)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(9th century)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description
+
+======================
+question: Who established a treaty with King Charles the third of France?
+real_answer: ""
+model_answer: ""
+cypher_query: cypher
+MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(king charles the third of france)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(king charles the third of france)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(treaty|established)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(treaty|established)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+
+======================
+question: What did the French promises to protect Rollo and his men from?
+real_answer: ""
+model_answer: ""
+cypher_query: cypher
+MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(french promises)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(french promises)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(protect|protection)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(protect|protection)\\b.*'
+)
+AND (
+    toLower(x.metadata) =~ '.*\\b(rollo|his men)\\b.*' OR 
+    toLower(x.description) =~ '.*\\b(rollo|his men)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+
+======================
+question: Who upon arriving gave the original viking settlers a common identity?
+real_answer: Rollo
+model_answer: ""
+cypher_query: cypher
+MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(viking settlers)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(viking settlers)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(gave|common identity)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(gave|common identity)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+
+======================
+question: When did Rollo begin to arrive in Normandy?
+real_answer: ""
+model_answer: 
+cypher_query: cypher
+MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(rollo)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(rollo)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(normandy)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(normandy)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+
+======================
+question: What Viking groups were conquered by Rollo?
+real_answer: ""
+model_answer: 
+cypher_query: cypher
+MATCH (w)-[r1]-(x)-[r2]-(y)
+WHERE (
+    toLower(r1.metadata) =~ '.*\\b(rollo)\\b.*' OR
+    toLower(r1.description) =~ '.*\\b(rollo)\\b.*'
+)
+AND (
+    toLower(r2.metadata) =~ '.*\\b(viking|groups|conquered)\\b.*' OR 
+    toLower(r2.description) =~ '.*\\b(viking|groups|conquered)\\b.*'
+)
+RETURN DISTINCT r1.metadata, r1.description, r2.metadata, r2.description
+
+======================

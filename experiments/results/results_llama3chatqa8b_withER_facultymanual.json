@@ -1,0 +1,122 @@
+[
+    {
+        "ID": 1,
+        "Question": "What is the official title of this document and its reference number?",
+        "GroundTruth": "The official title of this document is \"FACULTY MANUAL\" and its reference number is \"OPR-HRD-D-M-003\".",
+        "Prediction": ""
+    },
+    {
+        "ID": 2,
+        "Question": "When is the date of effectivity for this Faculty Manual and what previous version does it supersede?",
+        "GroundTruth": "The date of effectivity for this Faculty Manual is August 1, 2023, and it supersedes the version from December 1, 2019.",
+        "Prediction": "The effective date for this Faculty Manual is [DATE], which supersedes the previous version from [PREVIOUS DATE]."
+    },
+    {
+        "ID": 3,
+        "Question": "What is the purpose of this Faculty Manual, according to the Foreword?",
+        "GroundTruth": "According to the Foreword, this Faculty Manual is prepared to provide an overview of National University's policies, rules, regulations, and benefits. It also aims to familiarize faculty with important information and provide employment guidelines to foster a safe and healthy work environment.",
+        "Prediction": ""
+    },
+    {
+        "ID": 4,
+        "Question": "What are the \"5 Commandments\" for data privacy compliance emphasized by the Commission on Higher Education (CHED) as mentioned in the Privacy Statement?",
+        "GroundTruth": "The \"5 Commandments\" for data privacy compliance emphasized by CHED are: appointing a Data Protection Officer (DPO); conducting a Privacy Impact Assessment; creating a Privacy Management Program; implementing privacy and data protection measures; and performing Breach Reporting Procedure.",
+        "Prediction": ""
+    },
+    {
+        "ID": 5,
+        "Question": "Who founded National University and when?",
+        "GroundTruth": "National University was founded by Don Mariano Fortunato Jhocson on August 1, 1900.",
+        "Prediction": ""
+    },
+    {
+        "ID": 6,
+        "Question": "What is the vision of National University?",
+        "GroundTruth": "The vision of National University is to be a dynamic private institution committed to nation-building, recognized internationally in education and research.",
+        "Prediction": ""
+    },
+    {
+        "ID": 7,
+        "Question": "What are the types of contracts applicable to employees as listed in Section 5.1 of Chapter 3?",
+        "GroundTruth": "The types of contracts applicable to employees include: Probationary Employment Contract (For Full-time Faculty Member), Employment Contract (For regularization), Contractual Full-Time Employment Agreement (Non-Regular faculty), Contractual Employment Contract (For Part-time Faculty Member), Adjunct Faculty Contract, Project-based Employment Contract (For Non-Teaching Personnel), and Consultancy Contract.",
+        "Prediction": ""
+    },
+    {
+        "ID": 8,
+        "Question": "What is the policy regarding solicitation and distribution of materials in the campus?",
+        "GroundTruth": "For the safety, convenience, and protection of all faculty, National University always prohibits solicitation and distribution of materials in the campus.",
+        "Prediction": ""
+    },
+    {
+        "ID": 9,
+        "Question": "What is the maximum score a faculty can achieve in Research and Innovation, and what are some categories for points allocation?",
+        "GroundTruth": "A faculty's maximum score in Research and Innovation is 30 points. Categories for points allocation include: Publication: Journal Articles, Publication: Conference Proceedings, Publication: Book Chapters and International Handbook and Encyclopedia, Externally Funded Research/Innovation/Resiliency Project, and Completed Internally Funded Research/Innovation/Resiliency Project.",
+        "Prediction": ""
+    },
+    {
+        "ID": 10,
+        "Question": "What is the \"No Work, No Pay\" policy specifically for Part-time Faculty regarding tardiness and absences?",
+        "GroundTruth": "There is a \"No Work, No Pay\" policy for Part-time Faculty, and tardiness and absences are computed based on their hourly rate.",
+        "Prediction": ""
+    },
+    {
+        "ID": 11,
+        "Question": "What is the current student enrollment for the upcoming academic year across all programs?",
+        "GroundTruth": "",
+        "Prediction": ""
+    },
+    {
+        "ID": 12,
+        "Question": "What specific pedagogical approaches are recommended for teaching a master's level course in computer science?",
+        "GroundTruth": "",
+        "Prediction": ""
+    },
+    {
+        "ID": 13,
+        "Question": "Who are the current deans of each college, and what are their academic backgrounds?",
+        "GroundTruth": "",
+        "Prediction": ""
+    },
+    {
+        "ID": 14,
+        "Question": "What is the total budget allocated for faculty research grants in the next fiscal year?",
+        "GroundTruth": "",
+        "Prediction": ""
+    },
+    {
+        "ID": 15,
+        "Question": "What are the technical specifications of the university's learning management system?",
+        "GroundTruth": "",
+        "Prediction": ""
+    },
+    {
+        "ID": 16,
+        "Question": "What is the university's strategy for international partnerships in the next five years?",
+        "GroundTruth": "",
+        "Prediction": ""
+    },
+    {
+        "ID": 17,
+        "Question": "How many faculty members are expected to retire in the next three years?",
+        "GroundTruth": "",
+        "Prediction": ""
+    },
+    {
+        "ID": 18,
+        "Question": "What is the average student-to-faculty ratio in undergraduate programs?",
+        "GroundTruth": "",
+        "Prediction": ""
+    },
+    {
+        "ID": 19,
+        "Question": "What are the detailed architectural plans for the new campus building under construction?",
+        "GroundTruth": "",
+        "Prediction": ""
+    },
+    {
+        "ID": 20,
+        "Question": "What is the university's market share in tertiary education in the Philippines compared to other private institutions?",
+        "GroundTruth": "",
+        "Prediction": ""
+    }
+]
